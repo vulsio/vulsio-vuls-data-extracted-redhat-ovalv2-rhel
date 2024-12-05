@@ -1,11 +1,11 @@
 {
-	"id": "RHSA-2024:0973",
+	"id": "RHSA-2024:10830",
 	"advisories": [
 		{
 			"content": {
-				"id": "RHSA-2024:0973",
-				"title": "RHSA-2024:0973: postgresql:15 security update (Important)",
-				"description": "PostgreSQL is an advanced object-relational database management system (DBMS).\n\nSecurity Fix(es):\n\n* postgresql: non-owner 'REFRESH MATERIALIZED VIEW CONCURRENTLY' executes arbitrary SQL (CVE-2024-0985)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"id": "RHSA-2024:10830",
+				"title": "RHSA-2024:10830: postgresql:15 security update (Important)",
+				"description": "PostgreSQL is an advanced object-relational database management system (DBMS).\n\nSecurity Fix(es):\n\n* postgresql: PostgreSQL SET ROLE, SET SESSION AUTHORIZATION reset to wrong user ID (CVE-2024-10978)\n\n* postgresql: PostgreSQL PL/Perl environment variable changes execute arbitrary code (CVE-2024-10979)\n\n* postgresql: PostgreSQL row security below e.g. subqueries disregards user ID changes (CVE-2024-10976)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
 				"severity": [
 					{
 						"type": "vendor",
@@ -16,19 +16,35 @@
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/errata/RHSA-2024:0973"
+						"url": "https://access.redhat.com/errata/RHSA-2024:10830"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-0985"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10976"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2263384"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10978"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10979"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2326251"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2326253"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2326263"
 					}
 				],
-				"published": "2024-02-26T00:00:00Z",
-				"modified": "2024-02-26T00:00:00Z"
+				"published": "2024-12-05T00:00:00Z",
+				"modified": "2024-12-05T00:00:00Z"
 			},
 			"segments": [
 				{
@@ -41,7 +57,97 @@
 	"vulnerabilities": [
 		{
 			"content": {
-				"id": "CVE-2024-0985",
+				"id": "CVE-2024-10976",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+							"base_score": 4.2,
+							"base_severity": "MEDIUM",
+							"temporal_score": 4.2,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 4.2,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-1250"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10976"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-10978",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+							"base_score": 4.2,
+							"base_severity": "MEDIUM",
+							"temporal_score": 4.2,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 4.2,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-266"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10978"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-10979",
 				"severity": [
 					{
 						"type": "vendor",
@@ -52,12 +158,12 @@
 						"type": "cvss_v31",
 						"source": "secalert@redhat.com",
 						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-							"base_score": 8,
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 8.8,
 							"base_severity": "HIGH",
-							"temporal_score": 8,
+							"temporal_score": 8.8,
 							"temporal_severity": "HIGH",
-							"environmental_score": 8,
+							"environmental_score": 8.8,
 							"environmental_severity": "HIGH"
 						}
 					}
@@ -66,17 +172,16 @@
 					{
 						"source": "secalert@redhat.com",
 						"cwe": [
-							"CWE-271"
+							"CWE-15"
 						]
 					}
 				],
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-0985"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10979"
 					}
-				],
-				"published": "2024-02-08T00:00:00Z"
+				]
 			},
 			"segments": [
 				{
@@ -219,11 +324,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -253,11 +358,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -287,11 +392,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -321,11 +426,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -355,11 +460,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -389,11 +494,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -423,11 +528,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -457,11 +562,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -491,11 +596,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -525,11 +630,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -559,11 +664,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -593,11 +698,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -621,11 +726,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -655,11 +760,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -689,11 +794,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:15.10-1.module+el8.10.0+22550+22c7d5ca"
 												]
 											}
 										}
@@ -711,7 +816,7 @@
 		"id": "redhat-ovalv2",
 		"raws": [
 			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:20240973.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:202410830.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202021469001.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202021469002.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202021469003.json",
@@ -734,8 +839,8 @@
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20237884001.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20237884003.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20237884004.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20240973005.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20240973006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410830005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410830006.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/textfilecontent54_state/oval:com.redhat.cve:ste:202410977003.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202021469002.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202021469004.json",
@@ -758,21 +863,21 @@
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237884001.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237884003.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237884005.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973007.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973009.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973011.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973013.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973015.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973017.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973019.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973021.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973023.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973025.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973027.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973029.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973031.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973033.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973035.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830017.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830019.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830021.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830023.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830025.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830027.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830029.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830031.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830033.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410830035.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20191992004.json",

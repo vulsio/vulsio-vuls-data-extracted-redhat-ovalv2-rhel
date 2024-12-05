@@ -1,11 +1,11 @@
 {
-	"id": "RHSA-2024:0973",
+	"id": "RHSA-2024:10831",
 	"advisories": [
 		{
 			"content": {
-				"id": "RHSA-2024:0973",
-				"title": "RHSA-2024:0973: postgresql:15 security update (Important)",
-				"description": "PostgreSQL is an advanced object-relational database management system (DBMS).\n\nSecurity Fix(es):\n\n* postgresql: non-owner 'REFRESH MATERIALIZED VIEW CONCURRENTLY' executes arbitrary SQL (CVE-2024-0985)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"id": "RHSA-2024:10831",
+				"title": "RHSA-2024:10831: postgresql:16 security update (Important)",
+				"description": "PostgreSQL is an advanced object-relational database management system (DBMS).\n\nSecurity Fix(es):\n\n* postgresql: PostgreSQL SET ROLE, SET SESSION AUTHORIZATION reset to wrong user ID (CVE-2024-10978)\n\n* postgresql: PostgreSQL PL/Perl environment variable changes execute arbitrary code (CVE-2024-10979)\n\n* postgresql: PostgreSQL row security below e.g. subqueries disregards user ID changes (CVE-2024-10976)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
 				"severity": [
 					{
 						"type": "vendor",
@@ -16,19 +16,35 @@
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/errata/RHSA-2024:0973"
+						"url": "https://access.redhat.com/errata/RHSA-2024:10831"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-0985"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10976"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2263384"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10978"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10979"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2326251"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2326253"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2326263"
 					}
 				],
-				"published": "2024-02-26T00:00:00Z",
-				"modified": "2024-02-26T00:00:00Z"
+				"published": "2024-12-05T00:00:00Z",
+				"modified": "2024-12-05T00:00:00Z"
 			},
 			"segments": [
 				{
@@ -41,7 +57,97 @@
 	"vulnerabilities": [
 		{
 			"content": {
-				"id": "CVE-2024-0985",
+				"id": "CVE-2024-10976",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+							"base_score": 4.2,
+							"base_severity": "MEDIUM",
+							"temporal_score": 4.2,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 4.2,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-1250"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10976"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-10978",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:L/I:L/A:N",
+							"base_score": 4.2,
+							"base_severity": "MEDIUM",
+							"temporal_score": 4.2,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 4.2,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-266"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10978"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-10979",
 				"severity": [
 					{
 						"type": "vendor",
@@ -52,12 +158,12 @@
 						"type": "cvss_v31",
 						"source": "secalert@redhat.com",
 						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
-							"base_score": 8,
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 8.8,
 							"base_severity": "HIGH",
-							"temporal_score": 8,
+							"temporal_score": 8.8,
 							"temporal_severity": "HIGH",
-							"environmental_score": 8,
+							"environmental_score": 8.8,
 							"environmental_severity": "HIGH"
 						}
 					}
@@ -66,17 +172,16 @@
 					{
 						"source": "secalert@redhat.com",
 						"cwe": [
-							"CWE-271"
+							"CWE-15"
 						]
 					}
 				],
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-0985"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-10979"
 					}
-				],
-				"published": "2024-02-08T00:00:00Z"
+				]
 			},
 			"segments": [
 				{
@@ -105,7 +210,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::pg_repack",
+												"name": "postgresql:16::pg_repack",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -117,11 +222,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:1.4.8-1.module+el8.9.0+19797+c4ce5969"
+														"lt": "0:1.5.1-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:1.4.8-1.module+el8.9.0+19797+c4ce5969"
+													"0:1.5.1-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -139,7 +244,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::pgaudit",
+												"name": "postgresql:16::pgaudit",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -151,11 +256,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:1.7.0-1.module+el8.9.0+19797+c4ce5969"
+														"lt": "0:16.0-1.module+el8.10.0+20413+d8116364"
 													}
 												],
 												"fixed": [
-													"0:1.7.0-1.module+el8.9.0+19797+c4ce5969"
+													"0:16.0-1.module+el8.10.0+20413+d8116364"
 												]
 											}
 										}
@@ -173,7 +278,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgres-decoderbufs",
+												"name": "postgresql:16::postgres-decoderbufs",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -185,11 +290,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:1.9.7-1.Final.module+el8.9.0+19797+c4ce5969"
+														"lt": "0:2.4.0-1.Final.module+el8.10.0+20413+d8116364"
 													}
 												],
 												"fixed": [
-													"0:1.9.7-1.Final.module+el8.9.0+19797+c4ce5969"
+													"0:2.4.0-1.Final.module+el8.10.0+20413+d8116364"
 												]
 											}
 										}
@@ -207,7 +312,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql",
+												"name": "postgresql:16::postgresql",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -219,11 +324,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -241,7 +346,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-contrib",
+												"name": "postgresql:16::postgresql-contrib",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -253,11 +358,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -275,7 +380,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-docs",
+												"name": "postgresql:16::postgresql-docs",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -287,11 +392,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -309,7 +414,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-plperl",
+												"name": "postgresql:16::postgresql-plperl",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -321,11 +426,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -343,7 +448,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-plpython3",
+												"name": "postgresql:16::postgresql-plpython3",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -355,11 +460,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -377,7 +482,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-pltcl",
+												"name": "postgresql:16::postgresql-pltcl",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -389,11 +494,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -411,7 +516,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-private-devel",
+												"name": "postgresql:16::postgresql-private-devel",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -423,11 +528,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -445,7 +550,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-private-libs",
+												"name": "postgresql:16::postgresql-private-libs",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -457,11 +562,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -479,7 +584,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-server",
+												"name": "postgresql:16::postgresql-server",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -491,11 +596,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -513,7 +618,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-server-devel",
+												"name": "postgresql:16::postgresql-server-devel",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -525,11 +630,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -547,7 +652,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-static",
+												"name": "postgresql:16::postgresql-static",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -559,11 +664,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -581,7 +686,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-test",
+												"name": "postgresql:16::postgresql-test",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -593,11 +698,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -615,17 +720,17 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-test-rpm-macros"
+												"name": "postgresql:16::postgresql-test-rpm-macros"
 											},
 											"affected": {
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -643,7 +748,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-upgrade",
+												"name": "postgresql:16::postgresql-upgrade",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -655,11 +760,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -677,7 +782,7 @@
 												"class": "fixed"
 											},
 											"package": {
-												"name": "postgresql:15::postgresql-upgrade-devel",
+												"name": "postgresql:16::postgresql-upgrade-devel",
 												"architectures": [
 													"aarch64",
 													"ppc64le",
@@ -689,11 +794,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+														"lt": "0:16.6-1.module+el8.10.0+22551+c0330dc9"
 													}
 												],
 												"fixed": [
-													"0:15.6-1.module+el8.9.0+21287+d0eecfe6"
+													"0:16.6-1.module+el8.10.0+22551+c0330dc9"
 												]
 											}
 										}
@@ -711,7 +816,7 @@
 		"id": "redhat-ovalv2",
 		"raws": [
 			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:20240973.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:202410831.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202021469001.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202021469002.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202021469003.json",
@@ -731,12 +836,12 @@
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202021469017.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202021469018.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/textfilecontent54_object/oval:com.redhat.cve:obj:202021469019.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20237884001.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20237884003.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20237884004.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20240973005.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20240973006.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/textfilecontent54_state/oval:com.redhat.cve:ste:202410977003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410831001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410831003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410831004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410831005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410831006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/textfilecontent54_state/oval:com.redhat.cve:ste:202229244002.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202021469002.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202021469004.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202021469006.json",
@@ -755,28 +860,28 @@
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202021469032.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202021469034.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202021469036.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237884001.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237884003.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237884005.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973007.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973009.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973011.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973013.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973015.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973017.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973019.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973021.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973023.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973025.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973027.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973029.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973031.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973033.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240973035.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831017.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831019.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831021.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831023.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831025.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831027.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831029.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831031.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831033.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410831035.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20191992004.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/textfilecontent54_test/oval:com.redhat.cve:tst:202410977038.json"
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/textfilecontent54_test/oval:com.redhat.cve:tst:202410977040.json"
 		]
 	}
 }
