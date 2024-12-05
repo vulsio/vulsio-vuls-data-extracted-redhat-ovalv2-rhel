@@ -1,0 +1,234 @@
+{
+	"id": "RHSA-2021:0681",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2021:0681",
+				"title": "RHSA-2021:0681: podman security update (Important)",
+				"description": "The podman tool manages pods, container images, and containers. It is part of the libpod library, which is for applications that use container pods. Container pods is a concept in Kubernetes.\n\nSecurity Fix(es):\n\n* podman: container users permissions are not respected in privileged containers (CVE-2021-20188)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Important"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2021:0681"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2021-20188"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1915734"
+					}
+				],
+				"published": "2021-03-01T00:00:00Z",
+				"modified": "2021-03-01T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2021-20188",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "important"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 7,
+							"base_severity": "HIGH",
+							"temporal_score": 7,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-863"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2021-20188"
+					}
+				],
+				"published": "2021-02-10T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "podman",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.6.4-29.el7_9"
+													}
+												],
+												"fixed": [
+													"0:1.6.4-29.el7_9"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "podman-docker",
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.6.4-29.el7_9"
+													}
+												],
+												"fixed": [
+													"0:1.6.4-29.el7_9"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/definitions/oval:com.redhat.rhsa:def:20210681.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:201925067001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:201925067002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20210681001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20210681003.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:201925067002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:201925067004.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20210681001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20210681003.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047029.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047030.json"
+		]
+	}
+}

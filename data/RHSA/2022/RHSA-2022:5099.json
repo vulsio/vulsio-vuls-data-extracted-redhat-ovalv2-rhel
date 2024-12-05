@@ -1,0 +1,2753 @@
+{
+	"id": "RHSA-2022:5099",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2022:5099",
+				"title": "RHSA-2022:5099: grub2, mokutil, shim, and shim-unsigned-x64 security update (Important)",
+				"description": "The grub2 packages provide version 2 of the Grand Unified Boot Loader (GRUB), a highly configurable and customizable boot loader with modular architecture. The packages support a variety of kernel formats, file systems, computer architectures, and hardware devices.\n\nThe shim package contains a first-stage UEFI boot loader that handles chaining to a trusted full boot loader under secure boot environments.\n\nSecurity Fix(es):\n\n* grub2: Integer underflow in grub_net_recv_ip4_packets (CVE-2022-28733)\n\n* grub2: Crafted PNG grayscale images may lead to out-of-bounds write in heap (CVE-2021-3695)\n\n* grub2: Crafted PNG image may lead to out-of-bound write during huffman table handling (CVE-2021-3696)\n\n* grub2: Crafted JPEG image can lead to buffer underflow write in the heap (CVE-2021-3697)\n\n* grub2: Out-of-bound write when handling split HTTP headers (CVE-2022-28734)\n\n* grub2: shim_lock verifier allows non-kernel files to be loaded (CVE-2022-28735)\n\n* grub2: use-after-free in grub_cmd_chainloader() (CVE-2022-28736)\n\n* shim: Buffer overflow when loading crafted EFI images (CVE-2022-28737)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Important"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2022:5099"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2021-3695"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2021-3696"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2021-3697"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28733"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28734"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28735"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28736"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28737"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1991685"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1991686"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1991687"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2083339"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2090463"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2090857"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2090899"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2092613"
+					}
+				],
+				"published": "2022-06-16T00:00:00Z",
+				"modified": "2022-06-16T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2021-3695",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.6,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-787"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2021-3695"
+					}
+				],
+				"published": "2022-06-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2021-3696",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:L/I:L/A:L",
+							"base_score": 5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-787"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2021-3696"
+					}
+				],
+				"published": "2022-06-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2021-3697",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:N/S:C/C:H/I:H/A:H",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.6,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-787"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2021-3697"
+					}
+				],
+				"published": "2022-06-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2022-28733",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "important"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 8.1,
+							"base_severity": "HIGH",
+							"temporal_score": 8.1,
+							"temporal_severity": "HIGH",
+							"environmental_score": 8.1,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-191"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28733"
+					}
+				],
+				"published": "2022-06-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2022-28734",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H",
+							"base_score": 7,
+							"base_severity": "HIGH",
+							"temporal_score": 7,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-787"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28734"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2022-28735",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 7.8,
+							"base_severity": "HIGH",
+							"temporal_score": 7.8,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.8,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-829"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28735"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2022-28736",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 7,
+							"base_severity": "HIGH",
+							"temporal_score": 7,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-416"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28736"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2022-28737",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 7.3,
+							"base_severity": "HIGH",
+							"temporal_score": 7.3,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.3,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-120"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2022-28737"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-common",
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-efi-aa64",
+												"architectures": [
+													"aarch64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-efi-aa64-cdboot",
+												"architectures": [
+													"aarch64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-efi-aa64-modules",
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-efi-x64",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-efi-x64-cdboot",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-efi-x64-modules",
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-pc",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-pc-modules",
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-ppc64le",
+												"architectures": [
+													"ppc64le"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-ppc64le-modules",
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-tools",
+												"architectures": [
+													"aarch64",
+													"ppc64le",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-tools-efi",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-tools-extra",
+												"architectures": [
+													"aarch64",
+													"ppc64le",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "grub2-tools-minimal",
+												"architectures": [
+													"aarch64",
+													"ppc64le",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:2.06-27.el9_0.7"
+													}
+												],
+												"fixed": [
+													"1:2.06-27.el9_0.7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "shim-aa64",
+												"architectures": [
+													"aarch64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:15.6-1.el9"
+													}
+												],
+												"fixed": [
+													"0:15.6-1.el9"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "shim-unsigned-x64",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:15.6-1.el9"
+													}
+												],
+												"fixed": [
+													"0:15.6-1.el9"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "shim-x64",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-9-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-9-aarch64-rpms",
+													"codeready-builder-for-rhel-9-aarch64-source-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-rpms",
+													"codeready-builder-for-rhel-9-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-9-s390x-debug-rpms",
+													"codeready-builder-for-rhel-9-s390x-rpms",
+													"codeready-builder-for-rhel-9-s390x-source-rpms",
+													"codeready-builder-for-rhel-9-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-9-x86_64-rpms",
+													"codeready-builder-for-rhel-9-x86_64-source-rpms",
+													"rhel-9-for-aarch64-appstream-debug-rpms",
+													"rhel-9-for-aarch64-appstream-rpms",
+													"rhel-9-for-aarch64-appstream-source-rpms",
+													"rhel-9-for-aarch64-baseos-debug-rpms",
+													"rhel-9-for-aarch64-baseos-rpms",
+													"rhel-9-for-aarch64-baseos-source-rpms",
+													"rhel-9-for-aarch64-highavailability-debug-rpms",
+													"rhel-9-for-aarch64-highavailability-rpms",
+													"rhel-9-for-aarch64-highavailability-source-rpms",
+													"rhel-9-for-aarch64-supplementary-debug-rpms",
+													"rhel-9-for-aarch64-supplementary-rpms",
+													"rhel-9-for-aarch64-supplementary-source-rpms",
+													"rhel-9-for-ppc64le-appstream-debug-rpms",
+													"rhel-9-for-ppc64le-appstream-rpms",
+													"rhel-9-for-ppc64le-appstream-source-rpms",
+													"rhel-9-for-ppc64le-baseos-debug-rpms",
+													"rhel-9-for-ppc64le-baseos-rpms",
+													"rhel-9-for-ppc64le-baseos-source-rpms",
+													"rhel-9-for-ppc64le-highavailability-debug-rpms",
+													"rhel-9-for-ppc64le-highavailability-rpms",
+													"rhel-9-for-ppc64le-highavailability-source-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-rpms",
+													"rhel-9-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-rpms",
+													"rhel-9-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-rpms",
+													"rhel-9-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-9-for-ppc64le-supplementary-debug-rpms",
+													"rhel-9-for-ppc64le-supplementary-rpms",
+													"rhel-9-for-ppc64le-supplementary-source-rpms",
+													"rhel-9-for-s390x-appstream-debug-rpms",
+													"rhel-9-for-s390x-appstream-rpms",
+													"rhel-9-for-s390x-appstream-source-rpms",
+													"rhel-9-for-s390x-baseos-debug-rpms",
+													"rhel-9-for-s390x-baseos-rpms",
+													"rhel-9-for-s390x-baseos-source-rpms",
+													"rhel-9-for-s390x-highavailability-debug-rpms",
+													"rhel-9-for-s390x-highavailability-rpms",
+													"rhel-9-for-s390x-highavailability-source-rpms",
+													"rhel-9-for-s390x-resilientstorage-debug-rpms",
+													"rhel-9-for-s390x-resilientstorage-rpms",
+													"rhel-9-for-s390x-resilientstorage-source-rpms",
+													"rhel-9-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-9-for-s390x-sap-netweaver-rpms",
+													"rhel-9-for-s390x-sap-netweaver-source-rpms",
+													"rhel-9-for-s390x-supplementary-debug-rpms",
+													"rhel-9-for-s390x-supplementary-rpms",
+													"rhel-9-for-s390x-supplementary-source-rpms",
+													"rhel-9-for-x86_64-appstream-debug-rpms",
+													"rhel-9-for-x86_64-appstream-rpms",
+													"rhel-9-for-x86_64-appstream-source-rpms",
+													"rhel-9-for-x86_64-baseos-debug-rpms",
+													"rhel-9-for-x86_64-baseos-rpms",
+													"rhel-9-for-x86_64-baseos-source-rpms",
+													"rhel-9-for-x86_64-highavailability-debug-rpms",
+													"rhel-9-for-x86_64-highavailability-rpms",
+													"rhel-9-for-x86_64-highavailability-source-rpms",
+													"rhel-9-for-x86_64-nfv-debug-rpms",
+													"rhel-9-for-x86_64-nfv-rpms",
+													"rhel-9-for-x86_64-nfv-source-rpms",
+													"rhel-9-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-9-for-x86_64-resilientstorage-rpms",
+													"rhel-9-for-x86_64-resilientstorage-source-rpms",
+													"rhel-9-for-x86_64-rt-debug-rpms",
+													"rhel-9-for-x86_64-rt-rpms",
+													"rhel-9-for-x86_64-rt-source-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-rpms",
+													"rhel-9-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-9-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-9-for-x86_64-sap-solutions-rpms",
+													"rhel-9-for-x86_64-sap-solutions-source-rpms",
+													"rhel-9-for-x86_64-supplementary-debug-rpms",
+													"rhel-9-for-x86_64-supplementary-rpms",
+													"rhel-9-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:15.6-1.el9"
+													}
+												],
+												"fixed": [
+													"0:15.6-1.el9"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:20225099.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20224304001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20224304004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20249143001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20225099015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20225099001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20225099003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20225099004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20225099005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20225099006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20225099007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20225099008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20224304002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20224304008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20249143002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099017.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099018.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099019.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099020.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099021.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099022.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099023.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099024.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099025.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099026.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099027.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099028.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099029.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099030.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099031.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099033.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20225099035.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json"
+		]
+	}
+}

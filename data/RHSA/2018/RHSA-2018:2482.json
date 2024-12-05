@@ -1,0 +1,610 @@
+{
+	"id": "RHSA-2018:2482",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2018:2482",
+				"title": "RHSA-2018:2482: docker security and bug fix update (Moderate)",
+				"description": "Docker is an open-source engine that automates the deployment of any application as a lightweight, portable, self-sufficient container that runs virtually anywhere.\n\nSecurity Fix(es):\n\n* docker: container breakout without selinux in enforcing mode (CVE-2018-10892)\n\nFor more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.\n\nThis issue was discovered by Antonio Murdaca (Red Hat).\n\nBug Fix(es):\n\n* Previously, the `dontaudit` and `allow` SELinux rules were missing, so the kernel raised a SELinux AVC message. Consequently, some commands did not work as expected. This update adds the missing rules, and the commands now run successfully. (BZ#1550967)\n\n* Previously, during a restart the container daemon did not restore the state of a container correctly if an exec'ed process was associated with the container. Consequently, the container daemon aborted with 'panic: close of nil channel' when the daemon was handling the termination of the exec'ed process. This bug has been fixed, and the container daemon no longer panics in the aforementioned scenario. (BZ#1554121)\n\n* Previously, bind mounts were resolved before using them inside a container. Consequently, symlinks could not be mounted inside of the container. With this update, the source of a bind mount is not resolved. As a result, it is possible to bind mount symlinks again into a container. (BZ#1603201)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2018:2482"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2018-10892"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1598581"
+					}
+				],
+				"published": "2018-08-16T00:00:00Z",
+				"modified": "2018-08-16T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2018-10892",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L",
+							"base_score": 6.3,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.3,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.3,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-250"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2018-10892"
+					}
+				],
+				"published": "2018-07-05T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:1.13.1-74.git6e3bb8e.el7"
+													}
+												],
+												"fixed": [
+													"2:1.13.1-74.git6e3bb8e.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-client",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:1.13.1-74.git6e3bb8e.el7"
+													}
+												],
+												"fixed": [
+													"2:1.13.1-74.git6e3bb8e.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-common",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:1.13.1-74.git6e3bb8e.el7"
+													}
+												],
+												"fixed": [
+													"2:1.13.1-74.git6e3bb8e.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-logrotate",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:1.13.1-74.git6e3bb8e.el7"
+													}
+												],
+												"fixed": [
+													"2:1.13.1-74.git6e3bb8e.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-lvm-plugin",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:1.13.1-74.git6e3bb8e.el7"
+													}
+												],
+												"fixed": [
+													"2:1.13.1-74.git6e3bb8e.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-novolume-plugin",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:1.13.1-74.git6e3bb8e.el7"
+													}
+												],
+												"fixed": [
+													"2:1.13.1-74.git6e3bb8e.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-rhel-push-plugin",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:1.13.1-74.git6e3bb8e.el7"
+													}
+												],
+												"fixed": [
+													"2:1.13.1-74.git6e3bb8e.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-v1.10-migrator",
+												"architectures": [
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:1.13.1-74.git6e3bb8e.el7"
+													}
+												],
+												"fixed": [
+													"2:1.13.1-74.git6e3bb8e.el7"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/definitions/oval:com.redhat.rhsa:def:20182482.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047004.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047006.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047007.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047009.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047010.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047012.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047013.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20182482001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047008.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047012.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047014.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047018.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047020.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047024.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047026.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20182482001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20182482003.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20182482005.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20182482007.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20182482009.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20182482011.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20182482013.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20182482015.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047029.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047030.json"
+		]
+	}
+}

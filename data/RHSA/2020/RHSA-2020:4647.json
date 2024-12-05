@@ -1,0 +1,2371 @@
+{
+	"id": "RHSA-2020:4647",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2020:4647",
+				"title": "RHSA-2020:4647: freerdp and vinagre security, bug fix, and enhancement update (Moderate)",
+				"description": "FreeRDP is a free implementation of the Remote Desktop Protocol (RDP), released under the Apache license. The xfreerdp client can connect to RDP servers such as Microsoft Windows machines, xrdp, and VirtualBox.\n\nThe vinagre packages provide the Vinagre remote desktop viewer for the GNOME desktop.\n\nThe following packages have been upgraded to a later upstream version: freerdp (2.1.1). (BZ#1834287)\n\nSecurity Fix(es):\n\n* freerdp: Out of bound read in cliprdr_server_receive_capabilities (CVE-2020-11018)\n\n* freerdp: Out of bound read/write in usb redirection channel (CVE-2020-11039)\n\n* freerdp: out-of-bounds read in update_read_icon_info function (CVE-2020-11042)\n\n* freerdp: out-of-bounds read in autodetect_recv_bandwidth_measure_results function (CVE-2020-11047)\n\n* freerdp: Out-of-bounds read in ntlm_read_ChallengeMessage in winpr/libwinpr/sspi/NTLM/ntlm_message.c. (CVE-2020-13396)\n\n* freerdp: Out-of-bounds read in security_fips_decrypt in libfreerdp/core/security.c (CVE-2020-13397)\n\n* freerdp: Out of bound read in update_recv could result in a crash (CVE-2020-11019)\n\n* freerdp: Integer overflow in VIDEO channel (CVE-2020-11038)\n\n* freerdp: Out of bound access in clear_decompress_subcode_rlex (CVE-2020-11040)\n\n* freerdp: Unchecked read of array offset in rdpsnd_recv_wave2_pdu (CVE-2020-11041)\n\n* freerdp: out of bound read in rfx_process_message_tileset (CVE-2020-11043)\n\n* freerdp: double free in update_read_cache_bitmap_v3_order function (CVE-2020-11044)\n\n* freerdp: out of bounds read in update_read_bitmap_data function (CVE-2020-11045)\n\n* freerdp: out of bounds seek in update_read_synchronize function could lead out of bounds read (CVE-2020-11046)\n\n* freerdp: out-of-bounds read could result in aborting the session (CVE-2020-11048)\n\n* freerdp: out-of-bound read of client memory that is then passed on to the protocol parser (CVE-2020-11049)\n\n* freerdp: stream out-of-bounds seek in rdp_read_font_capability_set could lead to out-of-bounds read (CVE-2020-11058)\n\n* freerdp: out-of-bounds read in cliprdr_read_format_list function (CVE-2020-11085)\n\n* freerdp: out-of-bounds read in ntlm_read_ntlm_v2_client_challenge function (CVE-2020-11086)\n\n* freerdp: out-of-bounds read in ntlm_read_AuthenticateMessage (CVE-2020-11087)\n\n* freerdp: out-of-bounds read in ntlm_read_NegotiateMessage (CVE-2020-11088)\n\n* freerdp: out-of-bounds read in irp functions (CVE-2020-11089)\n\n* freerdp: out-of-bounds read in gdi.c (CVE-2020-11522)\n\n* freerdp: out-of-bounds read in bitmap.c (CVE-2020-11525)\n\n* freerdp: Stream pointer out of bounds in update_recv_secondary_order could lead out of bounds read later (CVE-2020-11526)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.\n\nAdditional Changes:\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 8.3 Release Notes linked from the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2020:4647"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11018"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11019"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11038"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11039"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11040"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11041"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11042"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11043"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11044"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11045"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11046"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11047"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11048"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11049"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11058"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11085"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11086"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11087"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11088"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11089"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11522"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11525"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11526"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-13396"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-13397"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1835382"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1835391"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1835399"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1835403"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1835762"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1835766"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1835772"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1835779"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1836223"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1836239"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1836247"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1841189"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1841196"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1844161"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1844166"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1844171"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1844177"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1844184"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1848008"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1848012"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1848018"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1848022"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1848029"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1848034"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1848038"
+					}
+				],
+				"published": "2020-11-04T00:00:00Z",
+				"modified": "2020-11-04T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2020-11018",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11018"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11019",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-20->CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11019"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11038",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:L",
+							"base_score": 5.4,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.4,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.4,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-190->CWE-787"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11038"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11039",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:H/A:L",
+							"base_score": 6.8,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-20->CWE-190->CWE-770->(CWE-125|CWE-787)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11039"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11040",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.7,
+							"base_severity": "LOW",
+							"temporal_score": 2.7,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.7,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11040"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11041",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.7,
+							"base_severity": "LOW",
+							"temporal_score": 2.7,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.7,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-129->CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11041"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11042",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:H",
+							"base_score": 5.9,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.9,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.9,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11042"
+					}
+				],
+				"published": "2020-03-31T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11043",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.7,
+							"base_severity": "LOW",
+							"temporal_score": 2.7,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.7,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-20->CWE-805->CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11043"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11044",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.2,
+							"base_severity": "LOW",
+							"temporal_score": 2.2,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.2,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-672"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11044"
+					}
+				],
+				"published": "2020-03-31T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11045",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:L/I:N/A:L",
+							"base_score": 3.3,
+							"base_severity": "LOW",
+							"temporal_score": 3.3,
+							"temporal_severity": "LOW",
+							"environmental_score": 3.3,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11045"
+					}
+				],
+				"published": "2020-03-30T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11046",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.2,
+							"base_severity": "LOW",
+							"temporal_score": 2.2,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.2,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-119->CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11046"
+					}
+				],
+				"published": "2020-03-30T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11047",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:H/I:N/A:H",
+							"base_score": 5.9,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.9,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.9,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11047"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11048",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.2,
+							"base_severity": "LOW",
+							"temporal_score": 2.2,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.2,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11048"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11049",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.2,
+							"base_severity": "LOW",
+							"temporal_score": 2.2,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.2,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11049"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11058",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.2,
+							"base_severity": "LOW",
+							"temporal_score": 2.2,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.2,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-119->CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11058"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11085",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:N/A:L",
+							"base_score": 3.5,
+							"base_severity": "LOW",
+							"temporal_score": 3.5,
+							"temporal_severity": "LOW",
+							"environmental_score": 3.5,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-805->CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11085"
+					}
+				],
+				"published": "2020-05-29T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11086",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L",
+							"base_score": 5.4,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.4,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.4,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11086"
+					}
+				],
+				"published": "2020-05-29T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11087",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L",
+							"base_score": 5.4,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.4,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.4,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-20->CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11087"
+					}
+				],
+				"published": "2020-05-29T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11088",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:L",
+							"base_score": 5.4,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.4,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.4,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11088"
+					}
+				],
+				"published": "2020-05-29T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11089",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:L/I:L/A:L",
+							"base_score": 5.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11089"
+					}
+				],
+				"published": "2020-05-29T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11522",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.2,
+							"base_severity": "LOW",
+							"temporal_score": 2.2,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.2,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11522"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11525",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.2,
+							"base_severity": "LOW",
+							"temporal_score": 2.2,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.2,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11525"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-11526",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 2.2,
+							"base_severity": "LOW",
+							"temporal_score": 2.2,
+							"temporal_severity": "LOW",
+							"environmental_score": 2.2,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-11526"
+					}
+				],
+				"published": "2020-04-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-13396",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+							"base_score": 7.1,
+							"base_severity": "HIGH",
+							"temporal_score": 7.1,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.1,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-13396"
+					}
+				],
+				"published": "2020-05-22T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2020-13397",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L",
+							"base_score": 6.1,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.1,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.1,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-476"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-13397"
+					}
+				],
+				"published": "2020-05-22T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:8",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "freerdp",
+												"architectures": [
+													"aarch64",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-8-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-8-aarch64-rpms",
+													"codeready-builder-for-rhel-8-aarch64-source-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-8-s390x-debug-rpms",
+													"codeready-builder-for-rhel-8-s390x-rpms",
+													"codeready-builder-for-rhel-8-s390x-source-rpms",
+													"codeready-builder-for-rhel-8-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-8-x86_64-rpms",
+													"codeready-builder-for-rhel-8-x86_64-source-rpms",
+													"rhel-8-for-aarch64-appstream-debug-rpms",
+													"rhel-8-for-aarch64-appstream-rpms",
+													"rhel-8-for-aarch64-appstream-source-rpms",
+													"rhel-8-for-aarch64-baseos-debug-rpms",
+													"rhel-8-for-aarch64-baseos-rpms",
+													"rhel-8-for-aarch64-baseos-source-rpms",
+													"rhel-8-for-aarch64-highavailability-debug-rpms",
+													"rhel-8-for-aarch64-highavailability-rpms",
+													"rhel-8-for-aarch64-highavailability-source-rpms",
+													"rhel-8-for-aarch64-supplementary-debug-rpms",
+													"rhel-8-for-aarch64-supplementary-rpms",
+													"rhel-8-for-aarch64-supplementary-source-rpms",
+													"rhel-8-for-ppc64le-appstream-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-source-rpms",
+													"rhel-8-for-ppc64le-appstream-rpms",
+													"rhel-8-for-ppc64le-appstream-source-rpms",
+													"rhel-8-for-ppc64le-baseos-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-source-rpms",
+													"rhel-8-for-ppc64le-baseos-rpms",
+													"rhel-8-for-ppc64le-baseos-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-rpms",
+													"rhel-8-for-ppc64le-highavailability-source-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-8-for-ppc64le-supplementary-debug-rpms",
+													"rhel-8-for-ppc64le-supplementary-rpms",
+													"rhel-8-for-ppc64le-supplementary-source-rpms",
+													"rhel-8-for-s390x-appstream-debug-rpms",
+													"rhel-8-for-s390x-appstream-rpms",
+													"rhel-8-for-s390x-appstream-source-rpms",
+													"rhel-8-for-s390x-baseos-debug-rpms",
+													"rhel-8-for-s390x-baseos-rpms",
+													"rhel-8-for-s390x-baseos-source-rpms",
+													"rhel-8-for-s390x-highavailability-debug-rpms",
+													"rhel-8-for-s390x-highavailability-rpms",
+													"rhel-8-for-s390x-highavailability-source-rpms",
+													"rhel-8-for-s390x-resilientstorage-debug-rpms",
+													"rhel-8-for-s390x-resilientstorage-rpms",
+													"rhel-8-for-s390x-resilientstorage-source-rpms",
+													"rhel-8-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-8-for-s390x-sap-netweaver-rpms",
+													"rhel-8-for-s390x-sap-netweaver-source-rpms",
+													"rhel-8-for-s390x-supplementary-debug-rpms",
+													"rhel-8-for-s390x-supplementary-rpms",
+													"rhel-8-for-s390x-supplementary-source-rpms",
+													"rhel-8-for-x86_64-appstream-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-source-rpms",
+													"rhel-8-for-x86_64-appstream-rpms",
+													"rhel-8-for-x86_64-appstream-source-rpms",
+													"rhel-8-for-x86_64-baseos-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-source-rpms",
+													"rhel-8-for-x86_64-baseos-rpms",
+													"rhel-8-for-x86_64-baseos-source-rpms",
+													"rhel-8-for-x86_64-highavailability-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-source-rpms",
+													"rhel-8-for-x86_64-highavailability-rpms",
+													"rhel-8-for-x86_64-highavailability-source-rpms",
+													"rhel-8-for-x86_64-nfv-debug-rpms",
+													"rhel-8-for-x86_64-nfv-rpms",
+													"rhel-8-for-x86_64-nfv-source-rpms",
+													"rhel-8-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-8-for-x86_64-resilientstorage-rpms",
+													"rhel-8-for-x86_64-resilientstorage-source-rpms",
+													"rhel-8-for-x86_64-rt-debug-rpms",
+													"rhel-8-for-x86_64-rt-rpms",
+													"rhel-8-for-x86_64-rt-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-rpms",
+													"rhel-8-for-x86_64-sap-solutions-source-rpms",
+													"rhel-8-for-x86_64-supplementary-debug-rpms",
+													"rhel-8-for-x86_64-supplementary-rpms",
+													"rhel-8-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:2.1.1-1.el8"
+													}
+												],
+												"fixed": [
+													"2:2.1.1-1.el8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "freerdp-devel",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-8-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-8-aarch64-rpms",
+													"codeready-builder-for-rhel-8-aarch64-source-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-8-s390x-debug-rpms",
+													"codeready-builder-for-rhel-8-s390x-rpms",
+													"codeready-builder-for-rhel-8-s390x-source-rpms",
+													"codeready-builder-for-rhel-8-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-8-x86_64-rpms",
+													"codeready-builder-for-rhel-8-x86_64-source-rpms",
+													"rhel-8-for-aarch64-appstream-debug-rpms",
+													"rhel-8-for-aarch64-appstream-rpms",
+													"rhel-8-for-aarch64-appstream-source-rpms",
+													"rhel-8-for-aarch64-baseos-debug-rpms",
+													"rhel-8-for-aarch64-baseos-rpms",
+													"rhel-8-for-aarch64-baseos-source-rpms",
+													"rhel-8-for-aarch64-highavailability-debug-rpms",
+													"rhel-8-for-aarch64-highavailability-rpms",
+													"rhel-8-for-aarch64-highavailability-source-rpms",
+													"rhel-8-for-aarch64-supplementary-debug-rpms",
+													"rhel-8-for-aarch64-supplementary-rpms",
+													"rhel-8-for-aarch64-supplementary-source-rpms",
+													"rhel-8-for-ppc64le-appstream-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-source-rpms",
+													"rhel-8-for-ppc64le-appstream-rpms",
+													"rhel-8-for-ppc64le-appstream-source-rpms",
+													"rhel-8-for-ppc64le-baseos-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-source-rpms",
+													"rhel-8-for-ppc64le-baseos-rpms",
+													"rhel-8-for-ppc64le-baseos-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-rpms",
+													"rhel-8-for-ppc64le-highavailability-source-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-8-for-ppc64le-supplementary-debug-rpms",
+													"rhel-8-for-ppc64le-supplementary-rpms",
+													"rhel-8-for-ppc64le-supplementary-source-rpms",
+													"rhel-8-for-s390x-appstream-debug-rpms",
+													"rhel-8-for-s390x-appstream-rpms",
+													"rhel-8-for-s390x-appstream-source-rpms",
+													"rhel-8-for-s390x-baseos-debug-rpms",
+													"rhel-8-for-s390x-baseos-rpms",
+													"rhel-8-for-s390x-baseos-source-rpms",
+													"rhel-8-for-s390x-highavailability-debug-rpms",
+													"rhel-8-for-s390x-highavailability-rpms",
+													"rhel-8-for-s390x-highavailability-source-rpms",
+													"rhel-8-for-s390x-resilientstorage-debug-rpms",
+													"rhel-8-for-s390x-resilientstorage-rpms",
+													"rhel-8-for-s390x-resilientstorage-source-rpms",
+													"rhel-8-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-8-for-s390x-sap-netweaver-rpms",
+													"rhel-8-for-s390x-sap-netweaver-source-rpms",
+													"rhel-8-for-s390x-supplementary-debug-rpms",
+													"rhel-8-for-s390x-supplementary-rpms",
+													"rhel-8-for-s390x-supplementary-source-rpms",
+													"rhel-8-for-x86_64-appstream-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-source-rpms",
+													"rhel-8-for-x86_64-appstream-rpms",
+													"rhel-8-for-x86_64-appstream-source-rpms",
+													"rhel-8-for-x86_64-baseos-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-source-rpms",
+													"rhel-8-for-x86_64-baseos-rpms",
+													"rhel-8-for-x86_64-baseos-source-rpms",
+													"rhel-8-for-x86_64-highavailability-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-source-rpms",
+													"rhel-8-for-x86_64-highavailability-rpms",
+													"rhel-8-for-x86_64-highavailability-source-rpms",
+													"rhel-8-for-x86_64-nfv-debug-rpms",
+													"rhel-8-for-x86_64-nfv-rpms",
+													"rhel-8-for-x86_64-nfv-source-rpms",
+													"rhel-8-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-8-for-x86_64-resilientstorage-rpms",
+													"rhel-8-for-x86_64-resilientstorage-source-rpms",
+													"rhel-8-for-x86_64-rt-debug-rpms",
+													"rhel-8-for-x86_64-rt-rpms",
+													"rhel-8-for-x86_64-rt-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-rpms",
+													"rhel-8-for-x86_64-sap-solutions-source-rpms",
+													"rhel-8-for-x86_64-supplementary-debug-rpms",
+													"rhel-8-for-x86_64-supplementary-rpms",
+													"rhel-8-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:2.1.1-1.el8"
+													}
+												],
+												"fixed": [
+													"2:2.1.1-1.el8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "freerdp-libs",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-8-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-8-aarch64-rpms",
+													"codeready-builder-for-rhel-8-aarch64-source-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-8-s390x-debug-rpms",
+													"codeready-builder-for-rhel-8-s390x-rpms",
+													"codeready-builder-for-rhel-8-s390x-source-rpms",
+													"codeready-builder-for-rhel-8-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-8-x86_64-rpms",
+													"codeready-builder-for-rhel-8-x86_64-source-rpms",
+													"rhel-8-for-aarch64-appstream-debug-rpms",
+													"rhel-8-for-aarch64-appstream-rpms",
+													"rhel-8-for-aarch64-appstream-source-rpms",
+													"rhel-8-for-aarch64-baseos-debug-rpms",
+													"rhel-8-for-aarch64-baseos-rpms",
+													"rhel-8-for-aarch64-baseos-source-rpms",
+													"rhel-8-for-aarch64-highavailability-debug-rpms",
+													"rhel-8-for-aarch64-highavailability-rpms",
+													"rhel-8-for-aarch64-highavailability-source-rpms",
+													"rhel-8-for-aarch64-supplementary-debug-rpms",
+													"rhel-8-for-aarch64-supplementary-rpms",
+													"rhel-8-for-aarch64-supplementary-source-rpms",
+													"rhel-8-for-ppc64le-appstream-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-source-rpms",
+													"rhel-8-for-ppc64le-appstream-rpms",
+													"rhel-8-for-ppc64le-appstream-source-rpms",
+													"rhel-8-for-ppc64le-baseos-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-source-rpms",
+													"rhel-8-for-ppc64le-baseos-rpms",
+													"rhel-8-for-ppc64le-baseos-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-rpms",
+													"rhel-8-for-ppc64le-highavailability-source-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-8-for-ppc64le-supplementary-debug-rpms",
+													"rhel-8-for-ppc64le-supplementary-rpms",
+													"rhel-8-for-ppc64le-supplementary-source-rpms",
+													"rhel-8-for-s390x-appstream-debug-rpms",
+													"rhel-8-for-s390x-appstream-rpms",
+													"rhel-8-for-s390x-appstream-source-rpms",
+													"rhel-8-for-s390x-baseos-debug-rpms",
+													"rhel-8-for-s390x-baseos-rpms",
+													"rhel-8-for-s390x-baseos-source-rpms",
+													"rhel-8-for-s390x-highavailability-debug-rpms",
+													"rhel-8-for-s390x-highavailability-rpms",
+													"rhel-8-for-s390x-highavailability-source-rpms",
+													"rhel-8-for-s390x-resilientstorage-debug-rpms",
+													"rhel-8-for-s390x-resilientstorage-rpms",
+													"rhel-8-for-s390x-resilientstorage-source-rpms",
+													"rhel-8-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-8-for-s390x-sap-netweaver-rpms",
+													"rhel-8-for-s390x-sap-netweaver-source-rpms",
+													"rhel-8-for-s390x-supplementary-debug-rpms",
+													"rhel-8-for-s390x-supplementary-rpms",
+													"rhel-8-for-s390x-supplementary-source-rpms",
+													"rhel-8-for-x86_64-appstream-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-source-rpms",
+													"rhel-8-for-x86_64-appstream-rpms",
+													"rhel-8-for-x86_64-appstream-source-rpms",
+													"rhel-8-for-x86_64-baseos-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-source-rpms",
+													"rhel-8-for-x86_64-baseos-rpms",
+													"rhel-8-for-x86_64-baseos-source-rpms",
+													"rhel-8-for-x86_64-highavailability-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-source-rpms",
+													"rhel-8-for-x86_64-highavailability-rpms",
+													"rhel-8-for-x86_64-highavailability-source-rpms",
+													"rhel-8-for-x86_64-nfv-debug-rpms",
+													"rhel-8-for-x86_64-nfv-rpms",
+													"rhel-8-for-x86_64-nfv-source-rpms",
+													"rhel-8-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-8-for-x86_64-resilientstorage-rpms",
+													"rhel-8-for-x86_64-resilientstorage-source-rpms",
+													"rhel-8-for-x86_64-rt-debug-rpms",
+													"rhel-8-for-x86_64-rt-rpms",
+													"rhel-8-for-x86_64-rt-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-rpms",
+													"rhel-8-for-x86_64-sap-solutions-source-rpms",
+													"rhel-8-for-x86_64-supplementary-debug-rpms",
+													"rhel-8-for-x86_64-supplementary-rpms",
+													"rhel-8-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:2.1.1-1.el8"
+													}
+												],
+												"fixed": [
+													"2:2.1.1-1.el8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "libwinpr",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-8-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-8-aarch64-rpms",
+													"codeready-builder-for-rhel-8-aarch64-source-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-8-s390x-debug-rpms",
+													"codeready-builder-for-rhel-8-s390x-rpms",
+													"codeready-builder-for-rhel-8-s390x-source-rpms",
+													"codeready-builder-for-rhel-8-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-8-x86_64-rpms",
+													"codeready-builder-for-rhel-8-x86_64-source-rpms",
+													"rhel-8-for-aarch64-appstream-debug-rpms",
+													"rhel-8-for-aarch64-appstream-rpms",
+													"rhel-8-for-aarch64-appstream-source-rpms",
+													"rhel-8-for-aarch64-baseos-debug-rpms",
+													"rhel-8-for-aarch64-baseos-rpms",
+													"rhel-8-for-aarch64-baseos-source-rpms",
+													"rhel-8-for-aarch64-highavailability-debug-rpms",
+													"rhel-8-for-aarch64-highavailability-rpms",
+													"rhel-8-for-aarch64-highavailability-source-rpms",
+													"rhel-8-for-aarch64-supplementary-debug-rpms",
+													"rhel-8-for-aarch64-supplementary-rpms",
+													"rhel-8-for-aarch64-supplementary-source-rpms",
+													"rhel-8-for-ppc64le-appstream-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-source-rpms",
+													"rhel-8-for-ppc64le-appstream-rpms",
+													"rhel-8-for-ppc64le-appstream-source-rpms",
+													"rhel-8-for-ppc64le-baseos-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-source-rpms",
+													"rhel-8-for-ppc64le-baseos-rpms",
+													"rhel-8-for-ppc64le-baseos-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-rpms",
+													"rhel-8-for-ppc64le-highavailability-source-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-8-for-ppc64le-supplementary-debug-rpms",
+													"rhel-8-for-ppc64le-supplementary-rpms",
+													"rhel-8-for-ppc64le-supplementary-source-rpms",
+													"rhel-8-for-s390x-appstream-debug-rpms",
+													"rhel-8-for-s390x-appstream-rpms",
+													"rhel-8-for-s390x-appstream-source-rpms",
+													"rhel-8-for-s390x-baseos-debug-rpms",
+													"rhel-8-for-s390x-baseos-rpms",
+													"rhel-8-for-s390x-baseos-source-rpms",
+													"rhel-8-for-s390x-highavailability-debug-rpms",
+													"rhel-8-for-s390x-highavailability-rpms",
+													"rhel-8-for-s390x-highavailability-source-rpms",
+													"rhel-8-for-s390x-resilientstorage-debug-rpms",
+													"rhel-8-for-s390x-resilientstorage-rpms",
+													"rhel-8-for-s390x-resilientstorage-source-rpms",
+													"rhel-8-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-8-for-s390x-sap-netweaver-rpms",
+													"rhel-8-for-s390x-sap-netweaver-source-rpms",
+													"rhel-8-for-s390x-supplementary-debug-rpms",
+													"rhel-8-for-s390x-supplementary-rpms",
+													"rhel-8-for-s390x-supplementary-source-rpms",
+													"rhel-8-for-x86_64-appstream-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-source-rpms",
+													"rhel-8-for-x86_64-appstream-rpms",
+													"rhel-8-for-x86_64-appstream-source-rpms",
+													"rhel-8-for-x86_64-baseos-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-source-rpms",
+													"rhel-8-for-x86_64-baseos-rpms",
+													"rhel-8-for-x86_64-baseos-source-rpms",
+													"rhel-8-for-x86_64-highavailability-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-source-rpms",
+													"rhel-8-for-x86_64-highavailability-rpms",
+													"rhel-8-for-x86_64-highavailability-source-rpms",
+													"rhel-8-for-x86_64-nfv-debug-rpms",
+													"rhel-8-for-x86_64-nfv-rpms",
+													"rhel-8-for-x86_64-nfv-source-rpms",
+													"rhel-8-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-8-for-x86_64-resilientstorage-rpms",
+													"rhel-8-for-x86_64-resilientstorage-source-rpms",
+													"rhel-8-for-x86_64-rt-debug-rpms",
+													"rhel-8-for-x86_64-rt-rpms",
+													"rhel-8-for-x86_64-rt-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-rpms",
+													"rhel-8-for-x86_64-sap-solutions-source-rpms",
+													"rhel-8-for-x86_64-supplementary-debug-rpms",
+													"rhel-8-for-x86_64-supplementary-rpms",
+													"rhel-8-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:2.1.1-1.el8"
+													}
+												],
+												"fixed": [
+													"2:2.1.1-1.el8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "libwinpr-devel",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-8-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-8-aarch64-rpms",
+													"codeready-builder-for-rhel-8-aarch64-source-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-8-s390x-debug-rpms",
+													"codeready-builder-for-rhel-8-s390x-rpms",
+													"codeready-builder-for-rhel-8-s390x-source-rpms",
+													"codeready-builder-for-rhel-8-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-8-x86_64-rpms",
+													"codeready-builder-for-rhel-8-x86_64-source-rpms",
+													"rhel-8-for-aarch64-appstream-debug-rpms",
+													"rhel-8-for-aarch64-appstream-rpms",
+													"rhel-8-for-aarch64-appstream-source-rpms",
+													"rhel-8-for-aarch64-baseos-debug-rpms",
+													"rhel-8-for-aarch64-baseos-rpms",
+													"rhel-8-for-aarch64-baseos-source-rpms",
+													"rhel-8-for-aarch64-highavailability-debug-rpms",
+													"rhel-8-for-aarch64-highavailability-rpms",
+													"rhel-8-for-aarch64-highavailability-source-rpms",
+													"rhel-8-for-aarch64-supplementary-debug-rpms",
+													"rhel-8-for-aarch64-supplementary-rpms",
+													"rhel-8-for-aarch64-supplementary-source-rpms",
+													"rhel-8-for-ppc64le-appstream-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-source-rpms",
+													"rhel-8-for-ppc64le-appstream-rpms",
+													"rhel-8-for-ppc64le-appstream-source-rpms",
+													"rhel-8-for-ppc64le-baseos-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-source-rpms",
+													"rhel-8-for-ppc64le-baseos-rpms",
+													"rhel-8-for-ppc64le-baseos-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-rpms",
+													"rhel-8-for-ppc64le-highavailability-source-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-8-for-ppc64le-supplementary-debug-rpms",
+													"rhel-8-for-ppc64le-supplementary-rpms",
+													"rhel-8-for-ppc64le-supplementary-source-rpms",
+													"rhel-8-for-s390x-appstream-debug-rpms",
+													"rhel-8-for-s390x-appstream-rpms",
+													"rhel-8-for-s390x-appstream-source-rpms",
+													"rhel-8-for-s390x-baseos-debug-rpms",
+													"rhel-8-for-s390x-baseos-rpms",
+													"rhel-8-for-s390x-baseos-source-rpms",
+													"rhel-8-for-s390x-highavailability-debug-rpms",
+													"rhel-8-for-s390x-highavailability-rpms",
+													"rhel-8-for-s390x-highavailability-source-rpms",
+													"rhel-8-for-s390x-resilientstorage-debug-rpms",
+													"rhel-8-for-s390x-resilientstorage-rpms",
+													"rhel-8-for-s390x-resilientstorage-source-rpms",
+													"rhel-8-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-8-for-s390x-sap-netweaver-rpms",
+													"rhel-8-for-s390x-sap-netweaver-source-rpms",
+													"rhel-8-for-s390x-supplementary-debug-rpms",
+													"rhel-8-for-s390x-supplementary-rpms",
+													"rhel-8-for-s390x-supplementary-source-rpms",
+													"rhel-8-for-x86_64-appstream-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-source-rpms",
+													"rhel-8-for-x86_64-appstream-rpms",
+													"rhel-8-for-x86_64-appstream-source-rpms",
+													"rhel-8-for-x86_64-baseos-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-source-rpms",
+													"rhel-8-for-x86_64-baseos-rpms",
+													"rhel-8-for-x86_64-baseos-source-rpms",
+													"rhel-8-for-x86_64-highavailability-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-source-rpms",
+													"rhel-8-for-x86_64-highavailability-rpms",
+													"rhel-8-for-x86_64-highavailability-source-rpms",
+													"rhel-8-for-x86_64-nfv-debug-rpms",
+													"rhel-8-for-x86_64-nfv-rpms",
+													"rhel-8-for-x86_64-nfv-source-rpms",
+													"rhel-8-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-8-for-x86_64-resilientstorage-rpms",
+													"rhel-8-for-x86_64-resilientstorage-source-rpms",
+													"rhel-8-for-x86_64-rt-debug-rpms",
+													"rhel-8-for-x86_64-rt-rpms",
+													"rhel-8-for-x86_64-rt-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-rpms",
+													"rhel-8-for-x86_64-sap-solutions-source-rpms",
+													"rhel-8-for-x86_64-supplementary-debug-rpms",
+													"rhel-8-for-x86_64-supplementary-rpms",
+													"rhel-8-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "2:2.1.1-1.el8"
+													}
+												],
+												"fixed": [
+													"2:2.1.1-1.el8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "vinagre",
+												"architectures": [
+													"aarch64",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												],
+												"repositories": [
+													"codeready-builder-for-rhel-8-aarch64-debug-rpms",
+													"codeready-builder-for-rhel-8-aarch64-rpms",
+													"codeready-builder-for-rhel-8-aarch64-source-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-debug-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-rpms",
+													"codeready-builder-for-rhel-8-ppc64le-source-rpms",
+													"codeready-builder-for-rhel-8-s390x-debug-rpms",
+													"codeready-builder-for-rhel-8-s390x-rpms",
+													"codeready-builder-for-rhel-8-s390x-source-rpms",
+													"codeready-builder-for-rhel-8-x86_64-debug-rpms",
+													"codeready-builder-for-rhel-8-x86_64-rpms",
+													"codeready-builder-for-rhel-8-x86_64-source-rpms",
+													"rhel-8-for-aarch64-appstream-debug-rpms",
+													"rhel-8-for-aarch64-appstream-rpms",
+													"rhel-8-for-aarch64-appstream-source-rpms",
+													"rhel-8-for-aarch64-baseos-debug-rpms",
+													"rhel-8-for-aarch64-baseos-rpms",
+													"rhel-8-for-aarch64-baseos-source-rpms",
+													"rhel-8-for-aarch64-highavailability-debug-rpms",
+													"rhel-8-for-aarch64-highavailability-rpms",
+													"rhel-8-for-aarch64-highavailability-source-rpms",
+													"rhel-8-for-aarch64-supplementary-debug-rpms",
+													"rhel-8-for-aarch64-supplementary-rpms",
+													"rhel-8-for-aarch64-supplementary-source-rpms",
+													"rhel-8-for-ppc64le-appstream-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-rpms",
+													"rhel-8-for-ppc64le-appstream-e4s-source-rpms",
+													"rhel-8-for-ppc64le-appstream-rpms",
+													"rhel-8-for-ppc64le-appstream-source-rpms",
+													"rhel-8-for-ppc64le-baseos-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-rpms",
+													"rhel-8-for-ppc64le-baseos-e4s-source-rpms",
+													"rhel-8-for-ppc64le-baseos-rpms",
+													"rhel-8-for-ppc64le-baseos-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-rpms",
+													"rhel-8-for-ppc64le-highavailability-e4s-source-rpms",
+													"rhel-8-for-ppc64le-highavailability-rpms",
+													"rhel-8-for-ppc64le-highavailability-source-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-debug-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-rpms",
+													"rhel-8-for-ppc64le-resilientstorage-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-rpms",
+													"rhel-8-for-ppc64le-sap-netweaver-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-rpms",
+													"rhel-8-for-ppc64le-sap-solutions-source-rpms",
+													"rhel-8-for-ppc64le-supplementary-debug-rpms",
+													"rhel-8-for-ppc64le-supplementary-rpms",
+													"rhel-8-for-ppc64le-supplementary-source-rpms",
+													"rhel-8-for-s390x-appstream-debug-rpms",
+													"rhel-8-for-s390x-appstream-rpms",
+													"rhel-8-for-s390x-appstream-source-rpms",
+													"rhel-8-for-s390x-baseos-debug-rpms",
+													"rhel-8-for-s390x-baseos-rpms",
+													"rhel-8-for-s390x-baseos-source-rpms",
+													"rhel-8-for-s390x-highavailability-debug-rpms",
+													"rhel-8-for-s390x-highavailability-rpms",
+													"rhel-8-for-s390x-highavailability-source-rpms",
+													"rhel-8-for-s390x-resilientstorage-debug-rpms",
+													"rhel-8-for-s390x-resilientstorage-rpms",
+													"rhel-8-for-s390x-resilientstorage-source-rpms",
+													"rhel-8-for-s390x-sap-netweaver-debug-rpms",
+													"rhel-8-for-s390x-sap-netweaver-rpms",
+													"rhel-8-for-s390x-sap-netweaver-source-rpms",
+													"rhel-8-for-s390x-supplementary-debug-rpms",
+													"rhel-8-for-s390x-supplementary-rpms",
+													"rhel-8-for-s390x-supplementary-source-rpms",
+													"rhel-8-for-x86_64-appstream-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-debug-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-rpms",
+													"rhel-8-for-x86_64-appstream-e4s-source-rpms",
+													"rhel-8-for-x86_64-appstream-rpms",
+													"rhel-8-for-x86_64-appstream-source-rpms",
+													"rhel-8-for-x86_64-baseos-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-debug-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-rpms",
+													"rhel-8-for-x86_64-baseos-e4s-source-rpms",
+													"rhel-8-for-x86_64-baseos-rpms",
+													"rhel-8-for-x86_64-baseos-source-rpms",
+													"rhel-8-for-x86_64-highavailability-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-debug-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-rpms",
+													"rhel-8-for-x86_64-highavailability-e4s-source-rpms",
+													"rhel-8-for-x86_64-highavailability-rpms",
+													"rhel-8-for-x86_64-highavailability-source-rpms",
+													"rhel-8-for-x86_64-nfv-debug-rpms",
+													"rhel-8-for-x86_64-nfv-rpms",
+													"rhel-8-for-x86_64-nfv-source-rpms",
+													"rhel-8-for-x86_64-resilientstorage-debug-rpms",
+													"rhel-8-for-x86_64-resilientstorage-rpms",
+													"rhel-8-for-x86_64-resilientstorage-source-rpms",
+													"rhel-8-for-x86_64-rt-debug-rpms",
+													"rhel-8-for-x86_64-rt-rpms",
+													"rhel-8-for-x86_64-rt-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-rpms",
+													"rhel-8-for-x86_64-sap-netweaver-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-debug-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-rpms",
+													"rhel-8-for-x86_64-sap-solutions-e4s-source-rpms",
+													"rhel-8-for-x86_64-sap-solutions-rpms",
+													"rhel-8-for-x86_64-sap-solutions-source-rpms",
+													"rhel-8-for-x86_64-supplementary-debug-rpms",
+													"rhel-8-for-x86_64-supplementary-rpms",
+													"rhel-8-for-x86_64-supplementary-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.22.0-23.el8"
+													}
+												],
+												"fixed": [
+													"0:3.22.0-23.el8"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:20204647.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:201917177001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:201917177002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:201917177003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:201917177004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:201917177005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20201766045.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20204647001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20204647003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20204647004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:201917177002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:201917177004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:201917177006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:201917177008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:201917177010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20201766090.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20204647001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20204647003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20204647005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20204647007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20204647009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20204647011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20191992004.json"
+		]
+	}
+}

@@ -1,0 +1,228 @@
+{
+	"id": "RHSA-2018:0591",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2018:0591",
+				"title": "RHSA-2018:0591: python-paramiko security and bug fix update (Critical)",
+				"description": "The python-paramiko package provides a Python module that implements the SSH2 protocol for encrypted and authenticated connections to remote machines. Unlike SSL, the SSH2 protocol does not require hierarchical certificates signed by a powerful central authority. The protocol also includes the ability to open arbitrary channels to remote services across an encrypted tunnel.\n\nSecurity Fix(es):\n\n* python-paramiko: Authentication bypass in transport.py (CVE-2018-7750)\n\nFor more details about the security issue(s), including the impact, a CVSS score, and other related information, refer to the CVE page(s) listed in the References section.\n\nBug Fix(es):\n\n* python-paramiko has been using the python2-pyasn1 package, but did not depend on it. With new versions of python2-cryptography, python2-pyasn1 was not getting installed and this caused python-paramiko to malfunction. This bug was fixed by making python-paramiko depend on python2-pyasn1 explicitly. (BZ#1559133)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Critical"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2018:0591"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2018-7750"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1557130"
+					}
+				],
+				"published": "2018-03-26T00:00:00Z",
+				"modified": "2018-03-26T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2018-7750",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+							"base_score": 9.8,
+							"base_severity": "CRITICAL",
+							"temporal_score": 9.8,
+							"temporal_severity": "CRITICAL",
+							"environmental_score": 9.8,
+							"environmental_severity": "CRITICAL"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-287"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2018-7750"
+					}
+				],
+				"published": "2018-03-13T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "python-paramiko",
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:2.1.1-4.el7"
+													}
+												],
+												"fixed": [
+													"0:2.1.1-4.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "python-paramiko-doc",
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:2.1.1-4.el7"
+													}
+												],
+												"fixed": [
+													"0:2.1.1-4.el7"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/definitions/oval:com.redhat.rhsa:def:20180591.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202224302001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202224302002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20180591001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202224302002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202224302004.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20180591001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20180591003.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047029.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047030.json"
+		]
+	}
+}

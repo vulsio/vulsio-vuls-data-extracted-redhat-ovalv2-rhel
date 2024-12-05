@@ -1,0 +1,628 @@
+{
+	"id": "RHBA-2015:1167",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHBA-2015:1167",
+				"title": "RHBA-2015:1167: docker bug fix update (Moderate)",
+				"description": "Docker is an open-source engine that automates the deployment of any application as a lightweight, portable, self-sufficient container that will run virtually anywhere.\n\nThis update fixes the following bugs:\n\n* Previously, if you had one image tagged in at least two repositories, running the \"docker rmi ID\" command untagged the image from just one repository and the other persisted. This bug has been fixed and \"docker rmi ID\" now untags all associated images. (BZ#1222784)\n\n* Previously, the docker service did not try to match short names against local fully qualified images names while doing a push. As a consequence, the push command reported that the image name could not be found and the user had to fully qualify the argument and execute the push again. This bug has been fixed and the docker service now tries to match short names against local images fully qualified with the default registry (those added with the \"--add-registry flag\"). Now, the user does not have to fully qualify the image name in order to push it to one of the default registries. (BZ#1218639)\n\n* During initialization of both the Docker client and daemon, the public Docker registry was resolved, in order to check whether it was secured or not. This happened regardless of the docker.io registry being blocked. Consequently, docker was attempting to resolve docker.io to an IP address any time a Docker client was run. This prolonged commands execution in environments without external DNS lookups. After this update, docker no longer checks whether the public Docker index is secure. As a result, no DNS lookups for docker.io are done unless a public Docker registry is enabled and a pull, push, or search operation is performed on it. (BZ#1224387)\n\n* The default handling of SELinux labeling did not work correctly and the docker service was unable to mount certain directories into containers. This bug has been fixed and mounting a directory into a container now executes successfully. (BZ#1209625)\n\n* Previously, the docker service was labeling shared volumes as private by default. As a consequence, other containers could not execute the content from them. With this update, the underlying source code has been fixed to label shared volumes correctly. As a result, shared volumes now work correctly with SELinux in enforcing mode. (BZ#1226320, BZ#1225549)\n\n* If a volume was specified with more than one object, the docker service did not perform relabeling. As a consequence, you could not, for example, mount a volume that is both read-only and needs relabeling at the same time. The labeling check has been fixed, and docker now relabels correctly in the described scenario. (BZ#1225556)\n\n* Previously, the docker service and SELinux were blocking relabels of the /usr directory, even if the user did not request relabeling. As a consequence, certain volume mounts of content in /usr were blocked and a container could not run. The check on relabeling has been fixed and volumes in /usr can now be mounted into a container successfully. (BZ#1230192)\n\nUsers of docker are advised to upgrade to these updated packages, which fix these bugs.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHBA-2015:1167"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-3627"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-3629"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-3630"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-3631"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1219058"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1219061"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1219063"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1219065"
+					}
+				],
+				"published": "2015-06-23T00:00:00Z",
+				"modified": "2015-06-23T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2015-3627",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+							"base_score": 4.3,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 4.3,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 4.3,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-22"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-3627"
+					}
+				],
+				"published": "2015-05-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-3629",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+							"base_score": 4.3,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 4.3,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 4.3,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-22"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-3629"
+					}
+				],
+				"published": "2015-05-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-3630",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:N",
+							"base_score": 5.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 5.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 5.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-3630"
+					}
+				],
+				"published": "2015-05-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-3631",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:N/I:P/A:N",
+							"base_score": 4.3,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 4.3,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 4.3,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-642"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-3631"
+					}
+				],
+				"published": "2015-05-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "atomic",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:0-0.40.gitf863afd.el7"
+													}
+												],
+												"fixed": [
+													"0:0-0.40.gitf863afd.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.6.2-14.el7"
+													}
+												],
+												"fixed": [
+													"0:1.6.2-14.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-logrotate",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.6.2-14.el7"
+													}
+												],
+												"fixed": [
+													"0:1.6.2-14.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-python",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.0.0-53.el7"
+													}
+												],
+												"fixed": [
+													"0:1.0.0-53.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "docker-selinux",
+												"architectures": [
+													"x86_64"
+												],
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.6.2-14.el7"
+													}
+												],
+												"fixed": [
+													"0:1.6.2-14.el7"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "python-websocket-client",
+												"repositories": [
+													"rhel-7-desktop-extras-debug-rpms",
+													"rhel-7-desktop-extras-rpms",
+													"rhel-7-desktop-extras-source-rpms",
+													"rhel-7-for-arm-64-extras-debug-rpms",
+													"rhel-7-for-arm-64-extras-rpms",
+													"rhel-7-for-arm-64-extras-source-rpms",
+													"rhel-7-for-power-9-extras-debug-rpms",
+													"rhel-7-for-power-9-extras-rpms",
+													"rhel-7-for-power-9-extras-source-rpms",
+													"rhel-7-for-power-le-extras-debug-rpms",
+													"rhel-7-for-power-le-extras-rpms",
+													"rhel-7-for-power-le-extras-source-rpms",
+													"rhel-7-for-system-z-a-extras-debug-rpms",
+													"rhel-7-for-system-z-a-extras-rpms",
+													"rhel-7-for-system-z-a-extras-source-rpms",
+													"rhel-7-for-system-z-extras-debug-rpms",
+													"rhel-7-for-system-z-extras-rpms",
+													"rhel-7-for-system-z-extras-source-rpms",
+													"rhel-7-server-extras-debug-rpms",
+													"rhel-7-server-extras-rpms",
+													"rhel-7-server-extras-source-rpms",
+													"rhel-7-workstation-extras-debug-rpms",
+													"rhel-7-workstation-extras-rpms",
+													"rhel-7-workstation-extras-source-rpms"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:0.14.1-97.el7"
+													}
+												],
+												"fixed": [
+													"0:0.14.1-97.el7"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/definitions/oval:com.redhat.rhba:def:20151167.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047003.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047005.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047006.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047008.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047009.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20140047011.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhba:ste:20151167001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhba:ste:20151167003.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhba:ste:20151167004.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhba:ste:20151167005.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047006.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047010.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047012.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047016.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047018.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20140047022.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20151167001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20151167003.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20151167005.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20151167007.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20151167009.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20151167011.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047029.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047030.json"
+		]
+	}
+}

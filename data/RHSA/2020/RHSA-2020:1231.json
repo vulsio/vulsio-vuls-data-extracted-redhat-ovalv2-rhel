@@ -1,0 +1,171 @@
+{
+	"id": "RHSA-2020:1231",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2020:1231",
+				"title": "RHSA-2020:1231: buildah security and bug fix update (Moderate)",
+				"description": "The buildah package provides a tool for facilitating building OCI container images. Among other things, buildah enables you to:\n* Create a working container, either from scratch or using an image as a starting point.\n* Create an image, either from a working container or using the instructions in a Dockerfile.\n* Build both Docker and OCI images.\n\nSecurity Fix(es):\n\n* proglottis/gpgme: Use-after-free in GPGME bindings during container image pull (CVE-2020-8945)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.\n\nBug Fix(es):\n\n* rootless buildah does not work with UID in /etc/subuid (BZ#1765469)\n\n* Extras RHEL-7.8 update - buildah (BZ#1791286)\n\n* buildah should be linked against gpgme-pthread (BZ#1793074)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2020:1231"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-8945"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1795838"
+					}
+				],
+				"published": "2020-04-01T00:00:00Z",
+				"modified": "2020-04-01T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2020-8945",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.5,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-416"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2020-8945"
+					}
+				],
+				"published": "2020-01-16T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "buildah",
+										"architectures": [
+											"ppc64le",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-7-desktop-extras-debug-rpms",
+											"rhel-7-desktop-extras-rpms",
+											"rhel-7-desktop-extras-source-rpms",
+											"rhel-7-for-arm-64-extras-debug-rpms",
+											"rhel-7-for-arm-64-extras-rpms",
+											"rhel-7-for-arm-64-extras-source-rpms",
+											"rhel-7-for-power-9-extras-debug-rpms",
+											"rhel-7-for-power-9-extras-rpms",
+											"rhel-7-for-power-9-extras-source-rpms",
+											"rhel-7-for-power-le-extras-debug-rpms",
+											"rhel-7-for-power-le-extras-rpms",
+											"rhel-7-for-power-le-extras-source-rpms",
+											"rhel-7-for-system-z-a-extras-debug-rpms",
+											"rhel-7-for-system-z-a-extras-rpms",
+											"rhel-7-for-system-z-a-extras-source-rpms",
+											"rhel-7-for-system-z-extras-debug-rpms",
+											"rhel-7-for-system-z-extras-rpms",
+											"rhel-7-for-system-z-extras-source-rpms",
+											"rhel-7-server-extras-debug-rpms",
+											"rhel-7-server-extras-rpms",
+											"rhel-7-server-extras-source-rpms",
+											"rhel-7-workstation-extras-debug-rpms",
+											"rhel-7-workstation-extras-rpms",
+											"rhel-7-workstation-extras-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:1.11.6-8.el7_8"
+											}
+										],
+										"fixed": [
+											"0:1.11.6-8.el7_8"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/definitions/oval:com.redhat.rhsa:def:20201231.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202028851003.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20201231001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202028851006.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20201231001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047029.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047030.json"
+		]
+	}
+}

@@ -1,0 +1,172 @@
+{
+	"id": "RHBA-2019:0862",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHBA-2019:0862",
+				"title": "RHBA-2019:0862: containernetworking-plugins bug fix and enhancement update (Moderate)",
+				"description": "The Container Network Interface (CNI) project consists of a specification and libraries for writing plug-ins for configuring network interfaces in Linux containers, along with a number of supported plug-ins. CNI concerns itself only with network connectivity of containers and removing allocated resources when the container is deleted.\n\nUsers of containernetworking-plugins are advised to upgrade to this updated package, which fixes these bugs and add these enhancements.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHBA-2019:0862"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2019-9946"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1692712"
+					}
+				],
+				"published": "2019-04-23T00:00:00Z",
+				"modified": "2019-04-23T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2019-9946",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:L",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-841"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2019-9946"
+					}
+				],
+				"published": "2019-03-28T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "containernetworking-plugins",
+										"architectures": [
+											"aarch64",
+											"ppc64le",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-7-desktop-extras-debug-rpms",
+											"rhel-7-desktop-extras-rpms",
+											"rhel-7-desktop-extras-source-rpms",
+											"rhel-7-for-arm-64-extras-debug-rpms",
+											"rhel-7-for-arm-64-extras-rpms",
+											"rhel-7-for-arm-64-extras-source-rpms",
+											"rhel-7-for-power-9-extras-debug-rpms",
+											"rhel-7-for-power-9-extras-rpms",
+											"rhel-7-for-power-9-extras-source-rpms",
+											"rhel-7-for-power-le-extras-debug-rpms",
+											"rhel-7-for-power-le-extras-rpms",
+											"rhel-7-for-power-le-extras-source-rpms",
+											"rhel-7-for-system-z-a-extras-debug-rpms",
+											"rhel-7-for-system-z-a-extras-rpms",
+											"rhel-7-for-system-z-a-extras-source-rpms",
+											"rhel-7-for-system-z-extras-debug-rpms",
+											"rhel-7-for-system-z-extras-rpms",
+											"rhel-7-for-system-z-extras-source-rpms",
+											"rhel-7-server-extras-debug-rpms",
+											"rhel-7-server-extras-rpms",
+											"rhel-7-server-extras-source-rpms",
+											"rhel-7-workstation-extras-debug-rpms",
+											"rhel-7-workstation-extras-rpms",
+											"rhel-7-workstation-extras-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:0.7.5-2.el7"
+											}
+										],
+										"fixed": [
+											"0:0.7.5-2.el7"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/definitions/oval:com.redhat.rhba:def:20190862.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202120206001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhba:ste:20190862001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202120206002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20190862001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047029.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047030.json"
+		]
+	}
+}

@@ -1,0 +1,3428 @@
+{
+	"id": "RHSA-2017:1871",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2017:1871",
+				"title": "RHSA-2017:1871: tcpdump security, bug fix, and enhancement update (Moderate)",
+				"description": "The tcpdump packages contain the tcpdump utility for monitoring network traffic. The tcpdump utility can capture and display the packet headers on a particular network interface or on all interfaces.\n\nThe following packages have been upgraded to a later upstream version: tcpdump (4.9.0). (BZ#1422473)\n\nSecurity Fix(es):\n\n* Multiple out of bounds read and integer overflow vulnerabilities were found in tcpdump affecting the decoding of various protocols. An attacker could create a crafted pcap file or send specially crafted packets to the network segment where tcpdump is running in live capture mode (without -w) which could cause it to display incorrect data, crash or enter an infinite loop. (CVE-2015-0261, CVE-2015-2153, CVE-2015-2154, CVE-2015-2155, CVE-2016-7922, CVE-2016-7923, CVE-2016-7924, CVE-2016-7925, CVE-2016-7926, CVE-2016-7927, CVE-2016-7928, CVE-2016-7929, CVE-2016-7930, CVE-2016-7931, CVE-2016-7932, CVE-2016-7933, CVE-2016-7934, CVE-2016-7935, CVE-2016-7936, CVE-2016-7937, CVE-2016-7938, CVE-2016-7939, CVE-2016-7940, CVE-2016-7973, CVE-2016-7974, CVE-2016-7975, CVE-2016-7983, CVE-2016-7984, CVE-2016-7985, CVE-2016-7986, CVE-2016-7992, CVE-2016-7993, CVE-2016-8574, CVE-2016-8575, CVE-2017-5202, CVE-2017-5203, CVE-2017-5204, CVE-2017-5205, CVE-2017-5341, CVE-2017-5342, CVE-2017-5482, CVE-2017-5483, CVE-2017-5484, CVE-2017-5485, CVE-2017-5486)\n\nRed Hat would like to thank the Tcpdump project for reporting CVE-2016-7922, CVE-2016-7923, CVE-2016-7924, CVE-2016-7925, CVE-2016-7926, CVE-2016-7927, CVE-2016-7928, CVE-2016-7929, CVE-2016-7930, CVE-2016-7931, CVE-2016-7932, CVE-2016-7933, CVE-2016-7934, CVE-2016-7935, CVE-2016-7936, CVE-2016-7937, CVE-2016-7938, CVE-2016-7939, CVE-2016-7940, CVE-2016-7973, CVE-2016-7974, CVE-2016-7975, CVE-2016-7983, CVE-2016-7984, CVE-2016-7985, CVE-2016-7986, CVE-2016-7992, CVE-2016-7993, CVE-2016-8574, CVE-2016-8575, CVE-2017-5202, CVE-2017-5203, CVE-2017-5204, CVE-2017-5205, CVE-2017-5341, CVE-2017-5342, CVE-2017-5482, CVE-2017-5483, CVE-2017-5484, CVE-2017-5485, and CVE-2017-5486.\n\nAdditional Changes:\n\nFor detailed information on changes in this release, see the Red Hat Enterprise Linux 7.4 Release Notes linked from the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2017:1871"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-0261"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2153"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2154"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2155"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7922"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7923"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7924"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7925"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7926"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7927"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7928"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7929"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7930"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7931"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7932"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7933"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7934"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7935"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7936"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7937"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7938"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7939"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7940"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7973"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7974"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7975"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7983"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7984"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7985"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7986"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7992"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7993"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-8574"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-8575"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5202"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5203"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5204"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5205"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5341"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5342"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5482"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5483"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5484"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5485"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5486"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1201792"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1201795"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1201797"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1201798"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1419066"
+					}
+				],
+				"published": "2017-08-01T00:00:00Z",
+				"modified": "2017-08-01T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2015-0261",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-0261"
+					}
+				],
+				"published": "2015-03-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-0261",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-0261"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1201792"
+					}
+				],
+				"published": "2015-03-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2153",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2153"
+					}
+				],
+				"published": "2015-03-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2153",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2153"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1201795"
+					}
+				],
+				"published": "2015-03-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2154",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2154"
+					}
+				],
+				"published": "2015-03-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2154",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-125"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2154"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1201797"
+					}
+				],
+				"published": "2015-03-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2155",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2155"
+					}
+				],
+				"published": "2015-03-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2155",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2155"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1201798"
+					}
+				],
+				"published": "2015-03-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7922",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7922"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7923",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7923"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7924",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7924"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7925",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7925"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7926",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7926"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7927",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7927"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7928",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7928"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7929",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7929"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7930",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7930"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7931",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7931"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7932",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7932"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7933",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7933"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7934",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7934"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7935",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7935"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7936",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7936"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7937",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7937"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7938",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7938"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7939",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7939"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7940",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7940"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7973",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7973"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7974",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7974"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7975",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7975"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7983",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7983"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7984",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7984"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7985",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7985"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7986",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7986"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7992",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7992"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-7993",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-7993"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-8574",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-8574"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2016-8575",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2016-8575"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5202",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5202"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5203",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5203"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5204",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5204"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5205",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5205"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5341",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5341"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5342",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5342"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5482",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5482"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5483",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5483"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5484",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5484"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5485",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5485"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2017-5486",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:N/A:H",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-125|CWE-190)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-5486"
+					}
+				],
+				"published": "2017-02-02T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "tcpdump",
+										"architectures": [
+											"aarch64",
+											"ppc64",
+											"ppc64le",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-7-desktop-debug-rpms",
+											"rhel-7-desktop-fastrack-debug-rpms",
+											"rhel-7-desktop-fastrack-rpms",
+											"rhel-7-desktop-fastrack-source-rpms",
+											"rhel-7-desktop-optional-debug-rpms",
+											"rhel-7-desktop-optional-fastrack-debug-rpms",
+											"rhel-7-desktop-optional-fastrack-rpms",
+											"rhel-7-desktop-optional-fastrack-source-rpms",
+											"rhel-7-desktop-optional-rpms",
+											"rhel-7-desktop-optional-source-rpms",
+											"rhel-7-desktop-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-desktop-rpms",
+											"rhel-7-desktop-source-rpms",
+											"rhel-7-desktop-supplementary-debug-rpms",
+											"rhel-7-desktop-supplementary-rpms",
+											"rhel-7-desktop-supplementary-source-rpms",
+											"rhel-7-for-arm-64-debug-rpms",
+											"rhel-7-for-arm-64-optional-debug-rpms",
+											"rhel-7-for-arm-64-optional-rpms",
+											"rhel-7-for-arm-64-optional-source-rpms",
+											"rhel-7-for-arm-64-rpms",
+											"rhel-7-for-arm-64-source-rpms",
+											"rhel-7-for-hpc-node-fastrack-debug-rpms",
+											"rhel-7-for-hpc-node-fastrack-rpms",
+											"rhel-7-for-hpc-node-fastrack-source-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-debug-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-source-rpms",
+											"rhel-7-for-hpc-node-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-for-hpc-node-supplementary-debug-rpms",
+											"rhel-7-for-hpc-node-supplementary-rpms",
+											"rhel-7-for-hpc-node-supplementary-source-rpms",
+											"rhel-7-for-power-9-debug-rpms",
+											"rhel-7-for-power-9-optional-debug-rpms",
+											"rhel-7-for-power-9-optional-rpms",
+											"rhel-7-for-power-9-optional-source-rpms",
+											"rhel-7-for-power-9-rpms",
+											"rhel-7-for-power-9-source-rpms",
+											"rhel-7-for-power-9-supplementary-debug-rpms",
+											"rhel-7-for-power-9-supplementary-source-rpms",
+											"rhel-7-for-power-debug-rpms",
+											"rhel-7-for-power-els-debug-rpms",
+											"rhel-7-for-power-els-optional-debug-rpms",
+											"rhel-7-for-power-els-optional-rpms",
+											"rhel-7-for-power-els-optional-source-rpms",
+											"rhel-7-for-power-els-rpms",
+											"rhel-7-for-power-els-source-rpms",
+											"rhel-7-for-power-eus-debug-rpms",
+											"rhel-7-for-power-eus-optional-debug-rpms",
+											"rhel-7-for-power-eus-optional-rpms",
+											"rhel-7-for-power-eus-optional-source-rpms",
+											"rhel-7-for-power-eus-rpms",
+											"rhel-7-for-power-eus-source-rpms",
+											"rhel-7-for-power-eus-supplementary-debuginfo",
+											"rhel-7-for-power-eus-supplementary-rpms",
+											"rhel-7-for-power-eus-supplementary-source-rpms",
+											"rhel-7-for-power-fastrack-debug-rpms",
+											"rhel-7-for-power-fastrack-rpms",
+											"rhel-7-for-power-fastrack-source-rpms",
+											"rhel-7-for-power-le-debug-rpms",
+											"rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-7-for-power-le-e4s-optional-debug-rpms",
+											"rhel-7-for-power-le-e4s-optional-rpms",
+											"rhel-7-for-power-le-e4s-optional-source-rpms",
+											"rhel-7-for-power-le-e4s-rpms",
+											"rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-7-for-power-le-els-debug-rpms",
+											"rhel-7-for-power-le-els-optional-debug-rpms",
+											"rhel-7-for-power-le-els-optional-rpms",
+											"rhel-7-for-power-le-els-optional-source-rpms",
+											"rhel-7-for-power-le-els-rpms",
+											"rhel-7-for-power-le-els-source-rpms",
+											"rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-7-for-power-le-eus-optional-debug-rpms",
+											"rhel-7-for-power-le-eus-optional-rpms",
+											"rhel-7-for-power-le-eus-optional-source-rpms",
+											"rhel-7-for-power-le-eus-rpms",
+											"rhel-7-for-power-le-eus-source-rpms",
+											"rhel-7-for-power-le-eus-supplementary-debug-rpms",
+											"rhel-7-for-power-le-eus-supplementary-rpms",
+											"rhel-7-for-power-le-eus-supplementary-source-rpms",
+											"rhel-7-for-power-le-optional-debug-rpms",
+											"rhel-7-for-power-le-optional-rpms",
+											"rhel-7-for-power-le-optional-source-rpms",
+											"rhel-7-for-power-le-rpms",
+											"rhel-7-for-power-le-source-rpms",
+											"rhel-7-for-power-le-supplementary-debug-rpms",
+											"rhel-7-for-power-le-supplementary-rpms",
+											"rhel-7-for-power-le-supplementary-source-rpms",
+											"rhel-7-for-power-optional-debug-rpms",
+											"rhel-7-for-power-optional-fastrack-debug-rpms",
+											"rhel-7-for-power-optional-fastrack-rpms",
+											"rhel-7-for-power-optional-fastrack-source-rpms",
+											"rhel-7-for-power-optional-rpms",
+											"rhel-7-for-power-optional-source-rpms",
+											"rhel-7-for-power-rpms",
+											"rhel-7-for-power-source-rpms",
+											"rhel-7-for-power-supplementary-debug-rpms",
+											"rhel-7-for-power-supplementary-rpms",
+											"rhel-7-for-power-supplementary-source-rpms",
+											"rhel-7-for-system-z-a-debug-rpms",
+											"rhel-7-for-system-z-a-optional-debug-rpms",
+											"rhel-7-for-system-z-a-optional-rpms",
+											"rhel-7-for-system-z-a-optional-source-rpms",
+											"rhel-7-for-system-z-a-rpms",
+											"rhel-7-for-system-z-a-source-rpms",
+											"rhel-7-for-system-z-debug-rpms",
+											"rhel-7-for-system-z-els-debug-rpms",
+											"rhel-7-for-system-z-els-optional-debug-rpms",
+											"rhel-7-for-system-z-els-optional-rpms",
+											"rhel-7-for-system-z-els-optional-source-rpms",
+											"rhel-7-for-system-z-els-rpms",
+											"rhel-7-for-system-z-els-source-rpms",
+											"rhel-7-for-system-z-eus-debug-rpms",
+											"rhel-7-for-system-z-eus-optional-debug-rpms",
+											"rhel-7-for-system-z-eus-optional-rpms",
+											"rhel-7-for-system-z-eus-optional-source-rpms",
+											"rhel-7-for-system-z-eus-rpms",
+											"rhel-7-for-system-z-eus-source-rpms",
+											"rhel-7-for-system-z-eus-supplementary-debuginfo",
+											"rhel-7-for-system-z-eus-supplementary-rpms",
+											"rhel-7-for-system-z-eus-supplementary-source-rpms",
+											"rhel-7-for-system-z-fastrack-debug-rpms",
+											"rhel-7-for-system-z-fastrack-rpms",
+											"rhel-7-for-system-z-fastrack-source-rpms",
+											"rhel-7-for-system-z-optional-debug-rpms",
+											"rhel-7-for-system-z-optional-fastrack-debug-rpms",
+											"rhel-7-for-system-z-optional-fastrack-rpms",
+											"rhel-7-for-system-z-optional-fastrack-source-rpms",
+											"rhel-7-for-system-z-optional-rpms",
+											"rhel-7-for-system-z-optional-source-rpms",
+											"rhel-7-for-system-z-rpms",
+											"rhel-7-for-system-z-source-rpms",
+											"rhel-7-for-system-z-supplementary-debug-rpms",
+											"rhel-7-for-system-z-supplementary-rpms",
+											"rhel-7-for-system-z-supplementary-source-rpms",
+											"rhel-7-hpc-node-debug-rpms",
+											"rhel-7-hpc-node-eus-debug-rpms",
+											"rhel-7-hpc-node-eus-optional-debug-rpms",
+											"rhel-7-hpc-node-eus-optional-rpms",
+											"rhel-7-hpc-node-eus-optional-source-rpms",
+											"rhel-7-hpc-node-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-hpc-node-eus-rpms",
+											"rhel-7-hpc-node-eus-source-rpms",
+											"rhel-7-hpc-node-eus-supplementary-debug-rpms",
+											"rhel-7-hpc-node-eus-supplementary-rpms",
+											"rhel-7-hpc-node-eus-supplementary-source-rpms",
+											"rhel-7-hpc-node-optional-debug-rpms",
+											"rhel-7-hpc-node-optional-rpms",
+											"rhel-7-hpc-node-optional-source-rpms",
+											"rhel-7-hpc-node-rpms",
+											"rhel-7-hpc-node-source-rpms",
+											"rhel-7-server-aus-debug-rpms",
+											"rhel-7-server-aus-optional-debug-rpms",
+											"rhel-7-server-aus-optional-rpms",
+											"rhel-7-server-aus-optional-source-rpms",
+											"rhel-7-server-aus-rpms",
+											"rhel-7-server-aus-source-rpms",
+											"rhel-7-server-debug-rpms",
+											"rhel-7-server-e4s-debug-rpms",
+											"rhel-7-server-e4s-optional-debug-rpms",
+											"rhel-7-server-e4s-optional-rpms",
+											"rhel-7-server-e4s-optional-source-rpms",
+											"rhel-7-server-e4s-rpms",
+											"rhel-7-server-e4s-source-rpms",
+											"rhel-7-server-els-debug-rpms",
+											"rhel-7-server-els-optional-debug-rpms",
+											"rhel-7-server-els-optional-rpms",
+											"rhel-7-server-els-optional-source-rpms",
+											"rhel-7-server-els-rpms",
+											"rhel-7-server-els-source-rpms",
+											"rhel-7-server-eus-debug-rpms",
+											"rhel-7-server-eus-optional-debug-rpms",
+											"rhel-7-server-eus-optional-rpms",
+											"rhel-7-server-eus-optional-source-rpms",
+											"rhel-7-server-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-server-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-7-server-eus-rpms",
+											"rhel-7-server-eus-source-rpms",
+											"rhel-7-server-eus-supplementary-debuginfo",
+											"rhel-7-server-eus-supplementary-rpms",
+											"rhel-7-server-eus-supplementary-source-rpms",
+											"rhel-7-server-fastrack-debug-rpms",
+											"rhel-7-server-fastrack-rpms",
+											"rhel-7-server-fastrack-source-rpms",
+											"rhel-7-server-nfv-debug-rpms",
+											"rhel-7-server-nfv-rpms",
+											"rhel-7-server-nfv-source-rpms",
+											"rhel-7-server-optional-debug-rpms",
+											"rhel-7-server-optional-fastrack-debug-rpms",
+											"rhel-7-server-optional-fastrack-rpms",
+											"rhel-7-server-optional-fastrack-source-rpms",
+											"rhel-7-server-optional-rpms",
+											"rhel-7-server-optional-source-rpms",
+											"rhel-7-server-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-server-rpms",
+											"rhel-7-server-rt-debug-rpms",
+											"rhel-7-server-rt-els-debug-rpms",
+											"rhel-7-server-rt-els-rpms",
+											"rhel-7-server-rt-els-source-rpms",
+											"rhel-7-server-rt-rpms",
+											"rhel-7-server-rt-source-rpms",
+											"rhel-7-server-source-rpms",
+											"rhel-7-server-supplementary-debug-rpms",
+											"rhel-7-server-supplementary-rpms",
+											"rhel-7-server-supplementary-source-rpms",
+											"rhel-7-server-tus-debug-rpms",
+											"rhel-7-server-tus-optional-debug-rpms",
+											"rhel-7-server-tus-optional-rpms",
+											"rhel-7-server-tus-optional-source-rpms",
+											"rhel-7-server-tus-rpms",
+											"rhel-7-server-tus-source-rpms",
+											"rhel-7-workstation-debug-rpms",
+											"rhel-7-workstation-fastrack-debug-rpms",
+											"rhel-7-workstation-fastrack-rpms",
+											"rhel-7-workstation-fastrack-source-rpms",
+											"rhel-7-workstation-optional-debug-rpms",
+											"rhel-7-workstation-optional-fastrack-debug-rpms",
+											"rhel-7-workstation-optional-fastrack-rpms",
+											"rhel-7-workstation-optional-fastrack-source-rpms",
+											"rhel-7-workstation-optional-rpms",
+											"rhel-7-workstation-optional-source-rpms",
+											"rhel-7-workstation-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-workstation-rpms",
+											"rhel-7-workstation-source-rpms",
+											"rhel-7-workstation-supplementary-debug-rpms",
+											"rhel-7-workstation-supplementary-rpms",
+											"rhel-7-workstation-supplementary-source-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-source-rpms",
+											"rhel-ha-for-rhel-7-server-debug-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-source-rpms",
+											"rhel-ha-for-rhel-7-server-els-debug-rpms",
+											"rhel-ha-for-rhel-7-server-els-rpms",
+											"rhel-ha-for-rhel-7-server-els-source-rpms",
+											"rhel-ha-for-rhel-7-server-eus-debug-rpms",
+											"rhel-ha-for-rhel-7-server-eus-rpms",
+											"rhel-ha-for-rhel-7-server-eus-source-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-debug-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-source-rpms",
+											"rhel-ha-for-rhel-7-server-rpms",
+											"rhel-ha-for-rhel-7-server-source-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-source-rpms",
+											"rhel-rs-for-rhel-7-server-debug-rpms",
+											"rhel-rs-for-rhel-7-server-els-debug-rpms",
+											"rhel-rs-for-rhel-7-server-els-rpms",
+											"rhel-rs-for-rhel-7-server-els-source-rpms",
+											"rhel-rs-for-rhel-7-server-eus-debug-rpms",
+											"rhel-rs-for-rhel-7-server-eus-rpms",
+											"rhel-rs-for-rhel-7-server-eus-source-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-debug-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-source-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-debug-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-debug-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-source-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-source-rpms",
+											"rhel-rs-for-rhel-7-server-rpms",
+											"rhel-rs-for-rhel-7-server-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-rpms",
+											"rhel-sap-for-rhel-7-for-power-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-source-rpms",
+											"rhel-sap-for-rhel-7-server-debug-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-source-rpms",
+											"rhel-sap-for-rhel-7-server-els-debug-rpms",
+											"rhel-sap-for-rhel-7-server-els-rpms",
+											"rhel-sap-for-rhel-7-server-els-source-rpms",
+											"rhel-sap-for-rhel-7-server-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-server-eus-rpms",
+											"rhel-sap-for-rhel-7-server-eus-source-rpms",
+											"rhel-sap-for-rhel-7-server-rpms",
+											"rhel-sap-for-rhel-7-server-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-rpms",
+											"rhel-sap-hana-for-rhel-7-server-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "14:4.9.0-5.el7"
+											}
+										],
+										"fixed": [
+											"14:4.9.0-5.el7"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "tcpdump",
+										"architectures": [
+											"aarch64",
+											"ppc64",
+											"ppc64le",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-7-desktop-debug-rpms",
+											"rhel-7-desktop-fastrack-debug-rpms",
+											"rhel-7-desktop-fastrack-rpms",
+											"rhel-7-desktop-fastrack-source-rpms",
+											"rhel-7-desktop-optional-debug-rpms",
+											"rhel-7-desktop-optional-fastrack-debug-rpms",
+											"rhel-7-desktop-optional-fastrack-rpms",
+											"rhel-7-desktop-optional-fastrack-source-rpms",
+											"rhel-7-desktop-optional-rpms",
+											"rhel-7-desktop-optional-source-rpms",
+											"rhel-7-desktop-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-desktop-rpms",
+											"rhel-7-desktop-source-rpms",
+											"rhel-7-desktop-supplementary-debug-rpms",
+											"rhel-7-desktop-supplementary-rpms",
+											"rhel-7-desktop-supplementary-source-rpms",
+											"rhel-7-for-arm-64-debug-rpms",
+											"rhel-7-for-arm-64-optional-debug-rpms",
+											"rhel-7-for-arm-64-optional-rpms",
+											"rhel-7-for-arm-64-optional-source-rpms",
+											"rhel-7-for-arm-64-rpms",
+											"rhel-7-for-arm-64-source-rpms",
+											"rhel-7-for-hpc-node-fastrack-debug-rpms",
+											"rhel-7-for-hpc-node-fastrack-rpms",
+											"rhel-7-for-hpc-node-fastrack-source-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-debug-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-source-rpms",
+											"rhel-7-for-hpc-node-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-for-hpc-node-supplementary-debug-rpms",
+											"rhel-7-for-hpc-node-supplementary-rpms",
+											"rhel-7-for-hpc-node-supplementary-source-rpms",
+											"rhel-7-for-power-9-debug-rpms",
+											"rhel-7-for-power-9-optional-debug-rpms",
+											"rhel-7-for-power-9-optional-rpms",
+											"rhel-7-for-power-9-optional-source-rpms",
+											"rhel-7-for-power-9-rpms",
+											"rhel-7-for-power-9-source-rpms",
+											"rhel-7-for-power-9-supplementary-debug-rpms",
+											"rhel-7-for-power-9-supplementary-source-rpms",
+											"rhel-7-for-power-debug-rpms",
+											"rhel-7-for-power-els-debug-rpms",
+											"rhel-7-for-power-els-optional-debug-rpms",
+											"rhel-7-for-power-els-optional-rpms",
+											"rhel-7-for-power-els-optional-source-rpms",
+											"rhel-7-for-power-els-rpms",
+											"rhel-7-for-power-els-source-rpms",
+											"rhel-7-for-power-eus-debug-rpms",
+											"rhel-7-for-power-eus-optional-debug-rpms",
+											"rhel-7-for-power-eus-optional-rpms",
+											"rhel-7-for-power-eus-optional-source-rpms",
+											"rhel-7-for-power-eus-rpms",
+											"rhel-7-for-power-eus-source-rpms",
+											"rhel-7-for-power-eus-supplementary-debuginfo",
+											"rhel-7-for-power-eus-supplementary-rpms",
+											"rhel-7-for-power-eus-supplementary-source-rpms",
+											"rhel-7-for-power-fastrack-debug-rpms",
+											"rhel-7-for-power-fastrack-rpms",
+											"rhel-7-for-power-fastrack-source-rpms",
+											"rhel-7-for-power-le-debug-rpms",
+											"rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-7-for-power-le-e4s-optional-debug-rpms",
+											"rhel-7-for-power-le-e4s-optional-rpms",
+											"rhel-7-for-power-le-e4s-optional-source-rpms",
+											"rhel-7-for-power-le-e4s-rpms",
+											"rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-7-for-power-le-els-debug-rpms",
+											"rhel-7-for-power-le-els-optional-debug-rpms",
+											"rhel-7-for-power-le-els-optional-rpms",
+											"rhel-7-for-power-le-els-optional-source-rpms",
+											"rhel-7-for-power-le-els-rpms",
+											"rhel-7-for-power-le-els-source-rpms",
+											"rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-7-for-power-le-eus-optional-debug-rpms",
+											"rhel-7-for-power-le-eus-optional-rpms",
+											"rhel-7-for-power-le-eus-optional-source-rpms",
+											"rhel-7-for-power-le-eus-rpms",
+											"rhel-7-for-power-le-eus-source-rpms",
+											"rhel-7-for-power-le-eus-supplementary-debug-rpms",
+											"rhel-7-for-power-le-eus-supplementary-rpms",
+											"rhel-7-for-power-le-eus-supplementary-source-rpms",
+											"rhel-7-for-power-le-optional-debug-rpms",
+											"rhel-7-for-power-le-optional-rpms",
+											"rhel-7-for-power-le-optional-source-rpms",
+											"rhel-7-for-power-le-rpms",
+											"rhel-7-for-power-le-source-rpms",
+											"rhel-7-for-power-le-supplementary-debug-rpms",
+											"rhel-7-for-power-le-supplementary-rpms",
+											"rhel-7-for-power-le-supplementary-source-rpms",
+											"rhel-7-for-power-optional-debug-rpms",
+											"rhel-7-for-power-optional-fastrack-debug-rpms",
+											"rhel-7-for-power-optional-fastrack-rpms",
+											"rhel-7-for-power-optional-fastrack-source-rpms",
+											"rhel-7-for-power-optional-rpms",
+											"rhel-7-for-power-optional-source-rpms",
+											"rhel-7-for-power-rpms",
+											"rhel-7-for-power-source-rpms",
+											"rhel-7-for-power-supplementary-debug-rpms",
+											"rhel-7-for-power-supplementary-rpms",
+											"rhel-7-for-power-supplementary-source-rpms",
+											"rhel-7-for-system-z-a-debug-rpms",
+											"rhel-7-for-system-z-a-optional-debug-rpms",
+											"rhel-7-for-system-z-a-optional-rpms",
+											"rhel-7-for-system-z-a-optional-source-rpms",
+											"rhel-7-for-system-z-a-rpms",
+											"rhel-7-for-system-z-a-source-rpms",
+											"rhel-7-for-system-z-debug-rpms",
+											"rhel-7-for-system-z-els-debug-rpms",
+											"rhel-7-for-system-z-els-optional-debug-rpms",
+											"rhel-7-for-system-z-els-optional-rpms",
+											"rhel-7-for-system-z-els-optional-source-rpms",
+											"rhel-7-for-system-z-els-rpms",
+											"rhel-7-for-system-z-els-source-rpms",
+											"rhel-7-for-system-z-eus-debug-rpms",
+											"rhel-7-for-system-z-eus-optional-debug-rpms",
+											"rhel-7-for-system-z-eus-optional-rpms",
+											"rhel-7-for-system-z-eus-optional-source-rpms",
+											"rhel-7-for-system-z-eus-rpms",
+											"rhel-7-for-system-z-eus-source-rpms",
+											"rhel-7-for-system-z-eus-supplementary-debuginfo",
+											"rhel-7-for-system-z-eus-supplementary-rpms",
+											"rhel-7-for-system-z-eus-supplementary-source-rpms",
+											"rhel-7-for-system-z-fastrack-debug-rpms",
+											"rhel-7-for-system-z-fastrack-rpms",
+											"rhel-7-for-system-z-fastrack-source-rpms",
+											"rhel-7-for-system-z-optional-debug-rpms",
+											"rhel-7-for-system-z-optional-fastrack-debug-rpms",
+											"rhel-7-for-system-z-optional-fastrack-rpms",
+											"rhel-7-for-system-z-optional-fastrack-source-rpms",
+											"rhel-7-for-system-z-optional-rpms",
+											"rhel-7-for-system-z-optional-source-rpms",
+											"rhel-7-for-system-z-rpms",
+											"rhel-7-for-system-z-source-rpms",
+											"rhel-7-for-system-z-supplementary-debug-rpms",
+											"rhel-7-for-system-z-supplementary-rpms",
+											"rhel-7-for-system-z-supplementary-source-rpms",
+											"rhel-7-hpc-node-debug-rpms",
+											"rhel-7-hpc-node-eus-debug-rpms",
+											"rhel-7-hpc-node-eus-optional-debug-rpms",
+											"rhel-7-hpc-node-eus-optional-rpms",
+											"rhel-7-hpc-node-eus-optional-source-rpms",
+											"rhel-7-hpc-node-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-hpc-node-eus-rpms",
+											"rhel-7-hpc-node-eus-source-rpms",
+											"rhel-7-hpc-node-eus-supplementary-debug-rpms",
+											"rhel-7-hpc-node-eus-supplementary-rpms",
+											"rhel-7-hpc-node-eus-supplementary-source-rpms",
+											"rhel-7-hpc-node-optional-debug-rpms",
+											"rhel-7-hpc-node-optional-rpms",
+											"rhel-7-hpc-node-optional-source-rpms",
+											"rhel-7-hpc-node-rpms",
+											"rhel-7-hpc-node-source-rpms",
+											"rhel-7-server-aus-debug-rpms",
+											"rhel-7-server-aus-optional-debug-rpms",
+											"rhel-7-server-aus-optional-rpms",
+											"rhel-7-server-aus-optional-source-rpms",
+											"rhel-7-server-aus-rpms",
+											"rhel-7-server-aus-source-rpms",
+											"rhel-7-server-debug-rpms",
+											"rhel-7-server-e4s-debug-rpms",
+											"rhel-7-server-e4s-optional-debug-rpms",
+											"rhel-7-server-e4s-optional-rpms",
+											"rhel-7-server-e4s-optional-source-rpms",
+											"rhel-7-server-e4s-rpms",
+											"rhel-7-server-e4s-source-rpms",
+											"rhel-7-server-els-debug-rpms",
+											"rhel-7-server-els-optional-debug-rpms",
+											"rhel-7-server-els-optional-rpms",
+											"rhel-7-server-els-optional-source-rpms",
+											"rhel-7-server-els-rpms",
+											"rhel-7-server-els-source-rpms",
+											"rhel-7-server-eus-debug-rpms",
+											"rhel-7-server-eus-optional-debug-rpms",
+											"rhel-7-server-eus-optional-rpms",
+											"rhel-7-server-eus-optional-source-rpms",
+											"rhel-7-server-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-server-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-7-server-eus-rpms",
+											"rhel-7-server-eus-source-rpms",
+											"rhel-7-server-eus-supplementary-debuginfo",
+											"rhel-7-server-eus-supplementary-rpms",
+											"rhel-7-server-eus-supplementary-source-rpms",
+											"rhel-7-server-fastrack-debug-rpms",
+											"rhel-7-server-fastrack-rpms",
+											"rhel-7-server-fastrack-source-rpms",
+											"rhel-7-server-nfv-debug-rpms",
+											"rhel-7-server-nfv-rpms",
+											"rhel-7-server-nfv-source-rpms",
+											"rhel-7-server-optional-debug-rpms",
+											"rhel-7-server-optional-fastrack-debug-rpms",
+											"rhel-7-server-optional-fastrack-rpms",
+											"rhel-7-server-optional-fastrack-source-rpms",
+											"rhel-7-server-optional-rpms",
+											"rhel-7-server-optional-source-rpms",
+											"rhel-7-server-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-server-rpms",
+											"rhel-7-server-rt-debug-rpms",
+											"rhel-7-server-rt-els-debug-rpms",
+											"rhel-7-server-rt-els-rpms",
+											"rhel-7-server-rt-els-source-rpms",
+											"rhel-7-server-rt-rpms",
+											"rhel-7-server-rt-source-rpms",
+											"rhel-7-server-source-rpms",
+											"rhel-7-server-supplementary-debug-rpms",
+											"rhel-7-server-supplementary-rpms",
+											"rhel-7-server-supplementary-source-rpms",
+											"rhel-7-server-tus-debug-rpms",
+											"rhel-7-server-tus-optional-debug-rpms",
+											"rhel-7-server-tus-optional-rpms",
+											"rhel-7-server-tus-optional-source-rpms",
+											"rhel-7-server-tus-rpms",
+											"rhel-7-server-tus-source-rpms",
+											"rhel-7-workstation-debug-rpms",
+											"rhel-7-workstation-fastrack-debug-rpms",
+											"rhel-7-workstation-fastrack-rpms",
+											"rhel-7-workstation-fastrack-source-rpms",
+											"rhel-7-workstation-optional-debug-rpms",
+											"rhel-7-workstation-optional-fastrack-debug-rpms",
+											"rhel-7-workstation-optional-fastrack-rpms",
+											"rhel-7-workstation-optional-fastrack-source-rpms",
+											"rhel-7-workstation-optional-rpms",
+											"rhel-7-workstation-optional-source-rpms",
+											"rhel-7-workstation-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-workstation-rpms",
+											"rhel-7-workstation-source-rpms",
+											"rhel-7-workstation-supplementary-debug-rpms",
+											"rhel-7-workstation-supplementary-rpms",
+											"rhel-7-workstation-supplementary-source-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-source-rpms",
+											"rhel-ha-for-rhel-7-server-debug-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-source-rpms",
+											"rhel-ha-for-rhel-7-server-els-debug-rpms",
+											"rhel-ha-for-rhel-7-server-els-rpms",
+											"rhel-ha-for-rhel-7-server-els-source-rpms",
+											"rhel-ha-for-rhel-7-server-eus-debug-rpms",
+											"rhel-ha-for-rhel-7-server-eus-rpms",
+											"rhel-ha-for-rhel-7-server-eus-source-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-debug-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-source-rpms",
+											"rhel-ha-for-rhel-7-server-rpms",
+											"rhel-ha-for-rhel-7-server-source-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-source-rpms",
+											"rhel-rs-for-rhel-7-server-debug-rpms",
+											"rhel-rs-for-rhel-7-server-els-debug-rpms",
+											"rhel-rs-for-rhel-7-server-els-rpms",
+											"rhel-rs-for-rhel-7-server-els-source-rpms",
+											"rhel-rs-for-rhel-7-server-eus-debug-rpms",
+											"rhel-rs-for-rhel-7-server-eus-rpms",
+											"rhel-rs-for-rhel-7-server-eus-source-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-debug-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-source-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-debug-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-debug-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-source-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-source-rpms",
+											"rhel-rs-for-rhel-7-server-rpms",
+											"rhel-rs-for-rhel-7-server-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-rpms",
+											"rhel-sap-for-rhel-7-for-power-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-source-rpms",
+											"rhel-sap-for-rhel-7-server-debug-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-source-rpms",
+											"rhel-sap-for-rhel-7-server-els-debug-rpms",
+											"rhel-sap-for-rhel-7-server-els-rpms",
+											"rhel-sap-for-rhel-7-server-els-source-rpms",
+											"rhel-sap-for-rhel-7-server-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-server-eus-rpms",
+											"rhel-sap-for-rhel-7-server-eus-source-rpms",
+											"rhel-sap-for-rhel-7-server-rpms",
+											"rhel-sap-for-rhel-7-server-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-rpms",
+											"rhel-sap-hana-for-rhel-7-server-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "14:4.9.0-5.el7"
+											}
+										],
+										"fixed": [
+											"14:4.9.0-5.el7"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/definitions/oval:com.redhat.rhsa:def:20171871.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20148767001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20171871001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20148767002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20171871001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20042779005.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20042779006.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/definitions/oval:com.redhat.rhsa:def:20171871.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/objects/rpminfo_object/oval:com.redhat.rhea:obj:20180705001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/states/rpminfo_state/oval:com.redhat.rhsa:ste:20171871001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/tests/rpminfo_test/oval:com.redhat.rhea:tst:20180705002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20171871001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20150364027.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20150364028.json"
+		]
+	}
+}

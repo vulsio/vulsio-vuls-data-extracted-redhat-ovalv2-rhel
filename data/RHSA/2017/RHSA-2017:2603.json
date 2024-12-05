@@ -1,0 +1,170 @@
+{
+	"id": "RHSA-2017:2603",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2017:2603",
+				"title": "RHSA-2017:2603: docker-distribution security, bug fix, and enhancement update (Low)",
+				"description": "The docker-distribution package provides the tool set to support the Docker Registry version 2.\n\nThe following packages have been upgraded to a later upstream version: docker-distribution (2.6.2). (BZ#1479494)\n\nSecurity Fix(es):\n\n* It was found that docker-distribution did not properly restrict memory allocation size for a registry instance through the manifest endpoint. An attacker could send a specially crafted request that would exhaust the memory of the docker-distribution service. (CVE-2017-11468)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Low"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2017:2603"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-11468"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1474893"
+					}
+				],
+				"published": "2017-09-05T00:00:00Z",
+				"modified": "2017-09-05T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2017-11468",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v30",
+						"source": "secalert@redhat.com",
+						"cvss_v30": {
+							"vector": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+							"base_score": 5.3,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.3,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.3,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-770"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2017-11468"
+					}
+				],
+				"published": "2017-07-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "docker-distribution",
+										"architectures": [
+											"ppc64le",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-7-desktop-extras-debug-rpms",
+											"rhel-7-desktop-extras-rpms",
+											"rhel-7-desktop-extras-source-rpms",
+											"rhel-7-for-arm-64-extras-debug-rpms",
+											"rhel-7-for-arm-64-extras-rpms",
+											"rhel-7-for-arm-64-extras-source-rpms",
+											"rhel-7-for-power-9-extras-debug-rpms",
+											"rhel-7-for-power-9-extras-rpms",
+											"rhel-7-for-power-9-extras-source-rpms",
+											"rhel-7-for-power-le-extras-debug-rpms",
+											"rhel-7-for-power-le-extras-rpms",
+											"rhel-7-for-power-le-extras-source-rpms",
+											"rhel-7-for-system-z-a-extras-debug-rpms",
+											"rhel-7-for-system-z-a-extras-rpms",
+											"rhel-7-for-system-z-a-extras-source-rpms",
+											"rhel-7-for-system-z-extras-debug-rpms",
+											"rhel-7-for-system-z-extras-rpms",
+											"rhel-7-for-system-z-extras-source-rpms",
+											"rhel-7-server-extras-debug-rpms",
+											"rhel-7-server-extras-rpms",
+											"rhel-7-server-extras-source-rpms",
+											"rhel-7-workstation-extras-debug-rpms",
+											"rhel-7-workstation-extras-rpms",
+											"rhel-7-workstation-extras-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:2.6.2-1.git48294d9.el7"
+											}
+										],
+										"fixed": [
+											"0:2.6.2-1.git48294d9.el7"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/definitions/oval:com.redhat.rhsa:def:20172603.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20213114018.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20172603001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20213114036.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20172603001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047029.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047030.json"
+		]
+	}
+}

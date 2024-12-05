@@ -1,0 +1,2491 @@
+{
+	"id": "RHSA-2015:0988",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2015:0988",
+				"title": "RHSA-2015:0988: firefox security update (Critical)",
+				"description": "Mozilla Firefox is an open source web browser. XULRunner provides the XUL\nRuntime environment for Mozilla Firefox.\n\nSeveral flaws were found in the processing of malformed web content. A web\npage containing malicious content could cause Firefox to crash or,\npotentially, execute arbitrary code with the privileges of the user running\nFirefox. (CVE-2015-2708, CVE-2015-0797, CVE-2015-2710, CVE-2015-2713)\n\nA heap-based buffer overflow flaw was found in the way Firefox processed\ncompressed XML data. An attacker could create specially crafted compressed\nXML content that, when processed by Firefox, could cause it to crash or\nexecute arbitrary code with the privileges of the user running Firefox.\n(CVE-2015-2716)\n\nRed Hat would like to thank the Mozilla project for reporting these issues.\nUpstream acknowledges Jesse Ruderman, Mats Palmgren, Byron Campen, Steve\nFink, Aki Helin, Atte Kettunen, Scott Bell, and Ucha Gobejishvili as the\noriginal reporters of these issues.\n\nAll Firefox users should upgrade to these updated packages, which contain\nFirefox version 38.0 ESR, which corrects these issues. After installing the\nupdate, Firefox must be restarted for the changes to take effect.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Critical"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2015:0988"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-0797"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2708"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2710"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2713"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2716"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-4496"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220597"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220600"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220601"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220605"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220607"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1253550"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z",
+				"modified": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-els"
+				},
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-supplementary"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2015-0797",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P",
+							"base_score": 5.1,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 5.1,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 5.1,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-119"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-0797"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-els"
+				},
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-0797",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:H/Au:N/C:P/I:P/A:P",
+							"base_score": 5.1,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 5.1,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 5.1,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-119"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-0797"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220600"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-supplementary"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2708",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2708"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-els"
+				},
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2708",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2708"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220597"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-supplementary"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2710",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-119"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2710"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-els"
+				},
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2710",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-119"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2710"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220601"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-supplementary"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2713",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-416"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2713"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-els"
+				},
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2713",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-416"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2713"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220605"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-supplementary"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2716",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2716"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-els"
+				},
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-2716",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-2716"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1220607"
+					}
+				],
+				"published": "2015-05-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-supplementary"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-4496",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-190"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-4496"
+					}
+				],
+				"published": "2015-08-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-els"
+				},
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-including-unpatched"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2015-4496",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "critical"
+					},
+					{
+						"type": "cvss_v2",
+						"source": "secalert@redhat.com",
+						"cvss_v2": {
+							"vector": "AV:N/AC:M/Au:N/C:P/I:P/A:P",
+							"base_score": 6.8,
+							"nvd_base_severity": "MEDIUM",
+							"temporal_score": 6.8,
+							"nvd_temporal_severity": "MEDIUM",
+							"environmental_score": 6.8,
+							"nvd_environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-190"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2015-4496"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/1253550"
+					}
+				],
+				"published": "2015-08-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:6",
+					"tag": "rhel-6-supplementary"
+				},
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:6",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "firefox",
+										"architectures": [
+											"i686",
+											"ppc",
+											"ppc64",
+											"s390",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-6-desktop-debug-rpms",
+											"rhel-6-desktop-fastrack-debug-rpms",
+											"rhel-6-desktop-fastrack-rpms",
+											"rhel-6-desktop-fastrack-source-rpms",
+											"rhel-6-desktop-optional-debug-rpms",
+											"rhel-6-desktop-optional-fastrack-debug-rpms",
+											"rhel-6-desktop-optional-fastrack-rpms",
+											"rhel-6-desktop-optional-fastrack-source-rpms",
+											"rhel-6-desktop-optional-rpms",
+											"rhel-6-desktop-optional-source-rpms",
+											"rhel-6-desktop-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-desktop-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-desktop-rpms",
+											"rhel-6-desktop-source-rpms",
+											"rhel-6-desktop-supplementary-debuginfo",
+											"rhel-6-desktop-supplementary-rpms",
+											"rhel-6-desktop-supplementary-source-rpms",
+											"rhel-6-for-hpc-node-fastrack-debug-rpms",
+											"rhel-6-for-hpc-node-fastrack-rpms",
+											"rhel-6-for-hpc-node-fastrack-source-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-debug-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-source-rpms",
+											"rhel-6-for-hpc-node-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-for-hpc-node-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-for-hpc-node-supplementary-debuginfo",
+											"rhel-6-for-hpc-node-supplementary-rpms",
+											"rhel-6-for-hpc-node-supplementary-source-rpms",
+											"rhel-6-for-power-debug-rpms",
+											"rhel-6-for-power-eus-debug-rpms",
+											"rhel-6-for-power-eus-optional-debug-rpms",
+											"rhel-6-for-power-eus-optional-rpms",
+											"rhel-6-for-power-eus-optional-source-rpms",
+											"rhel-6-for-power-eus-rpms",
+											"rhel-6-for-power-eus-source-rpms",
+											"rhel-6-for-power-eus-supplementary-debuginfo",
+											"rhel-6-for-power-eus-supplementary-rpms",
+											"rhel-6-for-power-eus-supplementary-source-rpms",
+											"rhel-6-for-power-fastrack-debug-rpms",
+											"rhel-6-for-power-fastrack-rpms",
+											"rhel-6-for-power-fastrack-source-rpms",
+											"rhel-6-for-power-optional-debug-rpms",
+											"rhel-6-for-power-optional-fastrack-debug-rpms",
+											"rhel-6-for-power-optional-fastrack-rpms",
+											"rhel-6-for-power-optional-fastrack-source-rpms",
+											"rhel-6-for-power-optional-rpms",
+											"rhel-6-for-power-optional-source-rpms",
+											"rhel-6-for-power-rpms",
+											"rhel-6-for-power-source-rpms",
+											"rhel-6-for-power-supplementary-debuginfo",
+											"rhel-6-for-power-supplementary-rpms",
+											"rhel-6-for-power-supplementary-source-rpms",
+											"rhel-6-for-system-z-debug-rpms",
+											"rhel-6-for-system-z-eus-debug-rpms",
+											"rhel-6-for-system-z-eus-optional-debug-rpms",
+											"rhel-6-for-system-z-eus-optional-rpms",
+											"rhel-6-for-system-z-eus-optional-source-rpms",
+											"rhel-6-for-system-z-eus-rpms",
+											"rhel-6-for-system-z-eus-source-rpms",
+											"rhel-6-for-system-z-eus-supplementary-debuginfo",
+											"rhel-6-for-system-z-eus-supplementary-rpms",
+											"rhel-6-for-system-z-eus-supplementary-source-rpms",
+											"rhel-6-for-system-z-fastrack-debug-rpms",
+											"rhel-6-for-system-z-fastrack-rpms",
+											"rhel-6-for-system-z-fastrack-source-rpms",
+											"rhel-6-for-system-z-optional-debug-rpms",
+											"rhel-6-for-system-z-optional-fastrack-debug-rpms",
+											"rhel-6-for-system-z-optional-fastrack-rpms",
+											"rhel-6-for-system-z-optional-fastrack-source-rpms",
+											"rhel-6-for-system-z-optional-rpms",
+											"rhel-6-for-system-z-optional-source-rpms",
+											"rhel-6-for-system-z-rpms",
+											"rhel-6-for-system-z-source-rpms",
+											"rhel-6-for-system-z-supplementary-debuginfo",
+											"rhel-6-for-system-z-supplementary-rpms",
+											"rhel-6-for-system-z-supplementary-source-rpms",
+											"rhel-6-hpc-node-debug-rpms",
+											"rhel-6-hpc-node-optional-debug-rpms",
+											"rhel-6-hpc-node-optional-rpms",
+											"rhel-6-hpc-node-optional-source-rpms",
+											"rhel-6-hpc-node-rpms",
+											"rhel-6-hpc-node-source-rpms",
+											"rhel-6-server-aus-debug-rpms",
+											"rhel-6-server-aus-optional-debug-rpms",
+											"rhel-6-server-aus-optional-rpms",
+											"rhel-6-server-aus-optional-source-rpms",
+											"rhel-6-server-aus-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-aus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-aus-rpms",
+											"rhel-6-server-aus-source-rpms",
+											"rhel-6-server-aus-supplementary-debuginfo",
+											"rhel-6-server-aus-supplementary-rpms",
+											"rhel-6-server-aus-supplementary-source-rpms",
+											"rhel-6-server-debug-rpms",
+											"rhel-6-server-eus-debug-rpms",
+											"rhel-6-server-eus-optional-debug-rpms",
+											"rhel-6-server-eus-optional-rpms",
+											"rhel-6-server-eus-optional-source-rpms",
+											"rhel-6-server-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-eus-rpms",
+											"rhel-6-server-eus-source-rpms",
+											"rhel-6-server-eus-supplementary-debuginfo",
+											"rhel-6-server-eus-supplementary-rpms",
+											"rhel-6-server-eus-supplementary-source-rpms",
+											"rhel-6-server-fastrack-debug-rpms",
+											"rhel-6-server-fastrack-rpms",
+											"rhel-6-server-fastrack-source-rpms",
+											"rhel-6-server-optional-debug-rpms",
+											"rhel-6-server-optional-fastrack-debug-rpms",
+											"rhel-6-server-optional-fastrack-rpms",
+											"rhel-6-server-optional-fastrack-source-rpms",
+											"rhel-6-server-optional-rpms",
+											"rhel-6-server-optional-source-rpms",
+											"rhel-6-server-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-rpms",
+											"rhel-6-server-source-rpms",
+											"rhel-6-server-supplementary-debuginfo",
+											"rhel-6-server-supplementary-rpms",
+											"rhel-6-server-supplementary-source-rpms",
+											"rhel-6-workstation-debug-rpms",
+											"rhel-6-workstation-fastrack-debug-rpms",
+											"rhel-6-workstation-fastrack-rpms",
+											"rhel-6-workstation-fastrack-source-rpms",
+											"rhel-6-workstation-optional-debug-rpms",
+											"rhel-6-workstation-optional-fastrack-debug-rpms",
+											"rhel-6-workstation-optional-fastrack-rpms",
+											"rhel-6-workstation-optional-fastrack-source-rpms",
+											"rhel-6-workstation-optional-rpms",
+											"rhel-6-workstation-optional-source-rpms",
+											"rhel-6-workstation-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-workstation-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-workstation-rpms",
+											"rhel-6-workstation-source-rpms",
+											"rhel-6-workstation-supplementary-debuginfo",
+											"rhel-6-workstation-supplementary-rpms",
+											"rhel-6-workstation-supplementary-source-rpms",
+											"rhel-ha-for-rhel-6-server-debug-rpms",
+											"rhel-ha-for-rhel-6-server-eus-debug-rpms",
+											"rhel-ha-for-rhel-6-server-eus-rpms",
+											"rhel-ha-for-rhel-6-server-eus-source-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-ha-for-rhel-6-server-rpms",
+											"rhel-ha-for-rhel-6-server-source-rpms",
+											"rhel-hpc-node-6-eus-debug-rpms",
+											"rhel-hpc-node-6-eus-hpn-debug-rpms",
+											"rhel-hpc-node-6-eus-hpn-rpms",
+											"rhel-hpc-node-6-eus-hpn-source-rpms",
+											"rhel-hpc-node-6-eus-optional-debug-rpms",
+											"rhel-hpc-node-6-eus-optional-rpms",
+											"rhel-hpc-node-6-eus-optional-source-rpms",
+											"rhel-hpc-node-6-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-hpc-node-6-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-hpc-node-6-eus-rpms",
+											"rhel-hpc-node-6-eus-sfs-debug-rpms",
+											"rhel-hpc-node-6-eus-sfs-rpms",
+											"rhel-hpc-node-6-eus-sfs-source-rpms",
+											"rhel-hpc-node-6-eus-source-rpms",
+											"rhel-hpc-node-6-eus-supplementary-debug-rpms",
+											"rhel-hpc-node-6-eus-supplementary-rpms",
+											"rhel-hpc-node-6-eus-supplementary-source-rpms",
+											"rhel-hpn-for-rhel-6-for-power-debug-rpms",
+											"rhel-hpn-for-rhel-6-for-power-rpms",
+											"rhel-hpn-for-rhel-6-for-power-source-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-debug-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-debug-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-source-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-source-rpms",
+											"rhel-hpn-for-rhel-6-server-debug-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-hpn-for-rhel-6-server-rpms",
+											"rhel-hpn-for-rhel-6-server-source-rpms",
+											"rhel-lb-for-rhel-6-server-debug-rpms",
+											"rhel-lb-for-rhel-6-server-eus-debug-rpms",
+											"rhel-lb-for-rhel-6-server-eus-rpms",
+											"rhel-lb-for-rhel-6-server-eus-source-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-lb-for-rhel-6-server-rpms",
+											"rhel-lb-for-rhel-6-server-source-rpms",
+											"rhel-rs-for-rhel-6-server-debug-rpms",
+											"rhel-rs-for-rhel-6-server-eus-debug-rpms",
+											"rhel-rs-for-rhel-6-server-eus-rpms",
+											"rhel-rs-for-rhel-6-server-eus-source-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-rs-for-rhel-6-server-rpms",
+											"rhel-rs-for-rhel-6-server-source-rpms",
+											"rhel-sap-for-rhel-6-for-power-debug-rpms",
+											"rhel-sap-for-rhel-6-for-power-rpms",
+											"rhel-sap-for-rhel-6-for-power-source-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-debug-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-source-rpms",
+											"rhel-sap-for-rhel-6-server-debug-rpms",
+											"rhel-sap-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sap-for-rhel-6-server-eus-rpms",
+											"rhel-sap-for-rhel-6-server-eus-source-rpms",
+											"rhel-sap-for-rhel-6-server-rpms",
+											"rhel-sap-for-rhel-6-server-source-rpms",
+											"rhel-sap-hana-for-rhel-6-server-debug-rpms",
+											"rhel-sap-hana-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-6-server-eus-rpms",
+											"rhel-sap-hana-for-rhel-6-server-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-6-server-rpms",
+											"rhel-sap-hana-for-rhel-6-server-source-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-debug-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-source-rpms",
+											"rhel-scalefs-for-rhel-6-server-debug-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-server-rpms",
+											"rhel-scalefs-for-rhel-6-server-source-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-debug-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-source-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:38.0-4.el6_6"
+											}
+										],
+										"fixed": [
+											"0:38.0-4.el6_6"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-6-including-unpatched"
+				},
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "firefox",
+										"architectures": [
+											"i686",
+											"ppc",
+											"ppc64",
+											"s390",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-6-desktop-debug-rpms",
+											"rhel-6-desktop-fastrack-debug-rpms",
+											"rhel-6-desktop-fastrack-rpms",
+											"rhel-6-desktop-fastrack-source-rpms",
+											"rhel-6-desktop-optional-debug-rpms",
+											"rhel-6-desktop-optional-fastrack-debug-rpms",
+											"rhel-6-desktop-optional-fastrack-rpms",
+											"rhel-6-desktop-optional-fastrack-source-rpms",
+											"rhel-6-desktop-optional-rpms",
+											"rhel-6-desktop-optional-source-rpms",
+											"rhel-6-desktop-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-desktop-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-desktop-rpms",
+											"rhel-6-desktop-source-rpms",
+											"rhel-6-desktop-supplementary-debuginfo",
+											"rhel-6-desktop-supplementary-rpms",
+											"rhel-6-desktop-supplementary-source-rpms",
+											"rhel-6-for-hpc-node-fastrack-debug-rpms",
+											"rhel-6-for-hpc-node-fastrack-rpms",
+											"rhel-6-for-hpc-node-fastrack-source-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-debug-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-source-rpms",
+											"rhel-6-for-hpc-node-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-for-hpc-node-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-for-hpc-node-supplementary-debuginfo",
+											"rhel-6-for-hpc-node-supplementary-rpms",
+											"rhel-6-for-hpc-node-supplementary-source-rpms",
+											"rhel-6-for-power-debug-rpms",
+											"rhel-6-for-power-eus-debug-rpms",
+											"rhel-6-for-power-eus-optional-debug-rpms",
+											"rhel-6-for-power-eus-optional-rpms",
+											"rhel-6-for-power-eus-optional-source-rpms",
+											"rhel-6-for-power-eus-rpms",
+											"rhel-6-for-power-eus-source-rpms",
+											"rhel-6-for-power-eus-supplementary-debuginfo",
+											"rhel-6-for-power-eus-supplementary-rpms",
+											"rhel-6-for-power-eus-supplementary-source-rpms",
+											"rhel-6-for-power-fastrack-debug-rpms",
+											"rhel-6-for-power-fastrack-rpms",
+											"rhel-6-for-power-fastrack-source-rpms",
+											"rhel-6-for-power-optional-debug-rpms",
+											"rhel-6-for-power-optional-fastrack-debug-rpms",
+											"rhel-6-for-power-optional-fastrack-rpms",
+											"rhel-6-for-power-optional-fastrack-source-rpms",
+											"rhel-6-for-power-optional-rpms",
+											"rhel-6-for-power-optional-source-rpms",
+											"rhel-6-for-power-rpms",
+											"rhel-6-for-power-source-rpms",
+											"rhel-6-for-power-supplementary-debuginfo",
+											"rhel-6-for-power-supplementary-rpms",
+											"rhel-6-for-power-supplementary-source-rpms",
+											"rhel-6-for-system-z-debug-rpms",
+											"rhel-6-for-system-z-eus-debug-rpms",
+											"rhel-6-for-system-z-eus-optional-debug-rpms",
+											"rhel-6-for-system-z-eus-optional-rpms",
+											"rhel-6-for-system-z-eus-optional-source-rpms",
+											"rhel-6-for-system-z-eus-rpms",
+											"rhel-6-for-system-z-eus-source-rpms",
+											"rhel-6-for-system-z-eus-supplementary-debuginfo",
+											"rhel-6-for-system-z-eus-supplementary-rpms",
+											"rhel-6-for-system-z-eus-supplementary-source-rpms",
+											"rhel-6-for-system-z-fastrack-debug-rpms",
+											"rhel-6-for-system-z-fastrack-rpms",
+											"rhel-6-for-system-z-fastrack-source-rpms",
+											"rhel-6-for-system-z-optional-debug-rpms",
+											"rhel-6-for-system-z-optional-fastrack-debug-rpms",
+											"rhel-6-for-system-z-optional-fastrack-rpms",
+											"rhel-6-for-system-z-optional-fastrack-source-rpms",
+											"rhel-6-for-system-z-optional-rpms",
+											"rhel-6-for-system-z-optional-source-rpms",
+											"rhel-6-for-system-z-rpms",
+											"rhel-6-for-system-z-source-rpms",
+											"rhel-6-for-system-z-supplementary-debuginfo",
+											"rhel-6-for-system-z-supplementary-rpms",
+											"rhel-6-for-system-z-supplementary-source-rpms",
+											"rhel-6-hpc-node-debug-rpms",
+											"rhel-6-hpc-node-optional-debug-rpms",
+											"rhel-6-hpc-node-optional-rpms",
+											"rhel-6-hpc-node-optional-source-rpms",
+											"rhel-6-hpc-node-rpms",
+											"rhel-6-hpc-node-source-rpms",
+											"rhel-6-server-aus-debug-rpms",
+											"rhel-6-server-aus-optional-debug-rpms",
+											"rhel-6-server-aus-optional-rpms",
+											"rhel-6-server-aus-optional-source-rpms",
+											"rhel-6-server-aus-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-aus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-aus-rpms",
+											"rhel-6-server-aus-source-rpms",
+											"rhel-6-server-aus-supplementary-debuginfo",
+											"rhel-6-server-aus-supplementary-rpms",
+											"rhel-6-server-aus-supplementary-source-rpms",
+											"rhel-6-server-debug-rpms",
+											"rhel-6-server-eus-debug-rpms",
+											"rhel-6-server-eus-optional-debug-rpms",
+											"rhel-6-server-eus-optional-rpms",
+											"rhel-6-server-eus-optional-source-rpms",
+											"rhel-6-server-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-eus-rpms",
+											"rhel-6-server-eus-source-rpms",
+											"rhel-6-server-eus-supplementary-debuginfo",
+											"rhel-6-server-eus-supplementary-rpms",
+											"rhel-6-server-eus-supplementary-source-rpms",
+											"rhel-6-server-fastrack-debug-rpms",
+											"rhel-6-server-fastrack-rpms",
+											"rhel-6-server-fastrack-source-rpms",
+											"rhel-6-server-optional-debug-rpms",
+											"rhel-6-server-optional-fastrack-debug-rpms",
+											"rhel-6-server-optional-fastrack-rpms",
+											"rhel-6-server-optional-fastrack-source-rpms",
+											"rhel-6-server-optional-rpms",
+											"rhel-6-server-optional-source-rpms",
+											"rhel-6-server-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-rpms",
+											"rhel-6-server-source-rpms",
+											"rhel-6-server-supplementary-debuginfo",
+											"rhel-6-server-supplementary-rpms",
+											"rhel-6-server-supplementary-source-rpms",
+											"rhel-6-workstation-debug-rpms",
+											"rhel-6-workstation-fastrack-debug-rpms",
+											"rhel-6-workstation-fastrack-rpms",
+											"rhel-6-workstation-fastrack-source-rpms",
+											"rhel-6-workstation-optional-debug-rpms",
+											"rhel-6-workstation-optional-fastrack-debug-rpms",
+											"rhel-6-workstation-optional-fastrack-rpms",
+											"rhel-6-workstation-optional-fastrack-source-rpms",
+											"rhel-6-workstation-optional-rpms",
+											"rhel-6-workstation-optional-source-rpms",
+											"rhel-6-workstation-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-workstation-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-workstation-rpms",
+											"rhel-6-workstation-source-rpms",
+											"rhel-6-workstation-supplementary-debuginfo",
+											"rhel-6-workstation-supplementary-rpms",
+											"rhel-6-workstation-supplementary-source-rpms",
+											"rhel-ha-for-rhel-6-server-debug-rpms",
+											"rhel-ha-for-rhel-6-server-eus-debug-rpms",
+											"rhel-ha-for-rhel-6-server-eus-rpms",
+											"rhel-ha-for-rhel-6-server-eus-source-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-ha-for-rhel-6-server-rpms",
+											"rhel-ha-for-rhel-6-server-source-rpms",
+											"rhel-hpc-node-6-eus-debug-rpms",
+											"rhel-hpc-node-6-eus-hpn-debug-rpms",
+											"rhel-hpc-node-6-eus-hpn-rpms",
+											"rhel-hpc-node-6-eus-hpn-source-rpms",
+											"rhel-hpc-node-6-eus-optional-debug-rpms",
+											"rhel-hpc-node-6-eus-optional-rpms",
+											"rhel-hpc-node-6-eus-optional-source-rpms",
+											"rhel-hpc-node-6-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-hpc-node-6-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-hpc-node-6-eus-rpms",
+											"rhel-hpc-node-6-eus-sfs-debug-rpms",
+											"rhel-hpc-node-6-eus-sfs-rpms",
+											"rhel-hpc-node-6-eus-sfs-source-rpms",
+											"rhel-hpc-node-6-eus-source-rpms",
+											"rhel-hpc-node-6-eus-supplementary-debug-rpms",
+											"rhel-hpc-node-6-eus-supplementary-rpms",
+											"rhel-hpc-node-6-eus-supplementary-source-rpms",
+											"rhel-hpn-for-rhel-6-for-power-debug-rpms",
+											"rhel-hpn-for-rhel-6-for-power-rpms",
+											"rhel-hpn-for-rhel-6-for-power-source-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-debug-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-debug-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-source-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-source-rpms",
+											"rhel-hpn-for-rhel-6-server-debug-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-hpn-for-rhel-6-server-rpms",
+											"rhel-hpn-for-rhel-6-server-source-rpms",
+											"rhel-lb-for-rhel-6-server-debug-rpms",
+											"rhel-lb-for-rhel-6-server-eus-debug-rpms",
+											"rhel-lb-for-rhel-6-server-eus-rpms",
+											"rhel-lb-for-rhel-6-server-eus-source-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-lb-for-rhel-6-server-rpms",
+											"rhel-lb-for-rhel-6-server-source-rpms",
+											"rhel-rs-for-rhel-6-server-debug-rpms",
+											"rhel-rs-for-rhel-6-server-eus-debug-rpms",
+											"rhel-rs-for-rhel-6-server-eus-rpms",
+											"rhel-rs-for-rhel-6-server-eus-source-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-rs-for-rhel-6-server-rpms",
+											"rhel-rs-for-rhel-6-server-source-rpms",
+											"rhel-sap-for-rhel-6-for-power-debug-rpms",
+											"rhel-sap-for-rhel-6-for-power-rpms",
+											"rhel-sap-for-rhel-6-for-power-source-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-debug-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-source-rpms",
+											"rhel-sap-for-rhel-6-server-debug-rpms",
+											"rhel-sap-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sap-for-rhel-6-server-eus-rpms",
+											"rhel-sap-for-rhel-6-server-eus-source-rpms",
+											"rhel-sap-for-rhel-6-server-rpms",
+											"rhel-sap-for-rhel-6-server-source-rpms",
+											"rhel-sap-hana-for-rhel-6-server-debug-rpms",
+											"rhel-sap-hana-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-6-server-eus-rpms",
+											"rhel-sap-hana-for-rhel-6-server-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-6-server-rpms",
+											"rhel-sap-hana-for-rhel-6-server-source-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-debug-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-source-rpms",
+											"rhel-scalefs-for-rhel-6-server-debug-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-server-rpms",
+											"rhel-scalefs-for-rhel-6-server-source-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-debug-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-source-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:38.0-4.el6_6"
+											}
+										],
+										"fixed": [
+											"0:38.0-4.el6_6"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-6-supplementary"
+				},
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "firefox",
+										"architectures": [
+											"i686",
+											"ppc",
+											"ppc64",
+											"s390",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-6-desktop-debug-rpms",
+											"rhel-6-desktop-fastrack-debug-rpms",
+											"rhel-6-desktop-fastrack-rpms",
+											"rhel-6-desktop-fastrack-source-rpms",
+											"rhel-6-desktop-optional-debug-rpms",
+											"rhel-6-desktop-optional-fastrack-debug-rpms",
+											"rhel-6-desktop-optional-fastrack-rpms",
+											"rhel-6-desktop-optional-fastrack-source-rpms",
+											"rhel-6-desktop-optional-rpms",
+											"rhel-6-desktop-optional-source-rpms",
+											"rhel-6-desktop-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-desktop-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-desktop-rpms",
+											"rhel-6-desktop-source-rpms",
+											"rhel-6-desktop-supplementary-debuginfo",
+											"rhel-6-desktop-supplementary-rpms",
+											"rhel-6-desktop-supplementary-source-rpms",
+											"rhel-6-for-hpc-node-fastrack-debug-rpms",
+											"rhel-6-for-hpc-node-fastrack-rpms",
+											"rhel-6-for-hpc-node-fastrack-source-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-debug-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-rpms",
+											"rhel-6-for-hpc-node-optional-fastrack-source-rpms",
+											"rhel-6-for-hpc-node-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-for-hpc-node-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-for-hpc-node-supplementary-debuginfo",
+											"rhel-6-for-hpc-node-supplementary-rpms",
+											"rhel-6-for-hpc-node-supplementary-source-rpms",
+											"rhel-6-for-power-debug-rpms",
+											"rhel-6-for-power-eus-debug-rpms",
+											"rhel-6-for-power-eus-optional-debug-rpms",
+											"rhel-6-for-power-eus-optional-rpms",
+											"rhel-6-for-power-eus-optional-source-rpms",
+											"rhel-6-for-power-eus-rpms",
+											"rhel-6-for-power-eus-source-rpms",
+											"rhel-6-for-power-eus-supplementary-debuginfo",
+											"rhel-6-for-power-eus-supplementary-rpms",
+											"rhel-6-for-power-eus-supplementary-source-rpms",
+											"rhel-6-for-power-fastrack-debug-rpms",
+											"rhel-6-for-power-fastrack-rpms",
+											"rhel-6-for-power-fastrack-source-rpms",
+											"rhel-6-for-power-optional-debug-rpms",
+											"rhel-6-for-power-optional-fastrack-debug-rpms",
+											"rhel-6-for-power-optional-fastrack-rpms",
+											"rhel-6-for-power-optional-fastrack-source-rpms",
+											"rhel-6-for-power-optional-rpms",
+											"rhel-6-for-power-optional-source-rpms",
+											"rhel-6-for-power-rpms",
+											"rhel-6-for-power-source-rpms",
+											"rhel-6-for-power-supplementary-debuginfo",
+											"rhel-6-for-power-supplementary-rpms",
+											"rhel-6-for-power-supplementary-source-rpms",
+											"rhel-6-for-system-z-debug-rpms",
+											"rhel-6-for-system-z-els-debug-rpms",
+											"rhel-6-for-system-z-els-debug-rpms__s390x",
+											"rhel-6-for-system-z-els-optional-debug-rpms",
+											"rhel-6-for-system-z-els-optional-debug-rpms__s390x",
+											"rhel-6-for-system-z-els-optional-rpms",
+											"rhel-6-for-system-z-els-optional-rpms__s390x",
+											"rhel-6-for-system-z-els-optional-source-rpms",
+											"rhel-6-for-system-z-els-optional-source-rpms__s390x",
+											"rhel-6-for-system-z-els-rpms",
+											"rhel-6-for-system-z-els-rpms__s390x",
+											"rhel-6-for-system-z-els-source-rpms",
+											"rhel-6-for-system-z-els-source-rpms__s390x",
+											"rhel-6-for-system-z-eus-debug-rpms",
+											"rhel-6-for-system-z-eus-optional-debug-rpms",
+											"rhel-6-for-system-z-eus-optional-rpms",
+											"rhel-6-for-system-z-eus-optional-source-rpms",
+											"rhel-6-for-system-z-eus-rpms",
+											"rhel-6-for-system-z-eus-source-rpms",
+											"rhel-6-for-system-z-eus-supplementary-debuginfo",
+											"rhel-6-for-system-z-eus-supplementary-rpms",
+											"rhel-6-for-system-z-eus-supplementary-source-rpms",
+											"rhel-6-for-system-z-extended-els-debug-rpms",
+											"rhel-6-for-system-z-extended-els-debug-rpms__s390x",
+											"rhel-6-for-system-z-extended-els-optional-debug-rpms",
+											"rhel-6-for-system-z-extended-els-optional-debug-rpms__s390x",
+											"rhel-6-for-system-z-extended-els-optional-rpms",
+											"rhel-6-for-system-z-extended-els-optional-rpms__s390x",
+											"rhel-6-for-system-z-extended-els-optional-source-rpms",
+											"rhel-6-for-system-z-extended-els-optional-source-rpms__s390x",
+											"rhel-6-for-system-z-extended-els-rpms",
+											"rhel-6-for-system-z-extended-els-rpms__s390x",
+											"rhel-6-for-system-z-extended-els-source-rpms",
+											"rhel-6-for-system-z-extended-els-source-rpms__s390x",
+											"rhel-6-for-system-z-fastrack-debug-rpms",
+											"rhel-6-for-system-z-fastrack-rpms",
+											"rhel-6-for-system-z-fastrack-source-rpms",
+											"rhel-6-for-system-z-optional-debug-rpms",
+											"rhel-6-for-system-z-optional-fastrack-debug-rpms",
+											"rhel-6-for-system-z-optional-fastrack-rpms",
+											"rhel-6-for-system-z-optional-fastrack-source-rpms",
+											"rhel-6-for-system-z-optional-rpms",
+											"rhel-6-for-system-z-optional-source-rpms",
+											"rhel-6-for-system-z-rpms",
+											"rhel-6-for-system-z-source-rpms",
+											"rhel-6-for-system-z-supplementary-debuginfo",
+											"rhel-6-for-system-z-supplementary-rpms",
+											"rhel-6-for-system-z-supplementary-source-rpms",
+											"rhel-6-hpc-node-debug-rpms",
+											"rhel-6-hpc-node-optional-debug-rpms",
+											"rhel-6-hpc-node-optional-rpms",
+											"rhel-6-hpc-node-optional-source-rpms",
+											"rhel-6-hpc-node-rpms",
+											"rhel-6-hpc-node-source-rpms",
+											"rhel-6-server-aus-debug-rpms",
+											"rhel-6-server-aus-optional-debug-rpms",
+											"rhel-6-server-aus-optional-rpms",
+											"rhel-6-server-aus-optional-source-rpms",
+											"rhel-6-server-aus-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-aus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-aus-rpms",
+											"rhel-6-server-aus-source-rpms",
+											"rhel-6-server-aus-supplementary-debuginfo",
+											"rhel-6-server-aus-supplementary-rpms",
+											"rhel-6-server-aus-supplementary-source-rpms",
+											"rhel-6-server-debug-rpms",
+											"rhel-6-server-els-debug-rpms",
+											"rhel-6-server-els-debug-rpms__i386",
+											"rhel-6-server-els-debug-rpms__x86_64",
+											"rhel-6-server-els-optional-debug-rpms",
+											"rhel-6-server-els-optional-debug-rpms__i386",
+											"rhel-6-server-els-optional-debug-rpms__x86_64",
+											"rhel-6-server-els-optional-rpms",
+											"rhel-6-server-els-optional-rpms__i386",
+											"rhel-6-server-els-optional-rpms__x86_64",
+											"rhel-6-server-els-optional-source-rpms",
+											"rhel-6-server-els-optional-source-rpms__i386",
+											"rhel-6-server-els-optional-source-rpms__x86_64",
+											"rhel-6-server-els-rpms",
+											"rhel-6-server-els-rpms__i386",
+											"rhel-6-server-els-rpms__x86_64",
+											"rhel-6-server-els-source-rpms",
+											"rhel-6-server-els-source-rpms__i386",
+											"rhel-6-server-els-source-rpms__x86_64",
+											"rhel-6-server-eus-debug-rpms",
+											"rhel-6-server-eus-optional-debug-rpms",
+											"rhel-6-server-eus-optional-rpms",
+											"rhel-6-server-eus-optional-source-rpms",
+											"rhel-6-server-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-eus-rpms",
+											"rhel-6-server-eus-source-rpms",
+											"rhel-6-server-eus-supplementary-debuginfo",
+											"rhel-6-server-eus-supplementary-rpms",
+											"rhel-6-server-eus-supplementary-source-rpms",
+											"rhel-6-server-extended-els-debug-rpms",
+											"rhel-6-server-extended-els-debug-rpms__i386",
+											"rhel-6-server-extended-els-debug-rpms__x86_64",
+											"rhel-6-server-extended-els-optional-debug-rpms",
+											"rhel-6-server-extended-els-optional-debug-rpms__i386",
+											"rhel-6-server-extended-els-optional-debug-rpms__x86_64",
+											"rhel-6-server-extended-els-optional-rpms",
+											"rhel-6-server-extended-els-optional-rpms__i386",
+											"rhel-6-server-extended-els-optional-rpms__x86_64",
+											"rhel-6-server-extended-els-optional-source-rpms",
+											"rhel-6-server-extended-els-optional-source-rpms__i386",
+											"rhel-6-server-extended-els-optional-source-rpms__x86_64",
+											"rhel-6-server-extended-els-rpms",
+											"rhel-6-server-extended-els-rpms__i386",
+											"rhel-6-server-extended-els-rpms__x86_64",
+											"rhel-6-server-extended-els-source-rpms",
+											"rhel-6-server-extended-els-source-rpms__i386",
+											"rhel-6-server-extended-els-source-rpms__x86_64",
+											"rhel-6-server-fastrack-debug-rpms",
+											"rhel-6-server-fastrack-rpms",
+											"rhel-6-server-fastrack-source-rpms",
+											"rhel-6-server-optional-debug-rpms",
+											"rhel-6-server-optional-fastrack-debug-rpms",
+											"rhel-6-server-optional-fastrack-rpms",
+											"rhel-6-server-optional-fastrack-source-rpms",
+											"rhel-6-server-optional-rpms",
+											"rhel-6-server-optional-source-rpms",
+											"rhel-6-server-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-server-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-server-retired-els-debug-rpms",
+											"rhel-6-server-retired-els-debug-rpms__x86_64",
+											"rhel-6-server-retired-els-optional-debug-rpms",
+											"rhel-6-server-retired-els-optional-debug-rpms__x86_64",
+											"rhel-6-server-retired-els-optional-rpms",
+											"rhel-6-server-retired-els-optional-rpms__x86_64",
+											"rhel-6-server-retired-els-optional-source-rpms",
+											"rhel-6-server-retired-els-optional-source-rpms__x86_64",
+											"rhel-6-server-retired-els-rpms",
+											"rhel-6-server-retired-els-rpms__x86_64",
+											"rhel-6-server-retired-els-source-rpms",
+											"rhel-6-server-retired-els-source-rpms__x86_64",
+											"rhel-6-server-rpms",
+											"rhel-6-server-source-rpms",
+											"rhel-6-server-supplementary-debuginfo",
+											"rhel-6-server-supplementary-rpms",
+											"rhel-6-server-supplementary-source-rpms",
+											"rhel-6-workstation-debug-rpms",
+											"rhel-6-workstation-fastrack-debug-rpms",
+											"rhel-6-workstation-fastrack-rpms",
+											"rhel-6-workstation-fastrack-source-rpms",
+											"rhel-6-workstation-optional-debug-rpms",
+											"rhel-6-workstation-optional-fastrack-debug-rpms",
+											"rhel-6-workstation-optional-fastrack-rpms",
+											"rhel-6-workstation-optional-fastrack-source-rpms",
+											"rhel-6-workstation-optional-rpms",
+											"rhel-6-workstation-optional-source-rpms",
+											"rhel-6-workstation-restricted-maintenance-oracle-java-rpms",
+											"rhel-6-workstation-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-6-workstation-rpms",
+											"rhel-6-workstation-source-rpms",
+											"rhel-6-workstation-supplementary-debuginfo",
+											"rhel-6-workstation-supplementary-rpms",
+											"rhel-6-workstation-supplementary-source-rpms",
+											"rhel-ha-for-rhel-6-server-debug-rpms",
+											"rhel-ha-for-rhel-6-server-eus-debug-rpms",
+											"rhel-ha-for-rhel-6-server-eus-rpms",
+											"rhel-ha-for-rhel-6-server-eus-source-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-rpms",
+											"rhel-ha-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-ha-for-rhel-6-server-rpms",
+											"rhel-ha-for-rhel-6-server-source-rpms",
+											"rhel-hpc-node-6-eus-debug-rpms",
+											"rhel-hpc-node-6-eus-hpn-debug-rpms",
+											"rhel-hpc-node-6-eus-hpn-rpms",
+											"rhel-hpc-node-6-eus-hpn-source-rpms",
+											"rhel-hpc-node-6-eus-optional-debug-rpms",
+											"rhel-hpc-node-6-eus-optional-rpms",
+											"rhel-hpc-node-6-eus-optional-source-rpms",
+											"rhel-hpc-node-6-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-hpc-node-6-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-hpc-node-6-eus-rpms",
+											"rhel-hpc-node-6-eus-sfs-debug-rpms",
+											"rhel-hpc-node-6-eus-sfs-rpms",
+											"rhel-hpc-node-6-eus-sfs-source-rpms",
+											"rhel-hpc-node-6-eus-source-rpms",
+											"rhel-hpc-node-6-eus-supplementary-debug-rpms",
+											"rhel-hpc-node-6-eus-supplementary-rpms",
+											"rhel-hpc-node-6-eus-supplementary-source-rpms",
+											"rhel-hpn-for-rhel-6-for-power-debug-rpms",
+											"rhel-hpn-for-rhel-6-for-power-rpms",
+											"rhel-hpn-for-rhel-6-for-power-source-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-debug-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-debug-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-fastrack-source-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-rpms",
+											"rhel-hpn-for-rhel-6-hpc-node-source-rpms",
+											"rhel-hpn-for-rhel-6-server-debug-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-rpms",
+											"rhel-hpn-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-hpn-for-rhel-6-server-rpms",
+											"rhel-hpn-for-rhel-6-server-source-rpms",
+											"rhel-lb-for-rhel-6-server-debug-rpms",
+											"rhel-lb-for-rhel-6-server-eus-debug-rpms",
+											"rhel-lb-for-rhel-6-server-eus-rpms",
+											"rhel-lb-for-rhel-6-server-eus-source-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-rpms",
+											"rhel-lb-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-lb-for-rhel-6-server-rpms",
+											"rhel-lb-for-rhel-6-server-source-rpms",
+											"rhel-rs-for-rhel-6-server-debug-rpms",
+											"rhel-rs-for-rhel-6-server-eus-debug-rpms",
+											"rhel-rs-for-rhel-6-server-eus-rpms",
+											"rhel-rs-for-rhel-6-server-eus-source-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-rpms",
+											"rhel-rs-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-rs-for-rhel-6-server-rpms",
+											"rhel-rs-for-rhel-6-server-source-rpms",
+											"rhel-sap-for-rhel-6-for-power-debug-rpms",
+											"rhel-sap-for-rhel-6-for-power-rpms",
+											"rhel-sap-for-rhel-6-for-power-source-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-debug-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-els-debug-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-els-debug-rpms__s390x",
+											"rhel-sap-for-rhel-6-for-system-z-els-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-els-rpms__s390x",
+											"rhel-sap-for-rhel-6-for-system-z-els-source-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-els-source-rpms__s390x",
+											"rhel-sap-for-rhel-6-for-system-z-extended-els-debug-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-extended-els-debug-rpms__s390x",
+											"rhel-sap-for-rhel-6-for-system-z-extended-els-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-extended-els-rpms__s390x",
+											"rhel-sap-for-rhel-6-for-system-z-extended-els-source-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-extended-els-source-rpms__s390x",
+											"rhel-sap-for-rhel-6-for-system-z-rpms",
+											"rhel-sap-for-rhel-6-for-system-z-source-rpms",
+											"rhel-sap-for-rhel-6-server-debug-rpms",
+											"rhel-sap-for-rhel-6-server-els-debug-rpms",
+											"rhel-sap-for-rhel-6-server-els-debug-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-els-rpms",
+											"rhel-sap-for-rhel-6-server-els-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-els-source-rpms",
+											"rhel-sap-for-rhel-6-server-els-source-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sap-for-rhel-6-server-eus-rpms",
+											"rhel-sap-for-rhel-6-server-eus-source-rpms",
+											"rhel-sap-for-rhel-6-server-extended-els-debug-rpms",
+											"rhel-sap-for-rhel-6-server-extended-els-debug-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-extended-els-rpms",
+											"rhel-sap-for-rhel-6-server-extended-els-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-extended-els-source-rpms",
+											"rhel-sap-for-rhel-6-server-extended-els-source-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-retired-els-debug-rpms",
+											"rhel-sap-for-rhel-6-server-retired-els-debug-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-retired-els-rpms",
+											"rhel-sap-for-rhel-6-server-retired-els-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-retired-els-source-rpms",
+											"rhel-sap-for-rhel-6-server-retired-els-source-rpms__x86_64",
+											"rhel-sap-for-rhel-6-server-rpms",
+											"rhel-sap-for-rhel-6-server-source-rpms",
+											"rhel-sap-hana-for-rhel-6-server-debug-rpms",
+											"rhel-sap-hana-for-rhel-6-server-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-6-server-els-debug-rpms__x86_64",
+											"rhel-sap-hana-for-rhel-6-server-els-rpms",
+											"rhel-sap-hana-for-rhel-6-server-els-rpms__x86_64",
+											"rhel-sap-hana-for-rhel-6-server-els-source-rpms",
+											"rhel-sap-hana-for-rhel-6-server-els-source-rpms__x86_64",
+											"rhel-sap-hana-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-6-server-eus-rpms",
+											"rhel-sap-hana-for-rhel-6-server-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-6-server-extended-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-6-server-extended-els-debug-rpms__x86_64",
+											"rhel-sap-hana-for-rhel-6-server-extended-els-rpms",
+											"rhel-sap-hana-for-rhel-6-server-extended-els-rpms__x86_64",
+											"rhel-sap-hana-for-rhel-6-server-extended-els-source-rpms",
+											"rhel-sap-hana-for-rhel-6-server-extended-els-source-rpms__x86_64",
+											"rhel-sap-hana-for-rhel-6-server-rpms",
+											"rhel-sap-hana-for-rhel-6-server-source-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-debug-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-rpms",
+											"rhel-scalefs-for-rhel-6-hpc-node-source-rpms",
+											"rhel-scalefs-for-rhel-6-server-debug-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-server-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-server-rpms",
+											"rhel-scalefs-for-rhel-6-server-source-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-debug-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-debug-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-fastrack-source-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-rpms",
+											"rhel-scalefs-for-rhel-6-workstation-source-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-debug-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-rpms",
+											"rhel-sfs-for-rhel-6-server-eus-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:38.0-4.el6_6"
+											}
+										],
+										"fixed": [
+											"0:38.0-4.el6_6"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-6-els"
+				}
+			]
+		},
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "firefox",
+										"architectures": [
+											"i686",
+											"ppc",
+											"ppc64",
+											"s390",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-7-desktop-debug-rpms",
+											"rhel-7-desktop-fastrack-debug-rpms",
+											"rhel-7-desktop-fastrack-rpms",
+											"rhel-7-desktop-fastrack-source-rpms",
+											"rhel-7-desktop-optional-debug-rpms",
+											"rhel-7-desktop-optional-fastrack-debug-rpms",
+											"rhel-7-desktop-optional-fastrack-rpms",
+											"rhel-7-desktop-optional-fastrack-source-rpms",
+											"rhel-7-desktop-optional-rpms",
+											"rhel-7-desktop-optional-source-rpms",
+											"rhel-7-desktop-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-desktop-rpms",
+											"rhel-7-desktop-source-rpms",
+											"rhel-7-desktop-supplementary-debug-rpms",
+											"rhel-7-desktop-supplementary-rpms",
+											"rhel-7-desktop-supplementary-source-rpms",
+											"rhel-7-for-arm-64-debug-rpms",
+											"rhel-7-for-arm-64-optional-debug-rpms",
+											"rhel-7-for-arm-64-optional-rpms",
+											"rhel-7-for-arm-64-optional-source-rpms",
+											"rhel-7-for-arm-64-rpms",
+											"rhel-7-for-arm-64-source-rpms",
+											"rhel-7-for-hpc-node-fastrack-debug-rpms",
+											"rhel-7-for-hpc-node-fastrack-rpms",
+											"rhel-7-for-hpc-node-fastrack-source-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-debug-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-source-rpms",
+											"rhel-7-for-hpc-node-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-for-hpc-node-supplementary-debug-rpms",
+											"rhel-7-for-hpc-node-supplementary-rpms",
+											"rhel-7-for-hpc-node-supplementary-source-rpms",
+											"rhel-7-for-power-9-debug-rpms",
+											"rhel-7-for-power-9-optional-debug-rpms",
+											"rhel-7-for-power-9-optional-rpms",
+											"rhel-7-for-power-9-optional-source-rpms",
+											"rhel-7-for-power-9-rpms",
+											"rhel-7-for-power-9-source-rpms",
+											"rhel-7-for-power-9-supplementary-debug-rpms",
+											"rhel-7-for-power-9-supplementary-source-rpms",
+											"rhel-7-for-power-debug-rpms",
+											"rhel-7-for-power-els-debug-rpms",
+											"rhel-7-for-power-els-optional-debug-rpms",
+											"rhel-7-for-power-els-optional-rpms",
+											"rhel-7-for-power-els-optional-source-rpms",
+											"rhel-7-for-power-els-rpms",
+											"rhel-7-for-power-els-source-rpms",
+											"rhel-7-for-power-eus-debug-rpms",
+											"rhel-7-for-power-eus-optional-debug-rpms",
+											"rhel-7-for-power-eus-optional-rpms",
+											"rhel-7-for-power-eus-optional-source-rpms",
+											"rhel-7-for-power-eus-rpms",
+											"rhel-7-for-power-eus-source-rpms",
+											"rhel-7-for-power-eus-supplementary-debuginfo",
+											"rhel-7-for-power-eus-supplementary-rpms",
+											"rhel-7-for-power-eus-supplementary-source-rpms",
+											"rhel-7-for-power-fastrack-debug-rpms",
+											"rhel-7-for-power-fastrack-rpms",
+											"rhel-7-for-power-fastrack-source-rpms",
+											"rhel-7-for-power-le-debug-rpms",
+											"rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-7-for-power-le-e4s-optional-debug-rpms",
+											"rhel-7-for-power-le-e4s-optional-rpms",
+											"rhel-7-for-power-le-e4s-optional-source-rpms",
+											"rhel-7-for-power-le-e4s-rpms",
+											"rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-7-for-power-le-els-debug-rpms",
+											"rhel-7-for-power-le-els-optional-debug-rpms",
+											"rhel-7-for-power-le-els-optional-rpms",
+											"rhel-7-for-power-le-els-optional-source-rpms",
+											"rhel-7-for-power-le-els-rpms",
+											"rhel-7-for-power-le-els-source-rpms",
+											"rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-7-for-power-le-eus-optional-debug-rpms",
+											"rhel-7-for-power-le-eus-optional-rpms",
+											"rhel-7-for-power-le-eus-optional-source-rpms",
+											"rhel-7-for-power-le-eus-rpms",
+											"rhel-7-for-power-le-eus-source-rpms",
+											"rhel-7-for-power-le-eus-supplementary-debug-rpms",
+											"rhel-7-for-power-le-eus-supplementary-rpms",
+											"rhel-7-for-power-le-eus-supplementary-source-rpms",
+											"rhel-7-for-power-le-optional-debug-rpms",
+											"rhel-7-for-power-le-optional-rpms",
+											"rhel-7-for-power-le-optional-source-rpms",
+											"rhel-7-for-power-le-rpms",
+											"rhel-7-for-power-le-source-rpms",
+											"rhel-7-for-power-le-supplementary-debug-rpms",
+											"rhel-7-for-power-le-supplementary-rpms",
+											"rhel-7-for-power-le-supplementary-source-rpms",
+											"rhel-7-for-power-optional-debug-rpms",
+											"rhel-7-for-power-optional-fastrack-debug-rpms",
+											"rhel-7-for-power-optional-fastrack-rpms",
+											"rhel-7-for-power-optional-fastrack-source-rpms",
+											"rhel-7-for-power-optional-rpms",
+											"rhel-7-for-power-optional-source-rpms",
+											"rhel-7-for-power-rpms",
+											"rhel-7-for-power-source-rpms",
+											"rhel-7-for-power-supplementary-debug-rpms",
+											"rhel-7-for-power-supplementary-rpms",
+											"rhel-7-for-power-supplementary-source-rpms",
+											"rhel-7-for-system-z-a-debug-rpms",
+											"rhel-7-for-system-z-a-optional-debug-rpms",
+											"rhel-7-for-system-z-a-optional-rpms",
+											"rhel-7-for-system-z-a-optional-source-rpms",
+											"rhel-7-for-system-z-a-rpms",
+											"rhel-7-for-system-z-a-source-rpms",
+											"rhel-7-for-system-z-debug-rpms",
+											"rhel-7-for-system-z-els-debug-rpms",
+											"rhel-7-for-system-z-els-optional-debug-rpms",
+											"rhel-7-for-system-z-els-optional-rpms",
+											"rhel-7-for-system-z-els-optional-source-rpms",
+											"rhel-7-for-system-z-els-rpms",
+											"rhel-7-for-system-z-els-source-rpms",
+											"rhel-7-for-system-z-eus-debug-rpms",
+											"rhel-7-for-system-z-eus-optional-debug-rpms",
+											"rhel-7-for-system-z-eus-optional-rpms",
+											"rhel-7-for-system-z-eus-optional-source-rpms",
+											"rhel-7-for-system-z-eus-rpms",
+											"rhel-7-for-system-z-eus-source-rpms",
+											"rhel-7-for-system-z-eus-supplementary-debuginfo",
+											"rhel-7-for-system-z-eus-supplementary-rpms",
+											"rhel-7-for-system-z-eus-supplementary-source-rpms",
+											"rhel-7-for-system-z-fastrack-debug-rpms",
+											"rhel-7-for-system-z-fastrack-rpms",
+											"rhel-7-for-system-z-fastrack-source-rpms",
+											"rhel-7-for-system-z-optional-debug-rpms",
+											"rhel-7-for-system-z-optional-fastrack-debug-rpms",
+											"rhel-7-for-system-z-optional-fastrack-rpms",
+											"rhel-7-for-system-z-optional-fastrack-source-rpms",
+											"rhel-7-for-system-z-optional-rpms",
+											"rhel-7-for-system-z-optional-source-rpms",
+											"rhel-7-for-system-z-rpms",
+											"rhel-7-for-system-z-source-rpms",
+											"rhel-7-for-system-z-supplementary-debug-rpms",
+											"rhel-7-for-system-z-supplementary-rpms",
+											"rhel-7-for-system-z-supplementary-source-rpms",
+											"rhel-7-hpc-node-debug-rpms",
+											"rhel-7-hpc-node-eus-debug-rpms",
+											"rhel-7-hpc-node-eus-optional-debug-rpms",
+											"rhel-7-hpc-node-eus-optional-rpms",
+											"rhel-7-hpc-node-eus-optional-source-rpms",
+											"rhel-7-hpc-node-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-hpc-node-eus-rpms",
+											"rhel-7-hpc-node-eus-source-rpms",
+											"rhel-7-hpc-node-eus-supplementary-debug-rpms",
+											"rhel-7-hpc-node-eus-supplementary-rpms",
+											"rhel-7-hpc-node-eus-supplementary-source-rpms",
+											"rhel-7-hpc-node-optional-debug-rpms",
+											"rhel-7-hpc-node-optional-rpms",
+											"rhel-7-hpc-node-optional-source-rpms",
+											"rhel-7-hpc-node-rpms",
+											"rhel-7-hpc-node-source-rpms",
+											"rhel-7-server-aus-debug-rpms",
+											"rhel-7-server-aus-optional-debug-rpms",
+											"rhel-7-server-aus-optional-rpms",
+											"rhel-7-server-aus-optional-source-rpms",
+											"rhel-7-server-aus-rpms",
+											"rhel-7-server-aus-source-rpms",
+											"rhel-7-server-debug-rpms",
+											"rhel-7-server-e4s-debug-rpms",
+											"rhel-7-server-e4s-optional-debug-rpms",
+											"rhel-7-server-e4s-optional-rpms",
+											"rhel-7-server-e4s-optional-source-rpms",
+											"rhel-7-server-e4s-rpms",
+											"rhel-7-server-e4s-source-rpms",
+											"rhel-7-server-els-debug-rpms",
+											"rhel-7-server-els-optional-debug-rpms",
+											"rhel-7-server-els-optional-rpms",
+											"rhel-7-server-els-optional-source-rpms",
+											"rhel-7-server-els-rpms",
+											"rhel-7-server-els-source-rpms",
+											"rhel-7-server-eus-debug-rpms",
+											"rhel-7-server-eus-optional-debug-rpms",
+											"rhel-7-server-eus-optional-rpms",
+											"rhel-7-server-eus-optional-source-rpms",
+											"rhel-7-server-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-server-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-7-server-eus-rpms",
+											"rhel-7-server-eus-source-rpms",
+											"rhel-7-server-eus-supplementary-debuginfo",
+											"rhel-7-server-eus-supplementary-rpms",
+											"rhel-7-server-eus-supplementary-source-rpms",
+											"rhel-7-server-fastrack-debug-rpms",
+											"rhel-7-server-fastrack-rpms",
+											"rhel-7-server-fastrack-source-rpms",
+											"rhel-7-server-nfv-debug-rpms",
+											"rhel-7-server-nfv-rpms",
+											"rhel-7-server-nfv-source-rpms",
+											"rhel-7-server-optional-debug-rpms",
+											"rhel-7-server-optional-fastrack-debug-rpms",
+											"rhel-7-server-optional-fastrack-rpms",
+											"rhel-7-server-optional-fastrack-source-rpms",
+											"rhel-7-server-optional-rpms",
+											"rhel-7-server-optional-source-rpms",
+											"rhel-7-server-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-server-rpms",
+											"rhel-7-server-rt-debug-rpms",
+											"rhel-7-server-rt-els-debug-rpms",
+											"rhel-7-server-rt-els-rpms",
+											"rhel-7-server-rt-els-source-rpms",
+											"rhel-7-server-rt-rpms",
+											"rhel-7-server-rt-source-rpms",
+											"rhel-7-server-source-rpms",
+											"rhel-7-server-supplementary-debug-rpms",
+											"rhel-7-server-supplementary-rpms",
+											"rhel-7-server-supplementary-source-rpms",
+											"rhel-7-server-tus-debug-rpms",
+											"rhel-7-server-tus-optional-debug-rpms",
+											"rhel-7-server-tus-optional-rpms",
+											"rhel-7-server-tus-optional-source-rpms",
+											"rhel-7-server-tus-rpms",
+											"rhel-7-server-tus-source-rpms",
+											"rhel-7-workstation-debug-rpms",
+											"rhel-7-workstation-fastrack-debug-rpms",
+											"rhel-7-workstation-fastrack-rpms",
+											"rhel-7-workstation-fastrack-source-rpms",
+											"rhel-7-workstation-optional-debug-rpms",
+											"rhel-7-workstation-optional-fastrack-debug-rpms",
+											"rhel-7-workstation-optional-fastrack-rpms",
+											"rhel-7-workstation-optional-fastrack-source-rpms",
+											"rhel-7-workstation-optional-rpms",
+											"rhel-7-workstation-optional-source-rpms",
+											"rhel-7-workstation-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-workstation-rpms",
+											"rhel-7-workstation-source-rpms",
+											"rhel-7-workstation-supplementary-debug-rpms",
+											"rhel-7-workstation-supplementary-rpms",
+											"rhel-7-workstation-supplementary-source-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-source-rpms",
+											"rhel-ha-for-rhel-7-server-debug-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-source-rpms",
+											"rhel-ha-for-rhel-7-server-els-debug-rpms",
+											"rhel-ha-for-rhel-7-server-els-rpms",
+											"rhel-ha-for-rhel-7-server-els-source-rpms",
+											"rhel-ha-for-rhel-7-server-eus-debug-rpms",
+											"rhel-ha-for-rhel-7-server-eus-rpms",
+											"rhel-ha-for-rhel-7-server-eus-source-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-debug-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-source-rpms",
+											"rhel-ha-for-rhel-7-server-rpms",
+											"rhel-ha-for-rhel-7-server-source-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-source-rpms",
+											"rhel-rs-for-rhel-7-server-debug-rpms",
+											"rhel-rs-for-rhel-7-server-els-debug-rpms",
+											"rhel-rs-for-rhel-7-server-els-rpms",
+											"rhel-rs-for-rhel-7-server-els-source-rpms",
+											"rhel-rs-for-rhel-7-server-eus-debug-rpms",
+											"rhel-rs-for-rhel-7-server-eus-rpms",
+											"rhel-rs-for-rhel-7-server-eus-source-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-debug-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-source-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-debug-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-debug-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-source-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-source-rpms",
+											"rhel-rs-for-rhel-7-server-rpms",
+											"rhel-rs-for-rhel-7-server-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-rpms",
+											"rhel-sap-for-rhel-7-for-power-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-source-rpms",
+											"rhel-sap-for-rhel-7-server-debug-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-source-rpms",
+											"rhel-sap-for-rhel-7-server-els-debug-rpms",
+											"rhel-sap-for-rhel-7-server-els-rpms",
+											"rhel-sap-for-rhel-7-server-els-source-rpms",
+											"rhel-sap-for-rhel-7-server-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-server-eus-rpms",
+											"rhel-sap-for-rhel-7-server-eus-source-rpms",
+											"rhel-sap-for-rhel-7-server-rpms",
+											"rhel-sap-for-rhel-7-server-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-rpms",
+											"rhel-sap-hana-for-rhel-7-server-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:38.0-3.el7_1"
+											}
+										],
+										"fixed": [
+											"0:38.0-3.el7_1"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-7-including-unpatched"
+				},
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "firefox",
+										"architectures": [
+											"i686",
+											"ppc",
+											"ppc64",
+											"s390",
+											"s390x",
+											"x86_64"
+										],
+										"repositories": [
+											"rhel-7-desktop-debug-rpms",
+											"rhel-7-desktop-fastrack-debug-rpms",
+											"rhel-7-desktop-fastrack-rpms",
+											"rhel-7-desktop-fastrack-source-rpms",
+											"rhel-7-desktop-optional-debug-rpms",
+											"rhel-7-desktop-optional-fastrack-debug-rpms",
+											"rhel-7-desktop-optional-fastrack-rpms",
+											"rhel-7-desktop-optional-fastrack-source-rpms",
+											"rhel-7-desktop-optional-rpms",
+											"rhel-7-desktop-optional-source-rpms",
+											"rhel-7-desktop-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-desktop-rpms",
+											"rhel-7-desktop-source-rpms",
+											"rhel-7-desktop-supplementary-debug-rpms",
+											"rhel-7-desktop-supplementary-rpms",
+											"rhel-7-desktop-supplementary-source-rpms",
+											"rhel-7-for-arm-64-debug-rpms",
+											"rhel-7-for-arm-64-optional-debug-rpms",
+											"rhel-7-for-arm-64-optional-rpms",
+											"rhel-7-for-arm-64-optional-source-rpms",
+											"rhel-7-for-arm-64-rpms",
+											"rhel-7-for-arm-64-source-rpms",
+											"rhel-7-for-hpc-node-fastrack-debug-rpms",
+											"rhel-7-for-hpc-node-fastrack-rpms",
+											"rhel-7-for-hpc-node-fastrack-source-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-debug-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-rpms",
+											"rhel-7-for-hpc-node-optional-fastrack-source-rpms",
+											"rhel-7-for-hpc-node-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-for-hpc-node-supplementary-debug-rpms",
+											"rhel-7-for-hpc-node-supplementary-rpms",
+											"rhel-7-for-hpc-node-supplementary-source-rpms",
+											"rhel-7-for-power-9-debug-rpms",
+											"rhel-7-for-power-9-optional-debug-rpms",
+											"rhel-7-for-power-9-optional-rpms",
+											"rhel-7-for-power-9-optional-source-rpms",
+											"rhel-7-for-power-9-rpms",
+											"rhel-7-for-power-9-source-rpms",
+											"rhel-7-for-power-9-supplementary-debug-rpms",
+											"rhel-7-for-power-9-supplementary-source-rpms",
+											"rhel-7-for-power-debug-rpms",
+											"rhel-7-for-power-els-debug-rpms",
+											"rhel-7-for-power-els-optional-debug-rpms",
+											"rhel-7-for-power-els-optional-rpms",
+											"rhel-7-for-power-els-optional-source-rpms",
+											"rhel-7-for-power-els-rpms",
+											"rhel-7-for-power-els-source-rpms",
+											"rhel-7-for-power-eus-debug-rpms",
+											"rhel-7-for-power-eus-optional-debug-rpms",
+											"rhel-7-for-power-eus-optional-rpms",
+											"rhel-7-for-power-eus-optional-source-rpms",
+											"rhel-7-for-power-eus-rpms",
+											"rhel-7-for-power-eus-source-rpms",
+											"rhel-7-for-power-eus-supplementary-debuginfo",
+											"rhel-7-for-power-eus-supplementary-rpms",
+											"rhel-7-for-power-eus-supplementary-source-rpms",
+											"rhel-7-for-power-fastrack-debug-rpms",
+											"rhel-7-for-power-fastrack-rpms",
+											"rhel-7-for-power-fastrack-source-rpms",
+											"rhel-7-for-power-le-debug-rpms",
+											"rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-7-for-power-le-e4s-optional-debug-rpms",
+											"rhel-7-for-power-le-e4s-optional-rpms",
+											"rhel-7-for-power-le-e4s-optional-source-rpms",
+											"rhel-7-for-power-le-e4s-rpms",
+											"rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-7-for-power-le-els-debug-rpms",
+											"rhel-7-for-power-le-els-optional-debug-rpms",
+											"rhel-7-for-power-le-els-optional-rpms",
+											"rhel-7-for-power-le-els-optional-source-rpms",
+											"rhel-7-for-power-le-els-rpms",
+											"rhel-7-for-power-le-els-source-rpms",
+											"rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-7-for-power-le-eus-optional-debug-rpms",
+											"rhel-7-for-power-le-eus-optional-rpms",
+											"rhel-7-for-power-le-eus-optional-source-rpms",
+											"rhel-7-for-power-le-eus-rpms",
+											"rhel-7-for-power-le-eus-source-rpms",
+											"rhel-7-for-power-le-eus-supplementary-debug-rpms",
+											"rhel-7-for-power-le-eus-supplementary-rpms",
+											"rhel-7-for-power-le-eus-supplementary-source-rpms",
+											"rhel-7-for-power-le-optional-debug-rpms",
+											"rhel-7-for-power-le-optional-rpms",
+											"rhel-7-for-power-le-optional-source-rpms",
+											"rhel-7-for-power-le-rpms",
+											"rhel-7-for-power-le-source-rpms",
+											"rhel-7-for-power-le-supplementary-debug-rpms",
+											"rhel-7-for-power-le-supplementary-rpms",
+											"rhel-7-for-power-le-supplementary-source-rpms",
+											"rhel-7-for-power-optional-debug-rpms",
+											"rhel-7-for-power-optional-fastrack-debug-rpms",
+											"rhel-7-for-power-optional-fastrack-rpms",
+											"rhel-7-for-power-optional-fastrack-source-rpms",
+											"rhel-7-for-power-optional-rpms",
+											"rhel-7-for-power-optional-source-rpms",
+											"rhel-7-for-power-rpms",
+											"rhel-7-for-power-source-rpms",
+											"rhel-7-for-power-supplementary-debug-rpms",
+											"rhel-7-for-power-supplementary-rpms",
+											"rhel-7-for-power-supplementary-source-rpms",
+											"rhel-7-for-system-z-a-debug-rpms",
+											"rhel-7-for-system-z-a-optional-debug-rpms",
+											"rhel-7-for-system-z-a-optional-rpms",
+											"rhel-7-for-system-z-a-optional-source-rpms",
+											"rhel-7-for-system-z-a-rpms",
+											"rhel-7-for-system-z-a-source-rpms",
+											"rhel-7-for-system-z-debug-rpms",
+											"rhel-7-for-system-z-els-debug-rpms",
+											"rhel-7-for-system-z-els-optional-debug-rpms",
+											"rhel-7-for-system-z-els-optional-rpms",
+											"rhel-7-for-system-z-els-optional-source-rpms",
+											"rhel-7-for-system-z-els-rpms",
+											"rhel-7-for-system-z-els-source-rpms",
+											"rhel-7-for-system-z-eus-debug-rpms",
+											"rhel-7-for-system-z-eus-optional-debug-rpms",
+											"rhel-7-for-system-z-eus-optional-rpms",
+											"rhel-7-for-system-z-eus-optional-source-rpms",
+											"rhel-7-for-system-z-eus-rpms",
+											"rhel-7-for-system-z-eus-source-rpms",
+											"rhel-7-for-system-z-eus-supplementary-debuginfo",
+											"rhel-7-for-system-z-eus-supplementary-rpms",
+											"rhel-7-for-system-z-eus-supplementary-source-rpms",
+											"rhel-7-for-system-z-fastrack-debug-rpms",
+											"rhel-7-for-system-z-fastrack-rpms",
+											"rhel-7-for-system-z-fastrack-source-rpms",
+											"rhel-7-for-system-z-optional-debug-rpms",
+											"rhel-7-for-system-z-optional-fastrack-debug-rpms",
+											"rhel-7-for-system-z-optional-fastrack-rpms",
+											"rhel-7-for-system-z-optional-fastrack-source-rpms",
+											"rhel-7-for-system-z-optional-rpms",
+											"rhel-7-for-system-z-optional-source-rpms",
+											"rhel-7-for-system-z-rpms",
+											"rhel-7-for-system-z-source-rpms",
+											"rhel-7-for-system-z-supplementary-debug-rpms",
+											"rhel-7-for-system-z-supplementary-rpms",
+											"rhel-7-for-system-z-supplementary-source-rpms",
+											"rhel-7-hpc-node-debug-rpms",
+											"rhel-7-hpc-node-eus-debug-rpms",
+											"rhel-7-hpc-node-eus-optional-debug-rpms",
+											"rhel-7-hpc-node-eus-optional-rpms",
+											"rhel-7-hpc-node-eus-optional-source-rpms",
+											"rhel-7-hpc-node-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-hpc-node-eus-rpms",
+											"rhel-7-hpc-node-eus-source-rpms",
+											"rhel-7-hpc-node-eus-supplementary-debug-rpms",
+											"rhel-7-hpc-node-eus-supplementary-rpms",
+											"rhel-7-hpc-node-eus-supplementary-source-rpms",
+											"rhel-7-hpc-node-optional-debug-rpms",
+											"rhel-7-hpc-node-optional-rpms",
+											"rhel-7-hpc-node-optional-source-rpms",
+											"rhel-7-hpc-node-rpms",
+											"rhel-7-hpc-node-source-rpms",
+											"rhel-7-server-aus-debug-rpms",
+											"rhel-7-server-aus-optional-debug-rpms",
+											"rhel-7-server-aus-optional-rpms",
+											"rhel-7-server-aus-optional-source-rpms",
+											"rhel-7-server-aus-rpms",
+											"rhel-7-server-aus-source-rpms",
+											"rhel-7-server-debug-rpms",
+											"rhel-7-server-e4s-debug-rpms",
+											"rhel-7-server-e4s-optional-debug-rpms",
+											"rhel-7-server-e4s-optional-rpms",
+											"rhel-7-server-e4s-optional-source-rpms",
+											"rhel-7-server-e4s-rpms",
+											"rhel-7-server-e4s-source-rpms",
+											"rhel-7-server-els-debug-rpms",
+											"rhel-7-server-els-optional-debug-rpms",
+											"rhel-7-server-els-optional-rpms",
+											"rhel-7-server-els-optional-source-rpms",
+											"rhel-7-server-els-rpms",
+											"rhel-7-server-els-source-rpms",
+											"rhel-7-server-eus-debug-rpms",
+											"rhel-7-server-eus-optional-debug-rpms",
+											"rhel-7-server-eus-optional-rpms",
+											"rhel-7-server-eus-optional-source-rpms",
+											"rhel-7-server-eus-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-server-eus-restricted-maintenance-oracle-java-source-rpms",
+											"rhel-7-server-eus-rpms",
+											"rhel-7-server-eus-source-rpms",
+											"rhel-7-server-eus-supplementary-debuginfo",
+											"rhel-7-server-eus-supplementary-rpms",
+											"rhel-7-server-eus-supplementary-source-rpms",
+											"rhel-7-server-fastrack-debug-rpms",
+											"rhel-7-server-fastrack-rpms",
+											"rhel-7-server-fastrack-source-rpms",
+											"rhel-7-server-nfv-debug-rpms",
+											"rhel-7-server-nfv-rpms",
+											"rhel-7-server-nfv-source-rpms",
+											"rhel-7-server-optional-debug-rpms",
+											"rhel-7-server-optional-fastrack-debug-rpms",
+											"rhel-7-server-optional-fastrack-rpms",
+											"rhel-7-server-optional-fastrack-source-rpms",
+											"rhel-7-server-optional-rpms",
+											"rhel-7-server-optional-source-rpms",
+											"rhel-7-server-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-server-rpms",
+											"rhel-7-server-rt-debug-rpms",
+											"rhel-7-server-rt-els-debug-rpms",
+											"rhel-7-server-rt-els-rpms",
+											"rhel-7-server-rt-els-source-rpms",
+											"rhel-7-server-rt-rpms",
+											"rhel-7-server-rt-source-rpms",
+											"rhel-7-server-source-rpms",
+											"rhel-7-server-supplementary-debug-rpms",
+											"rhel-7-server-supplementary-rpms",
+											"rhel-7-server-supplementary-source-rpms",
+											"rhel-7-server-tus-debug-rpms",
+											"rhel-7-server-tus-optional-debug-rpms",
+											"rhel-7-server-tus-optional-rpms",
+											"rhel-7-server-tus-optional-source-rpms",
+											"rhel-7-server-tus-rpms",
+											"rhel-7-server-tus-source-rpms",
+											"rhel-7-workstation-debug-rpms",
+											"rhel-7-workstation-fastrack-debug-rpms",
+											"rhel-7-workstation-fastrack-rpms",
+											"rhel-7-workstation-fastrack-source-rpms",
+											"rhel-7-workstation-optional-debug-rpms",
+											"rhel-7-workstation-optional-fastrack-debug-rpms",
+											"rhel-7-workstation-optional-fastrack-rpms",
+											"rhel-7-workstation-optional-fastrack-source-rpms",
+											"rhel-7-workstation-optional-rpms",
+											"rhel-7-workstation-optional-source-rpms",
+											"rhel-7-workstation-restricted-maintenance-oracle-java-rpms",
+											"rhel-7-workstation-rpms",
+											"rhel-7-workstation-source-rpms",
+											"rhel-7-workstation-supplementary-debug-rpms",
+											"rhel-7-workstation-supplementary-rpms",
+											"rhel-7-workstation-supplementary-source-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-rpms",
+											"rhel-ha-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-rpms",
+											"rhel-ha-for-rhel-7-for-system-z-source-rpms",
+											"rhel-ha-for-rhel-7-server-debug-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-rpms",
+											"rhel-ha-for-rhel-7-server-e4s-source-rpms",
+											"rhel-ha-for-rhel-7-server-els-debug-rpms",
+											"rhel-ha-for-rhel-7-server-els-rpms",
+											"rhel-ha-for-rhel-7-server-els-source-rpms",
+											"rhel-ha-for-rhel-7-server-eus-debug-rpms",
+											"rhel-ha-for-rhel-7-server-eus-rpms",
+											"rhel-ha-for-rhel-7-server-eus-source-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-debug-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-rpms",
+											"rhel-ha-for-rhel-7-server-fastrack-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-e4s-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-debug-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-eus-source-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-rpms",
+											"rhel-ha-for-rhel-7-server-for-power-le-source-rpms",
+											"rhel-ha-for-rhel-7-server-rpms",
+											"rhel-ha-for-rhel-7-server-source-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-rpms",
+											"rhel-rs-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-rpms",
+											"rhel-rs-for-rhel-7-for-system-z-source-rpms",
+											"rhel-rs-for-rhel-7-server-debug-rpms",
+											"rhel-rs-for-rhel-7-server-els-debug-rpms",
+											"rhel-rs-for-rhel-7-server-els-rpms",
+											"rhel-rs-for-rhel-7-server-els-source-rpms",
+											"rhel-rs-for-rhel-7-server-eus-debug-rpms",
+											"rhel-rs-for-rhel-7-server-eus-rpms",
+											"rhel-rs-for-rhel-7-server-eus-source-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-debug-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-rpms",
+											"rhel-rs-for-rhel-7-server-fastrack-source-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-debug-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-debug-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-eus-source-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-rpms",
+											"rhel-rs-for-rhel-7-server-for-power-le-source-rpms",
+											"rhel-rs-for-rhel-7-server-rpms",
+											"rhel-rs-for-rhel-7-server-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-rpms",
+											"rhel-sap-for-rhel-7-for-power-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-rpms",
+											"rhel-sap-for-rhel-7-for-power-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-rpms",
+											"rhel-sap-for-rhel-7-for-power-le-source-rpms",
+											"rhel-sap-for-rhel-7-for-power-rpms",
+											"rhel-sap-for-rhel-7-for-power-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-els-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-eus-source-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-rpms",
+											"rhel-sap-for-rhel-7-for-system-z-source-rpms",
+											"rhel-sap-for-rhel-7-server-debug-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-rpms",
+											"rhel-sap-for-rhel-7-server-e4s-source-rpms",
+											"rhel-sap-for-rhel-7-server-els-debug-rpms",
+											"rhel-sap-for-rhel-7-server-els-rpms",
+											"rhel-sap-for-rhel-7-server-els-source-rpms",
+											"rhel-sap-for-rhel-7-server-eus-debug-rpms",
+											"rhel-sap-for-rhel-7-server-eus-rpms",
+											"rhel-sap-for-rhel-7-server-eus-source-rpms",
+											"rhel-sap-for-rhel-7-server-rpms",
+											"rhel-sap-for-rhel-7-server-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-e4s-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-els-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-rpms",
+											"rhel-sap-hana-for-rhel-7-for-power-le-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-rpms",
+											"rhel-sap-hana-for-rhel-7-server-e4s-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-rpms",
+											"rhel-sap-hana-for-rhel-7-server-els-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-debug-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-rpms",
+											"rhel-sap-hana-for-rhel-7-server-eus-source-rpms",
+											"rhel-sap-hana-for-rhel-7-server-rpms",
+											"rhel-sap-hana-for-rhel-7-server-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "0:38.0-3.el7_1"
+											}
+										],
+										"fixed": [
+											"0:38.0-3.el7_1"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-7-supplementary"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-els/definitions/oval:com.redhat.rhsa:def:20150988.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-els/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20100861003.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-els/states/rpminfo_state/oval:com.redhat.rhsa:ste:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-els/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20100861006.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-els/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-els/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20111656003.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-els/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20111656004.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-including-unpatched/definitions/oval:com.redhat.rhsa:def:20150988.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20052395001.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20052395002.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20022439069.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20022439070.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-supplementary/definitions/oval:com.redhat.rhsa:def:20150988.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-supplementary/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20100861003.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-supplementary/states/rpminfo_state/oval:com.redhat.rhsa:ste:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-supplementary/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20100861006.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-supplementary/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-supplementary/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20111656003.json",
+			"vuls-data-raw-redhat-ovalv2/6/rhel-6-supplementary/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20111656004.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/definitions/oval:com.redhat.rhsa:def:20150988.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20136167001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20136167002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20042779005.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20042779006.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/definitions/oval:com.redhat.rhsa:def:20150988.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20140741001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/states/rpminfo_state/oval:com.redhat.rhsa:ste:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20140741002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20150988001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20150364027.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-supplementary/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20150364028.json"
+		]
+	}
+}

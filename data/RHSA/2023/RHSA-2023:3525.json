@@ -1,0 +1,166 @@
+{
+	"id": "RHSA-2023:3525",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2023:3525",
+				"title": "RHSA-2023:3525: python-flask security update (Important)",
+				"description": "Flask is a lightweight but extensible web development framework for Python based on the Werkzeug WSGI toolkit, and the Jinja 2 template engine.\n\nSecurity Fix(es):\n\n* flask: Possible disclosure of permanent session cookie due to missing Vary: Cookie header (CVE-2023-30861)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Important"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2023:3525"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-30861"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2196643"
+					}
+				],
+				"published": "2023-06-07T00:00:00Z",
+				"modified": "2023-06-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2023-30861",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "important"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.5,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-488"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-30861"
+					}
+				],
+				"published": "2023-05-05T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:7",
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:7",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "AND",
+						"criterions": [
+							{
+								"type": "version",
+								"version": {
+									"vulnerable": true,
+									"fix_status": {
+										"class": "fixed"
+									},
+									"package": {
+										"name": "python-flask",
+										"repositories": [
+											"rhel-7-desktop-extras-debug-rpms",
+											"rhel-7-desktop-extras-rpms",
+											"rhel-7-desktop-extras-source-rpms",
+											"rhel-7-for-arm-64-extras-debug-rpms",
+											"rhel-7-for-arm-64-extras-rpms",
+											"rhel-7-for-arm-64-extras-source-rpms",
+											"rhel-7-for-power-9-extras-debug-rpms",
+											"rhel-7-for-power-9-extras-rpms",
+											"rhel-7-for-power-9-extras-source-rpms",
+											"rhel-7-for-power-le-extras-debug-rpms",
+											"rhel-7-for-power-le-extras-rpms",
+											"rhel-7-for-power-le-extras-source-rpms",
+											"rhel-7-for-system-z-a-extras-debug-rpms",
+											"rhel-7-for-system-z-a-extras-rpms",
+											"rhel-7-for-system-z-a-extras-source-rpms",
+											"rhel-7-for-system-z-extras-debug-rpms",
+											"rhel-7-for-system-z-extras-rpms",
+											"rhel-7-for-system-z-extras-source-rpms",
+											"rhel-7-server-extras-debug-rpms",
+											"rhel-7-server-extras-rpms",
+											"rhel-7-server-extras-source-rpms",
+											"rhel-7-workstation-extras-debug-rpms",
+											"rhel-7-workstation-extras-rpms",
+											"rhel-7-workstation-extras-source-rpms"
+										]
+									},
+									"affected": {
+										"type": "rpm",
+										"range": [
+											{
+												"lt": "1:0.10.1-7.el7_9"
+											}
+										],
+										"fixed": [
+											"1:0.10.1-7.el7_9"
+										]
+									}
+								}
+							}
+						]
+					},
+					"tag": "rhel-7-extras-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/definitions/oval:com.redhat.rhsa:def:20233525.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20200870001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20233525001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20200870002.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20233525001.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047029.json",
+			"vuls-data-raw-redhat-ovalv2/7/rhel-7-extras-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20140047030.json"
+		]
+	}
+}
