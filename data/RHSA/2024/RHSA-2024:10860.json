@@ -1,0 +1,1049 @@
+{
+	"id": "RHSA-2024:10860",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2024:10860",
+				"title": "RHSA-2024:10860: ruby:3.1 security update (Important)",
+				"description": "Ruby is an extensible, interpreted, object-oriented, scripting language. It has features to process text files and to perform system management tasks.\n\nSecurity Fix(es):\n\n* rexml: REXML ReDoS vulnerability (CVE-2024-49761)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Important"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2024:10860"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-49761"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2322153"
+					}
+				],
+				"published": "2024-12-05T00:00:00Z",
+				"modified": "2024-12-05T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-49761",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "important"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.5,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-1333"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-49761"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::ruby",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::ruby-bundled-gems",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::ruby-default-gems"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::ruby-devel",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::ruby-doc"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::ruby-libs",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.1.5-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-bigdecimal",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.1.1-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.1.1-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-bundler"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:2.3.27-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:2.3.27-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-io-console",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:0.5.11-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:0.5.11-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-irb"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.4.1-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:1.4.1-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-json",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:2.6.1-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:2.6.1-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-minitest"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:5.15.0-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:5.15.0-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-mysql2",
+												"architectures": [
+													"aarch64",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:0.5.4-1.module+el9.1.0+15737+76195479"
+													}
+												],
+												"fixed": [
+													"0:0.5.4-1.module+el9.1.0+15737+76195479"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-mysql2-doc"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:0.5.4-1.module+el9.1.0+15737+76195479"
+													}
+												],
+												"fixed": [
+													"0:0.5.4-1.module+el9.1.0+15737+76195479"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-pg",
+												"architectures": [
+													"aarch64",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.3.5-1.module+el9.1.0+15737+76195479"
+													}
+												],
+												"fixed": [
+													"0:1.3.5-1.module+el9.1.0+15737+76195479"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-pg-doc"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.3.5-1.module+el9.1.0+15737+76195479"
+													}
+												],
+												"fixed": [
+													"0:1.3.5-1.module+el9.1.0+15737+76195479"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-power_assert"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:2.0.1-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:2.0.1-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-psych",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.0.4-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:4.0.4-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-rake"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:13.0.6-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:13.0.6-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-rbs",
+												"architectures": [
+													"aarch64",
+													"i686",
+													"ppc64le",
+													"s390x",
+													"x86_64"
+												]
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:2.7.0-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:2.7.0-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-rdoc"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:6.4.1.1-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:6.4.1.1-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-rexml"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.2.5-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.2.5-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-rss"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:0.2.9-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:0.2.9-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-test-unit"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.5.3-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.5.3-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygem-typeprof"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:0.21.3-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:0.21.3-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygems"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.3.27-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.3.27-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"name": "ruby:3.1::rubygems-devel"
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.3.27-145.module+el9.5.0+22579+d0aa0a16"
+													}
+												],
+												"fixed": [
+													"0:3.3.27-145.module+el9.5.0+22579+d0aa0a16"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-oval-repository-to-cpe/repository-to-cpe.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:202410860.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617017.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617018.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617019.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617020.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617021.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202336617022.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:202410860002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:202410860013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:202410860014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:202410860015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:202410860016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/textfilecontent54_object/oval:com.redhat.cve:obj:202435176025.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860017.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860018.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860019.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860020.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860021.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860022.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410860023.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/textfilecontent54_state/oval:com.redhat.cve:ste:202435176002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617018.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617020.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617022.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617024.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617026.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617028.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617030.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617032.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617034.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617036.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617038.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617040.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617042.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202336617044.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860017.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860019.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860021.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860023.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860025.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860026.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860027.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860028.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860029.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860030.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860031.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860032.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860033.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860035.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860037.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860039.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860041.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860043.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860045.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860047.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860049.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860051.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410860053.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/textfilecontent54_test/oval:com.redhat.cve:tst:202435176049.json"
+		]
+	}
+}
