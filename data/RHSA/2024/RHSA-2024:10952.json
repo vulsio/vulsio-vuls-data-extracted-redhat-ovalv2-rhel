@@ -1,0 +1,2132 @@
+{
+	"id": "RHSA-2024:10952",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2024:10952",
+				"title": "RHSA-2024:10952: php:7.4 security update (Moderate)",
+				"description": "PHP is an HTML-embedded scripting language commonly used with the Apache HTTP Server.\n\nSecurity Fix(es):\n\n* php: 1-byte array overrun in common path resolve code (CVE-2023-0568)\n\n* php: Password_verify() always return true with some hash (CVE-2023-0567)\n\n* php: Missing error check and insufficient random bytes in HTTP Digest authentication for SOAP (CVE-2023-3247)\n\n* php: XML loading external entity without being enabled (CVE-2023-3823)\n\n* php: phar Buffer mismanagement (CVE-2023-3824)\n\n* php: host/secure cookie bypass due to partial CVE-2022-31629 fix (CVE-2024-2756)\n\n* php: password_verify can erroneously return true, opening ATO risk (CVE-2024-3096)\n\n* php: Filter bypass in filter_var (FILTER_VALIDATE_URL) (CVE-2024-5458)\n\n* php: Erroneous parsing of multipart form data (CVE-2024-8925)\n\n* php: cgi.force_redirect configuration is bypassable due to the environment variable collision (CVE-2024-8927)\n\n* php: PHP-FPM Log Manipulation Vulnerability (CVE-2024-9026)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2024:10952"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-0567"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-0568"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-3247"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-3823"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-3824"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-2756"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-3096"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-5458"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-8925"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-8927"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-9026"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2170770"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2170771"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2219290"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2229396"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2230101"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2275058"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2275061"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2291252"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2317049"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2317051"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2317144"
+					}
+				],
+				"published": "2024-12-11T00:00:00Z",
+				"modified": "2024-12-11T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2023-0567",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+							"base_score": 5.3,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.3,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.3,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-328"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-0567"
+					}
+				],
+				"published": "2023-02-15T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2023-0568",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.5,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-770->CWE-131"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-0568"
+					}
+				],
+				"published": "2023-02-15T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2023-3247",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+							"base_score": 4.3,
+							"base_severity": "MEDIUM",
+							"temporal_score": 4.3,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 4.3,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-252|CWE-334)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-3247"
+					}
+				],
+				"published": "2023-07-03T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2023-3823",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.5,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-611"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-3823"
+					}
+				],
+				"published": "2023-08-03T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2023-3824",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H",
+							"base_score": 7,
+							"base_severity": "HIGH",
+							"temporal_score": 7,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-119"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2023-3824"
+					}
+				],
+				"published": "2023-08-03T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-2756",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+							"base_score": 6.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-20"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-2756"
+					}
+				],
+				"published": "2024-04-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-3096",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+							"base_score": 4.8,
+							"base_severity": "MEDIUM",
+							"temporal_score": 4.8,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 4.8,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-626"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-3096"
+					}
+				],
+				"published": "2024-04-12T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-5458",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+							"base_score": 5.3,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.3,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.3,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-20"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-5458"
+					}
+				],
+				"published": "2022-10-21T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8925",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:N/I:H/A:N",
+							"base_score": 5.3,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.3,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.3,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-1286"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-8925"
+					}
+				],
+				"published": "2024-10-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-8927",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N",
+							"base_score": 7.5,
+							"base_severity": "HIGH",
+							"temporal_score": 7.5,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.5,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-1220"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-8927"
+					}
+				],
+				"published": "2024-10-07T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-9026",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "low"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N",
+							"base_score": 3.3,
+							"base_severity": "LOW",
+							"temporal_score": 3.3,
+							"temporal_severity": "LOW",
+							"environmental_score": 3.3,
+							"environmental_severity": "LOW"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-117|CWE-158)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-9026"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:8",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::apcu-panel"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:5.1.18-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:5.1.18-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::libzip",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.6.1-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:1.6.1-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::libzip-devel",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.6.1-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:1.6.1-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::libzip-tools",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.6.1-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:1.6.1-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-bcmath",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-cli",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-common",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-dba",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-dbg",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-devel",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-embedded",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-enchant",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-ffi",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-fpm",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-gd",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-gmp",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-intl",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-json",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-ldap",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-mbstring",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-mysqlnd",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-odbc",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-opcache",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-pdo",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-pear"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.10.13-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"1:1.10.13-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-pecl-apcu",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:5.1.18-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:5.1.18-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-pecl-apcu-devel",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:5.1.18-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:5.1.18-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-pecl-rrd",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:2.0.1-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:2.0.1-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-pecl-xdebug",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:2.9.5-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:2.9.5-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-pecl-zip",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:1.18.2-1.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:1.18.2-1.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-pgsql",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-process",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-snmp",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-soap",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-xml",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "php:7.4::php-xmlrpc",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:7.4.33-2.module+el8.10.0+22485+a3539972"
+													}
+												],
+												"fixed": [
+													"0:7.4.33-2.module+el8.10.0+22485+a3539972"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:202410952.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189012.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189014.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189016.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189017.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189018.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189019.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189020.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189021.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189023.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189024.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189025.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189026.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189028.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189029.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189031.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189032.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189033.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189034.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189035.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189037.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189038.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189040.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189041.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189042.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189043.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20177189044.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/textfilecontent54_object/oval:com.redhat.cve:obj:20177189045.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410952001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410952003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410952004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410952005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410952006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410952007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410952008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:202410952009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/textfilecontent54_state/oval:com.redhat.cve:ste:20178923003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189012.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189014.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189016.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189018.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189020.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189022.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189024.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189026.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189028.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189030.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189032.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189034.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189036.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189038.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189040.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189042.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189046.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189048.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189050.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189052.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189056.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189058.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189062.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189064.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189066.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189068.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189070.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189074.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189076.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189080.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189082.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189084.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189086.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20177189088.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952017.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952019.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952021.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952023.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952025.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952027.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952029.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952031.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952033.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952035.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952037.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952039.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952041.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952043.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952045.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952047.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952049.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952051.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952053.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952055.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952057.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952059.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952061.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952063.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952065.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952067.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952069.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952071.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:202410952073.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20191992004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/textfilecontent54_test/oval:com.redhat.cve:tst:20178923090.json",
+			"vuls-data-raw-redhat-repository-to-cpe/repository-to-cpe.json"
+		]
+	}
+}
