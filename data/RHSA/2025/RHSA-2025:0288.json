@@ -1,0 +1,734 @@
+{
+	"id": "RHSA-2025:0288",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2025:0288",
+				"title": "RHSA-2025:0288: Bug fix of NetworkManager (Moderate)",
+				"description": "Security and Bug Fix(es):\n\n* NetworkManager: DHCP routing options can manipulate interface-based VPN traffic (CVE-2024-3661)\n\n* Route to VPN server not stored in routing table that is specified by ipv4.route-table (JIRA:RHEL-73051)\n\n* VPN connections do not support ipv4.routing-rules settings (JIRA:RHEL-73052)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2025:0288"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-3661"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2320141"
+					}
+				],
+				"published": "2025-01-13T00:00:00Z",
+				"modified": "2025-01-13T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-3661",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:L",
+							"base_score": 7.6,
+							"base_severity": "HIGH",
+							"temporal_score": 7.6,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.6,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-306|CWE-501)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-3661"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:8",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-adsl",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-bluetooth",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-cloud-setup",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-config-connectivity-redhat"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-config-server"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-dispatcher-routing-rules"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-initscripts-updown"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-libnm",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-libnm-devel",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-ovs",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-ppp",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-team",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-tui",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-wifi",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "NetworkManager-wwan",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:1.40.16-18.el8_10"
+													}
+												],
+												"fixed": [
+													"1:1.40.16-18.el8_10"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:20250288.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501012.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501014.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20246501015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250288008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250288001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250288003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250288004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501012.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501014.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501016.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501018.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501020.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501022.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501024.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501026.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501028.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20246501030.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288016.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288017.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288019.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288021.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288023.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288025.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288027.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288029.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250288031.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20191992004.json",
+			"vuls-data-raw-redhat-repository-to-cpe/repository-to-cpe.json"
+		]
+	}
+}
