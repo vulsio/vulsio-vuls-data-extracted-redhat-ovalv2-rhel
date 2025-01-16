@@ -1,0 +1,2111 @@
+{
+	"id": "RHSA-2025:0308",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2025:0308",
+				"title": "RHSA-2025:0308: fence-agents security update (Important)",
+				"description": "The fence-agents packages provide a collection of scripts for handling remote power management for cluster devices. They allow failed or unreachable nodes to be forcibly restarted and removed from the cluster. \n\nSecurity Fix(es):\n\n* fence-agents: Jinja has a sandbox breakout through indirect reference to format method [rhel-9.5.z] (CVE-2024-56326)\n\n* fence-agents: Jinja has a sandbox breakout through malicious filenames [rhel-9.5.z] (CVE-2024-56201)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Important"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2025:0308"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-56201"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-56326"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2333854"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2333856"
+					}
+				],
+				"published": "2025-01-14T00:00:00Z",
+				"modified": "2025-01-14T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-56201",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "important"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 7.3,
+							"base_severity": "HIGH",
+							"temporal_score": 7.3,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.3,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-150"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-56201"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2024-56326",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "important"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 6.3,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.3,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.3,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"(CWE-1336|CWE-693)"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-56326"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-aliyun",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-all",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-amt-ws"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-apc"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-apc-snmp"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-aws",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-azure-arm",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-bladecenter"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-brocade"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-cisco-mds"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-cisco-ucs"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-common"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-compute",
+													"architectures": [
+														"ppc64le",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-drac5"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-eaton-snmp"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-emerson"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-eps"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-gce",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-heuristics-ping"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-hpblade"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ibm-powervs"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ibm-vpc"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ibmblade"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ifmib"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ilo-moonshot"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ilo-mp"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ilo-ssh"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ilo2"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-intelmodular"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ipdu"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-ipmilan"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-kdump",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-kubevirt",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-lpar"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-mpath"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-openstack",
+													"architectures": [
+														"ppc64le",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-redfish",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-rhevm"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-rsa"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-rsb"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-sbd"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-scsi"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-virsh"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-vmware-rest"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-vmware-soap"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-wti"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-agents-zvm",
+													"architectures": [
+														"s390x"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-virt",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-virtd",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-virtd-cpg",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-virtd-libvirt",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-virtd-multicast",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-virtd-serial",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "fence-virtd-tcp",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ha-cloud-support",
+													"architectures": [
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.10.0-76.el9_5.4"
+													}
+												],
+												"fixed": [
+													"0:4.10.0-76.el9_5.4"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:20250308.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217017.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217018.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217019.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217020.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217021.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217022.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217023.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217024.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217025.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217026.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217027.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217028.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217029.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217030.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217031.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217032.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217033.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217034.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217035.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217036.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217037.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217038.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217039.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217040.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217041.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217042.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217043.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217044.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217045.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217046.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217047.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217048.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217049.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217050.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217051.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217052.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217053.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217054.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217055.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202229217056.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250308001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250308003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250308004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250308005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250308006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217018.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217020.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217022.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217024.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217026.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217030.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217032.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217034.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217036.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217038.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217040.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217042.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217044.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217046.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217048.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217050.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217052.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217054.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217056.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217058.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217060.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217062.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217064.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217066.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217068.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217070.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217072.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217074.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217076.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217078.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217080.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217082.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217084.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217086.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217088.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217090.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217092.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217094.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217096.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217098.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217100.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217102.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217104.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217106.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217108.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217110.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202229217112.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308017.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308019.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308021.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308023.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308025.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308027.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308029.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308031.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308033.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308035.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308037.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308039.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308041.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308043.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308045.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308047.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308049.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308051.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308053.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308055.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308057.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308059.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308061.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308063.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308065.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308067.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308069.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308071.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308073.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308075.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308077.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308079.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308081.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308083.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308085.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308087.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308089.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308091.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308093.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308095.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308097.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308099.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308101.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308103.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308105.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308107.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250308109.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
+			"vuls-data-raw-redhat-repository-to-cpe/repository-to-cpe.json"
+		]
+	}
+}

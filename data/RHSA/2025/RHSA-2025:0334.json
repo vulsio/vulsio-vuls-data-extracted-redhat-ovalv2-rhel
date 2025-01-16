@@ -1,0 +1,688 @@
+{
+	"id": "RHSA-2025:0334",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2025:0334",
+				"title": "RHSA-2025:0334: ipa security update (Moderate)",
+				"description": "Red Hat Identity Management (IdM) is a centralized authentication, identity management, and authorization solution for both traditional and cloud-based enterprise environments.\n\nSecurity Fix(es):\n\n* freeipa: Administrative user data leaked through systemd journal (CVE-2024-11029)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2025:0334"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-11029"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2325557"
+					}
+				],
+				"published": "2025-01-15T00:00:00Z",
+				"modified": "2025-01-15T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-11029",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+							"base_score": 5.5,
+							"base_severity": "MEDIUM",
+							"temporal_score": 5.5,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 5.5,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-497"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-11029"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-client",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-client-common"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-client-epn",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-client-samba",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-common"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-selinux"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-selinux-luna"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-selinux-nfast"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-server",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-server-common"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-server-dns"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "ipa-server-trust-ad",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "python3-ipaclient"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "python3-ipalib"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "python3-ipaserver"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "python3-ipatests"
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:4.12.2-1.el9_5.3"
+													}
+												],
+												"fixed": [
+													"0:4.12.2-1.el9_5.3"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:20250334.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240141014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250334007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250334008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250334001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250334003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141006.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141008.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141012.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141018.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141020.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141022.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141024.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141026.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240141028.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334009.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334015.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334016.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334017.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334019.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334021.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334023.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334025.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334027.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334029.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250334031.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
+			"vuls-data-raw-redhat-repository-to-cpe/repository-to-cpe.json"
+		]
+	}
+}
