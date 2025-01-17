@@ -1,11 +1,11 @@
 {
-	"id": "RHSA-2024:7868",
+	"id": "RHSA-2025:0382",
 	"advisories": [
 		{
 			"content": {
-				"id": "RHSA-2024:7868",
-				"title": "RHSA-2024:7868: .NET 8.0 security update (Important)",
-				"description": ".NET is a managed-software framework. It implements a subset of the .NET framework APIs and several new APIs, and it includes a CLR implementation.\n\nNew versions of .NET that address a security vulnerability are now available. The updated versions are .NET SDK 8.0.110 and .NET Runtime 8.0.10.\n\nSecurity Fix(es):\n\n* dotnet: kestrel: closing an HTTP/3 stream can cause a race condition and lead to remote code execution (CVE-2024-38229)\n* dotnet: Multiple .NET components susceptible to hash flooding (CVE-2024-43483)\n* dotnet: System.IO.Packaging - Multiple DoS vectors in use of SortedList (CVE-2024-43484)\n* dotnet: Denial of Service in System.Text.Json (CVE-2024-43485)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.Security Fix(es):\n\n* dotnet: System.IO.Packaging - Multiple DoS vectors in use of SortedList (CVE-2024-43484)\n\n* dotnet: Multiple .NET components susceptible to hash flooding (CVE-2024-43483)\n\n* dotnet: Denial of Service in System.Text.Json (CVE-2024-43485)\n\n* dotnet: kestrel: closing an HTTP/3 stream can cause a race condition and lead to remote code execution (CVE-2024-38229)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"id": "RHSA-2025:0382",
+				"title": "RHSA-2025:0382: .NET 9.0 security update (Important)",
+				"description": ".NET is a managed-software framework. It implements a subset of the .NET framework APIs and several new APIs, and it includes a CLR implementation.\n\nNew versions of .NET that address a security vulnerability are now available. The updated versions are .NET SDK 9.0.102 and .NET Runtime 9.0.1.\n\nSecurity Fix(es):\n\n* dotnet: .NET Remote Code Execution Vulnerability (CVE-2025-21171)\n* dotnet: .NET and Visual Studio Remote Code Execution Vulnerability (CVE-2025-21172)\n* dotnet: .NET Elevation of Privilege Vulnerability (CVE-2025-21173)\n* dotnet: .NET, .NET Framework, and Visual Studio Remote Code Execution Vulnerability (CVE-2025-21176)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.Security Fix(es):\n\n* dotnet: .NET Elevation of Privilege Vulnerability (CVE-2025-21173)\n\n* dotnet: .NET, .NET Framework, and Visual Studio Remote Code Execution Vulnerability (CVE-2025-21176)\n\n* dotnet: .NET and Visual Studio Remote Code Execution Vulnerability (CVE-2025-21172)\n\n* dotnet: .NET Remote Code Execution Vulnerability (CVE-2025-21171)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
 				"severity": [
 					{
 						"type": "vendor",
@@ -16,43 +16,43 @@
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/errata/RHSA-2024:7868"
+						"url": "https://access.redhat.com/errata/RHSA-2025:0382"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-38229"
+						"url": "https://access.redhat.com/security/cve/CVE-2025-21171"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-43483"
+						"url": "https://access.redhat.com/security/cve/CVE-2025-21172"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-43484"
+						"url": "https://access.redhat.com/security/cve/CVE-2025-21173"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-43485"
+						"url": "https://access.redhat.com/security/cve/CVE-2025-21176"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2315729"
+						"url": "https://bugzilla.redhat.com/2337893"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2315730"
+						"url": "https://bugzilla.redhat.com/2337926"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2315731"
+						"url": "https://bugzilla.redhat.com/2337927"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2316161"
+						"url": "https://bugzilla.redhat.com/2337958"
 					}
 				],
-				"published": "2024-10-09T00:00:00Z",
-				"modified": "2024-10-09T00:00:00Z"
+				"published": "2025-01-16T00:00:00Z",
+				"modified": "2025-01-16T00:00:00Z"
 			},
 			"segments": [
 				{
@@ -65,7 +65,7 @@
 	"vulnerabilities": [
 		{
 			"content": {
-				"id": "CVE-2024-38229",
+				"id": "CVE-2025-21171",
 				"severity": [
 					{
 						"type": "vendor",
@@ -76,53 +76,7 @@
 						"type": "cvss_v31",
 						"source": "secalert@redhat.com",
 						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
-							"base_score": 8.1,
-							"base_severity": "HIGH",
-							"temporal_score": 8.1,
-							"temporal_severity": "HIGH",
-							"environmental_score": 8.1,
-							"environmental_severity": "HIGH"
-						}
-					}
-				],
-				"cwe": [
-					{
-						"source": "secalert@redhat.com",
-						"cwe": [
-							"CWE-416"
-						]
-					}
-				],
-				"references": [
-					{
-						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-38229"
-					}
-				],
-				"published": "2024-10-08T00:00:00Z"
-			},
-			"segments": [
-				{
-					"ecosystem": "redhat:8",
-					"tag": "rhel-8-including-unpatched"
-				}
-			]
-		},
-		{
-			"content": {
-				"id": "CVE-2024-43483",
-				"severity": [
-					{
-						"type": "vendor",
-						"source": "secalert@redhat.com",
-						"vendor": "important"
-					},
-					{
-						"type": "cvss_v31",
-						"source": "secalert@redhat.com",
-						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
 							"base_score": 7.5,
 							"base_severity": "HIGH",
 							"temporal_score": 7.5,
@@ -136,17 +90,16 @@
 					{
 						"source": "secalert@redhat.com",
 						"cwe": [
-							"CWE-407"
+							"CWE-122"
 						]
 					}
 				],
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-43483"
+						"url": "https://access.redhat.com/security/cve/CVE-2025-21171"
 					}
-				],
-				"published": "2024-10-08T00:00:00Z"
+				]
 			},
 			"segments": [
 				{
@@ -157,7 +110,7 @@
 		},
 		{
 			"content": {
-				"id": "CVE-2024-43484",
+				"id": "CVE-2025-21172",
 				"severity": [
 					{
 						"type": "vendor",
@@ -168,7 +121,7 @@
 						"type": "cvss_v31",
 						"source": "secalert@redhat.com",
 						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H",
 							"base_score": 7.5,
 							"base_severity": "HIGH",
 							"temporal_score": 7.5,
@@ -182,17 +135,16 @@
 					{
 						"source": "secalert@redhat.com",
 						"cwe": [
-							"(CWE-407|CWE-789)"
+							"(CWE-122|CWE-190)"
 						]
 					}
 				],
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-43484"
+						"url": "https://access.redhat.com/security/cve/CVE-2025-21172"
 					}
-				],
-				"published": "2024-10-08T00:00:00Z"
+				]
 			},
 			"segments": [
 				{
@@ -203,7 +155,7 @@
 		},
 		{
 			"content": {
-				"id": "CVE-2024-43485",
+				"id": "CVE-2025-21173",
 				"severity": [
 					{
 						"type": "vendor",
@@ -214,12 +166,12 @@
 						"type": "cvss_v31",
 						"source": "secalert@redhat.com",
 						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-							"base_score": 7.5,
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 7.3,
 							"base_severity": "HIGH",
-							"temporal_score": 7.5,
+							"temporal_score": 7.3,
 							"temporal_severity": "HIGH",
-							"environmental_score": 7.5,
+							"environmental_score": 7.3,
 							"environmental_severity": "HIGH"
 						}
 					}
@@ -228,17 +180,61 @@
 					{
 						"source": "secalert@redhat.com",
 						"cwe": [
-							"CWE-407"
+							"CWE-379"
 						]
 					}
 				],
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-43485"
+						"url": "https://access.redhat.com/security/cve/CVE-2025-21173"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		},
+		{
+			"content": {
+				"id": "CVE-2025-21176",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "important"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+							"base_score": 8.8,
+							"base_severity": "HIGH",
+							"temporal_score": 8.8,
+							"temporal_severity": "HIGH",
+							"environmental_score": 8.8,
+							"environmental_severity": "HIGH"
+						}
 					}
 				],
-				"published": "2024-10-08T00:00:00Z"
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-126"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2025-21176"
+					}
+				]
 			},
 			"segments": [
 				{
@@ -269,7 +265,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "aspnetcore-runtime-8.0",
+													"name": "aspnetcore-runtime-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -282,11 +278,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.1-1.el8_10"
 												]
 											}
 										}
@@ -306,7 +302,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "aspnetcore-runtime-dbg-8.0",
+													"name": "aspnetcore-runtime-dbg-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -319,11 +315,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.1-1.el8_10"
 												]
 											}
 										}
@@ -343,7 +339,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "aspnetcore-targeting-pack-8.0",
+													"name": "aspnetcore-targeting-pack-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -356,11 +352,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.1-1.el8_10"
 												]
 											}
 										}
@@ -393,11 +389,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.110-1.el8_10"
+														"lt": "0:9.0.102-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.110-1.el8_10"
+													"0:9.0.102-1.el8_10"
 												]
 											}
 										}
@@ -417,7 +413,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-apphost-pack-8.0",
+													"name": "dotnet-apphost-pack-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -430,11 +426,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.1-1.el8_10"
 												]
 											}
 										}
@@ -467,11 +463,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.1-1.el8_10"
 												]
 											}
 										}
@@ -491,7 +487,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-hostfxr-8.0",
+													"name": "dotnet-hostfxr-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -504,11 +500,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.1-1.el8_10"
 												]
 											}
 										}
@@ -528,7 +524,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-runtime-8.0",
+													"name": "dotnet-runtime-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -541,11 +537,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.1-1.el8_10"
 												]
 											}
 										}
@@ -565,7 +561,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-runtime-dbg-8.0",
+													"name": "dotnet-runtime-dbg-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -578,11 +574,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.1-1.el8_10"
 												]
 											}
 										}
@@ -602,7 +598,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-sdk-8.0",
+													"name": "dotnet-sdk-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -615,11 +611,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.110-1.el8_10"
+														"lt": "0:9.0.102-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.110-1.el8_10"
+													"0:9.0.102-1.el8_10"
 												]
 											}
 										}
@@ -639,7 +635,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-sdk-8.0-source-built-artifacts",
+													"name": "dotnet-sdk-9.0-source-built-artifacts",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -652,11 +648,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.110-1.el8_10"
+														"lt": "0:9.0.102-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.110-1.el8_10"
+													"0:9.0.102-1.el8_10"
 												]
 											}
 										}
@@ -676,11 +672,9 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-sdk-dbg-8.0",
+													"name": "dotnet-sdk-aot-9.0",
 													"architectures": [
 														"aarch64",
-														"ppc64le",
-														"s390x",
 														"x86_64"
 													]
 												}
@@ -689,11 +683,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.110-1.el8_10"
+														"lt": "0:9.0.102-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.110-1.el8_10"
+													"0:9.0.102-1.el8_10"
 												]
 											}
 										}
@@ -713,7 +707,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-targeting-pack-8.0",
+													"name": "dotnet-sdk-dbg-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -726,11 +720,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.10-1.el8_10"
+														"lt": "0:9.0.102-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.10-1.el8_10"
+													"0:9.0.102-1.el8_10"
 												]
 											}
 										}
@@ -750,7 +744,7 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "dotnet-templates-8.0",
+													"name": "dotnet-targeting-pack-9.0",
 													"architectures": [
 														"aarch64",
 														"ppc64le",
@@ -763,11 +757,48 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.110-1.el8_10"
+														"lt": "0:9.0.1-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.110-1.el8_10"
+													"0:9.0.1-1.el8_10"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "dotnet-templates-9.0",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:9.0.102-1.el8_10"
+													}
+												],
+												"fixed": [
+													"0:9.0.102-1.el8_10"
 												]
 											}
 										}
@@ -800,11 +831,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:8.0.110-1.el8_10"
+														"lt": "0:9.0.102-1.el8_10"
 													}
 												],
 												"fixed": [
-													"0:8.0.110-1.el8_10"
+													"0:9.0.102-1.el8_10"
 												]
 											}
 										}
@@ -821,54 +852,58 @@
 	"data_source": {
 		"id": "redhat-ovalv2",
 		"raws": [
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:20247868.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhsa:def:20250382.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20214231009.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20214231014.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:20214231016.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254001.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254002.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254004.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254006.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254007.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254008.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254009.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254010.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20237254011.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240827002.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240827009.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20240827012.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20247868001.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20247868003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382012.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382014.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20250382015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250382001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250382003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250382004.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20214231018.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20214231028.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:20214231032.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254002.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254004.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254008.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254012.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254014.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254016.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254018.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254020.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20237254022.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240827004.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240827018.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20240827024.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868001.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868003.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868005.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868007.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868009.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868011.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868013.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868015.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868017.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868019.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868021.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868023.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868025.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868027.json",
-			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20247868029.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382014.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382016.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382017.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382018.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382019.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382020.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382021.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382022.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382023.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382024.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382025.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382026.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382027.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382028.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382029.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382030.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250382031.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
 			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20191992004.json",
