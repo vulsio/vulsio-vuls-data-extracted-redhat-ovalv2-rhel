@@ -1,11 +1,11 @@
 {
-	"id": "RHSA-2024:9559",
+	"id": "RHSA-2025:0791",
 	"advisories": [
 		{
 			"content": {
-				"id": "RHSA-2024:9559",
-				"title": "RHSA-2024:9559: libsoup security update (Important)",
-				"description": "The libsoup packages provide an HTTP client and server library for GNOME.\n\nSecurity Fix(es):\n\n* libsoup: infinite loop while reading websocket data (CVE-2024-52532)\n\n* libsoup: HTTP request smuggling via stripping null bytes from the ends of header names (CVE-2024-52530)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"id": "RHSA-2025:0791",
+				"title": "RHSA-2025:0791: libsoup security update (Important)",
+				"description": "The libsoup packages provide an HTTP client and server library for GNOME.\n\nSecurity Fix(es):\n\n* libsoup: buffer overflow via UTF-8 conversion in soup_header_parse_param_list_strict (CVE-2024-52531)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
 				"severity": [
 					{
 						"type": "vendor",
@@ -16,27 +16,19 @@
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/errata/RHSA-2024:9559"
+						"url": "https://access.redhat.com/errata/RHSA-2025:0791"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-52530"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-52531"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-52532"
-					},
-					{
-						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2325276"
-					},
-					{
-						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2325284"
+						"url": "https://bugzilla.redhat.com/2325277"
 					}
 				],
-				"published": "2024-11-13T00:00:00Z",
-				"modified": "2024-11-13T00:00:00Z"
+				"published": "2025-01-29T00:00:00Z",
+				"modified": "2025-01-29T00:00:00Z"
 			},
 			"segments": [
 				{
@@ -49,7 +41,7 @@
 	"vulnerabilities": [
 		{
 			"content": {
-				"id": "CVE-2024-52530",
+				"id": "CVE-2024-52531",
 				"severity": [
 					{
 						"type": "vendor",
@@ -60,13 +52,13 @@
 						"type": "cvss_v31",
 						"source": "secalert@redhat.com",
 						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N",
-							"base_score": 7.5,
-							"base_severity": "HIGH",
-							"temporal_score": 7.5,
-							"temporal_severity": "HIGH",
-							"environmental_score": 7.5,
-							"environmental_severity": "HIGH"
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H",
+							"base_score": 9,
+							"base_severity": "CRITICAL",
+							"temporal_score": 9,
+							"temporal_severity": "CRITICAL",
+							"environmental_score": 9.1,
+							"environmental_severity": "CRITICAL"
 						}
 					}
 				],
@@ -74,60 +66,14 @@
 					{
 						"source": "secalert@redhat.com",
 						"cwe": [
-							"CWE-444"
+							"CWE-122"
 						]
 					}
 				],
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-52530"
-					}
-				],
-				"published": "2024-11-11T00:00:00Z"
-			},
-			"segments": [
-				{
-					"ecosystem": "redhat:9",
-					"tag": "rhel-9-including-unpatched"
-				}
-			]
-		},
-		{
-			"content": {
-				"id": "CVE-2024-52532",
-				"severity": [
-					{
-						"type": "vendor",
-						"source": "secalert@redhat.com",
-						"vendor": "moderate"
-					},
-					{
-						"type": "cvss_v31",
-						"source": "secalert@redhat.com",
-						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-							"base_score": 7.5,
-							"base_severity": "HIGH",
-							"temporal_score": 7.5,
-							"temporal_severity": "HIGH",
-							"environmental_score": 7.5,
-							"environmental_severity": "HIGH"
-						}
-					}
-				],
-				"cwe": [
-					{
-						"source": "secalert@redhat.com",
-						"cwe": [
-							"CWE-835"
-						]
-					}
-				],
-				"references": [
-					{
-						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-52532"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-52531"
 					}
 				],
 				"published": "2024-11-11T00:00:00Z"
@@ -175,11 +121,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:2.72.0-8.el9_5.2"
+														"lt": "0:2.72.0-8.el9_5.3"
 													}
 												],
 												"fixed": [
-													"0:2.72.0-8.el9_5.2"
+													"0:2.72.0-8.el9_5.3"
 												]
 											}
 										}
@@ -213,11 +159,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:2.72.0-8.el9_5.2"
+														"lt": "0:2.72.0-8.el9_5.3"
 													}
 												],
 												"fixed": [
-													"0:2.72.0-8.el9_5.2"
+													"0:2.72.0-8.el9_5.3"
 												]
 											}
 										}
@@ -234,14 +180,14 @@
 	"data_source": {
 		"id": "redhat-ovalv2",
 		"raws": [
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:20249559.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:20250791.json",
 			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20249559001.json",
 			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.rhsa:obj:20249559002.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20249559001.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20249559001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250791001.json",
 			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20249559002.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20249559003.json",
 			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20249559004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250791001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250791003.json",
 			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
 			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
 			"vuls-data-raw-redhat-repository-to-cpe/repository-to-cpe.json"
