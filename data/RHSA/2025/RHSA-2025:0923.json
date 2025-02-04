@@ -1,34 +1,34 @@
 {
-	"id": "RHSA-2024:9541",
+	"id": "RHSA-2025:0923",
 	"advisories": [
 		{
 			"content": {
-				"id": "RHSA-2024:9541",
-				"title": "RHSA-2024:9541: expat security update (Moderate)",
-				"description": "Expat is a C library for parsing XML documents.\n\nSecurity Fix(es):\n\n* libexpat: expat: DoS via XML_ResumeParser (CVE-2024-50602)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"id": "RHSA-2025:0923",
+				"title": "RHSA-2025:0923: buildah security update (Important)",
+				"description": "The buildah package provides a tool for facilitating building OCI container images. Among other things, buildah enables you to: Create a working container, either from scratch or using an image as a starting point; Create an image, either from a working container or using the instructions in a Dockerfile; Build both Docker and OCI images. \n\nSecurity Fix(es):\n\n* podman: buildah: Container breakout by using --jobs=2 and a race condition when building a malicious Containerfile (CVE-2024-11218)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
 				"severity": [
 					{
 						"type": "vendor",
 						"source": "secalert@redhat.com",
-						"vendor": "Moderate"
+						"vendor": "Important"
 					}
 				],
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/errata/RHSA-2024:9541"
+						"url": "https://access.redhat.com/errata/RHSA-2025:0923"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-50602"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-11218"
 					},
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://bugzilla.redhat.com/2321987"
+						"url": "https://bugzilla.redhat.com/2326231"
 					}
 				],
-				"published": "2024-11-13T00:00:00Z",
-				"modified": "2024-11-13T00:00:00Z"
+				"published": "2025-02-04T00:00:00Z",
+				"modified": "2025-02-04T00:00:00Z"
 			},
 			"segments": [
 				{
@@ -41,24 +41,24 @@
 	"vulnerabilities": [
 		{
 			"content": {
-				"id": "CVE-2024-50602",
+				"id": "CVE-2024-11218",
 				"severity": [
 					{
 						"type": "vendor",
 						"source": "secalert@redhat.com",
-						"vendor": "moderate"
+						"vendor": "important"
 					},
 					{
 						"type": "cvss_v31",
 						"source": "secalert@redhat.com",
 						"cvss_v31": {
-							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
-							"base_score": 5.9,
-							"base_severity": "MEDIUM",
-							"temporal_score": 5.9,
-							"temporal_severity": "MEDIUM",
-							"environmental_score": 5.9,
-							"environmental_severity": "MEDIUM"
+							"vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:C/C:H/I:H/A:H",
+							"base_score": 8.6,
+							"base_severity": "HIGH",
+							"temporal_score": 8.6,
+							"temporal_severity": "HIGH",
+							"environmental_score": 8.6,
+							"environmental_severity": "HIGH"
 						}
 					}
 				],
@@ -66,17 +66,17 @@
 					{
 						"source": "secalert@redhat.com",
 						"cwe": [
-							"CWE-754"
+							"CWE-269"
 						]
 					}
 				],
 				"references": [
 					{
 						"source": "secalert@redhat.com",
-						"url": "https://access.redhat.com/security/cve/CVE-2024-50602"
+						"url": "https://access.redhat.com/security/cve/CVE-2024-11218"
 					}
 				],
-				"published": "2024-10-27T00:00:00Z"
+				"published": "2025-01-20T00:00:00Z"
 			},
 			"segments": [
 				{
@@ -107,10 +107,9 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "expat",
+													"name": "buildah",
 													"architectures": [
 														"aarch64",
-														"i686",
 														"ppc64le",
 														"s390x",
 														"x86_64"
@@ -121,11 +120,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:2.5.0-3.el9_5.1"
+														"lt": "2:1.37.6-1.el9_5"
 													}
 												],
 												"fixed": [
-													"0:2.5.0-3.el9_5.1"
+													"2:1.37.6-1.el9_5"
 												]
 											}
 										}
@@ -145,10 +144,9 @@
 											"package": {
 												"type": "binary",
 												"binary": {
-													"name": "expat-devel",
+													"name": "buildah-tests",
 													"architectures": [
 														"aarch64",
-														"i686",
 														"ppc64le",
 														"s390x",
 														"x86_64"
@@ -159,11 +157,11 @@
 												"type": "rpm",
 												"range": [
 													{
-														"lt": "0:2.5.0-3.el9_5.1"
+														"lt": "2:1.37.6-1.el9_5"
 													}
 												],
 												"fixed": [
-													"0:2.5.0-3.el9_5.1"
+													"2:1.37.6-1.el9_5"
 												]
 											}
 										}
@@ -180,14 +178,14 @@
 	"data_source": {
 		"id": "redhat-ovalv2",
 		"raws": [
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:20249541.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202445491003.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202445491005.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20249541001.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202445491006.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202445491010.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20249541001.json",
-			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20249541003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:20250923.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202129923001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202129923002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20250923001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202129923002.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202129923004.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250923001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20250923003.json",
 			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
 			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
 			"vuls-data-raw-redhat-repository-to-cpe/repository-to-cpe.json"
