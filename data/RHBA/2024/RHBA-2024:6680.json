@@ -1,0 +1,524 @@
+{
+	"id": "RHBA-2024:6680",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHBA-2024:6680",
+				"title": "RHBA-2024:6680: nss bug fix and enhancement update (Moderate)",
+				"description": "Network Security Services (NSS) is a set of libraries designed to support the cross-platform development of security-enabled client and server applications.\n\nBug Fix(es) and Enhancement(s):\n\n* Rebase NSS to 3.101 for Firefox (JIRA:RHEL-46849)\n\n* nss: Mozilla: Memory corruption in NSS (JIRA:RHEL-47119)\n\n* nss: Mozilla: Memory corruption in NSS [rhel-8.10.z] (JIRA:RHEL-47120)\n\n* In FIPS mode, NSS DH_NewKey() fails because RNG_RNGInit() was never called (JIRA:RHEL-5263)\n\n* nss: PK11_Encrypt using CKM_CHACHA20 can reveal plaintext on Intel Sandy Bridge machines [rhel-8.10.z] (JIRA:RHEL-53576)",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Moderate"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHBA-2024:6680"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-6602"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2296637"
+					}
+				],
+				"published": "2024-09-16T00:00:00Z",
+				"modified": "2024-09-16T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-6602",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "moderate"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N",
+							"base_score": 6.1,
+							"base_severity": "MEDIUM",
+							"temporal_score": 6.1,
+							"temporal_severity": "MEDIUM",
+							"environmental_score": 6.1,
+							"environmental_severity": "MEDIUM"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-119"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-6602"
+					}
+				],
+				"published": "2024-07-09T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:8",
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:8",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-devel",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-softokn",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-softokn-devel",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-softokn-freebl",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-softokn-freebl-devel",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-sysinit",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-tools",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-util",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "nss-util-devel",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "0:3.101.0-7.el8_8"
+													}
+												],
+												"fixed": [
+													"0:3.101.0-7.el8_8"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-8-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/definitions/oval:com.redhat.rhba:def:20246680.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202012413010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhba:ste:20246680001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/states/rpminfo_state/oval:com.redhat.rhba:ste:20246680003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413002.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413006.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413008.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413010.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413012.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413014.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413016.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413018.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202012413020.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680001.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680005.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680007.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680009.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680011.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680013.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680015.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680017.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhba:tst:20246680019.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
+			"vuls-data-raw-redhat-ovalv2/8/rhel-8-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.rhba:tst:20191992004.json",
+			"vuls-data-raw-redhat-repository-to-cpe/repository-to-cpe.json"
+		]
+	}
+}
