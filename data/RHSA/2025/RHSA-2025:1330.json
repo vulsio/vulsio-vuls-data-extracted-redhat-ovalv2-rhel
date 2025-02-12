@@ -1,0 +1,276 @@
+{
+	"id": "RHSA-2025:1330",
+	"advisories": [
+		{
+			"content": {
+				"id": "RHSA-2025:1330",
+				"title": "RHSA-2025:1330: openssl security update (Important)",
+				"description": "OpenSSL is a toolkit that implements the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols, as well as a full-strength general-purpose cryptography library.\n\nSecurity Fix(es):\n\n* openssl: RFC7250 handshakes with unauthenticated servers don't abort as expected (CVE-2024-12797)\n\nFor more details about the security issue(s), including the impact, a CVSS score, acknowledgments, and other related information, refer to the CVE page(s) listed in the References section.",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "Important"
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/errata/RHSA-2025:1330"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-12797"
+					},
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://bugzilla.redhat.com/2342757"
+					}
+				],
+				"published": "2025-02-11T00:00:00Z",
+				"modified": "2025-02-11T00:00:00Z"
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"vulnerabilities": [
+		{
+			"content": {
+				"id": "CVE-2024-12797",
+				"severity": [
+					{
+						"type": "vendor",
+						"source": "secalert@redhat.com",
+						"vendor": "important"
+					},
+					{
+						"type": "cvss_v31",
+						"source": "secalert@redhat.com",
+						"cvss_v31": {
+							"vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N",
+							"base_score": 7.4,
+							"base_severity": "HIGH",
+							"temporal_score": 7.4,
+							"temporal_severity": "HIGH",
+							"environmental_score": 7.4,
+							"environmental_severity": "HIGH"
+						}
+					}
+				],
+				"cwe": [
+					{
+						"source": "secalert@redhat.com",
+						"cwe": [
+							"CWE-295"
+						]
+					}
+				],
+				"references": [
+					{
+						"source": "secalert@redhat.com",
+						"url": "https://access.redhat.com/security/cve/CVE-2024-12797"
+					}
+				]
+			},
+			"segments": [
+				{
+					"ecosystem": "redhat:9",
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"detections": [
+		{
+			"ecosystem": "redhat:9",
+			"conditions": [
+				{
+					"criteria": {
+						"operator": "OR",
+						"criterias": [
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "openssl",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:3.2.2-6.el9_5.1"
+													}
+												],
+												"fixed": [
+													"1:3.2.2-6.el9_5.1"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "openssl-devel",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:3.2.2-6.el9_5.1"
+													}
+												],
+												"fixed": [
+													"1:3.2.2-6.el9_5.1"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "openssl-libs",
+													"architectures": [
+														"aarch64",
+														"i686",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:3.2.2-6.el9_5.1"
+													}
+												],
+												"fixed": [
+													"1:3.2.2-6.el9_5.1"
+												]
+											}
+										}
+									}
+								]
+							},
+							{
+								"operator": "AND",
+								"criterions": [
+									{
+										"type": "version",
+										"version": {
+											"vulnerable": true,
+											"fix_status": {
+												"class": "fixed"
+											},
+											"package": {
+												"type": "binary",
+												"binary": {
+													"name": "openssl-perl",
+													"architectures": [
+														"aarch64",
+														"ppc64le",
+														"s390x",
+														"x86_64"
+													]
+												}
+											},
+											"affected": {
+												"type": "rpm",
+												"range": [
+													{
+														"lt": "1:3.2.2-6.el9_5.1"
+													}
+												],
+												"fixed": [
+													"1:3.2.2-6.el9_5.1"
+												]
+											}
+										}
+									}
+								]
+							}
+						]
+					},
+					"tag": "rhel-9-including-unpatched"
+				}
+			]
+		}
+	],
+	"data_source": {
+		"id": "redhat-ovalv2",
+		"raws": [
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/definitions/oval:com.redhat.rhsa:def:20251330.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202413176005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202413176007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202413176011.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/objects/rpminfo_object/oval:com.redhat.cve:obj:202413176013.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20251330001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/states/rpminfo_state/oval:com.redhat.rhsa:ste:20251330003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202413176010.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202413176014.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202413176022.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.cve:tst:202413176026.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20251330001.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20251330003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20251330005.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpminfo_test/oval:com.redhat.rhsa:tst:20251330007.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541003.json",
+			"vuls-data-raw-redhat-ovalv2/9/rhel-9-including-unpatched/tests/rpmverifyfile_test/oval:com.redhat.cve:tst:20052541004.json",
+			"vuls-data-raw-redhat-repository-to-cpe/repository-to-cpe.json"
+		]
+	}
+}
